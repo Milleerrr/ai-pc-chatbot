@@ -5,4 +5,6 @@ export default defineNuxtConfig({
   build: {
     transpile: ["trpc-nuxt"],
   },
+  modules: ["@nuxt/ui"],
+  css: ["~/assets/css/main.css"],
 });
