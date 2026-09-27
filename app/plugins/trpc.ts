@@ -7,16 +7,7 @@ export default defineNuxtPlugin(() => {
   const api = createTRPCNuxtClient<AppRouter>({
     links: [
       loggerLink({
-        enabled: (opts) => {
-          if (
-            process.env.NODE_ENV === "development" &&
-            opts.direction === "down" &&
-            opts.result instanceof Error
-          ) {
-            console.error(opts.result.message);
-          }
-          return true;
-        },
+        enabled: () => import.meta.dev,
       }),
       httpBatchLink({
         url: "/api/trpc",
