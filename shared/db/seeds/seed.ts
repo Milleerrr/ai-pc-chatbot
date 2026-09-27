@@ -1,0 +1,13 @@
+// shared/db/seeds/seed.ts
+import { db } from "../db-connection";
+import * as seeders from "./index";
+
+try {
+  for (const seed of Object.values(seeders)) {
+    if (typeof seed === "function") {
+      await seed();
+    }
+  }
+} finally {
+  await db.$client.end();
+}

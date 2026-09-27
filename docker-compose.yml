@@ -1,0 +1,10 @@
+services:
+  db:
+    image: pgvector/pgvector:pg18
+    container_name: pc-chatbot-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"

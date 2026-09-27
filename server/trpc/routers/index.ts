@@ -1,18 +1,15 @@
 import { baseProcedure, createTRPCRouter } from "../init";
-import { z } from "zod";
 
 export const appRouter = createTRPCRouter({
-  hello: baseProcedure
-    .input(
-      z.object({
-        text: z.string(),
-      }),
-    )
-    .query((opts) => {
-      return {
-        greeting: `hello ${opts.input.text}`,
-      };
-    }),
+  getUsers: baseProcedure.query(async ({ ctx }) => {
+    const users = await ctx.services.users.getUsers();
+
+    if (!users) {
+      throw new Error("No users found");
+    }
+
+    return users;
+  }),
 });
 
 export type AppRouter = typeof appRouter;
