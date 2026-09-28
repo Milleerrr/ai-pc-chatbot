@@ -1,5 +1,5 @@
 import { Service } from "../Service";
-import { usersTable } from "../../../db/schema/users";
+import { usersTable } from "../../../shared/db/schema/users";
 
 export default class UsersService extends Service {
   public async getUsers() {

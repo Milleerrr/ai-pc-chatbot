@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { db } from "../db-connection";
+import { db } from "./client";
 import { usersTable } from "../schema/users";
 
 const COUNT = 20;

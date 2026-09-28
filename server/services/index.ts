@@ -1,4 +1,4 @@
-import { type RequestContext } from "../api/types";
+import { type RequestContext } from "./types";
 import UsersService from "./Users";
 
 export default class Services {

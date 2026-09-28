@@ -1,5 +1,5 @@
 import type Services from ".";
-import { type RequestContext } from "../api/types";
+import { type RequestContext } from "./types";
 
 export class Service {
   protected readonly context: RequestContext;

@@ -1,5 +1,5 @@
 // shared/db/seeds/seed.ts
-import { db } from "../db-connection";
+import { db } from "./client";
 import * as seeders from "./index";
 
 try {

@@ -1,14 +1,14 @@
 import { initTRPC } from "@trpc/server";
 import type { H3Event } from "h3";
 import superjson from "superjson";
-import { db } from "../../shared/db/db-connection";
-import _createService from "../../shared/src/services/createService";
+import { getDb } from "../db/connection";
+import _createService from "../services/createService";
 
 export const createTRPCContext = async (event: H3Event) => {
   /**
    * @see: https://trpc.io/docs/server/context
    */
-  return { auth: event.context.auth, db };
+  return { auth: event.context.auth, db: getDb() };
 };
 
 export type TRPCContext = Awaited<ReturnType<typeof createTRPCContext>>;

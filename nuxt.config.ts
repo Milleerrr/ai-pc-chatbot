@@ -2,12 +2,12 @@
 export default defineNuxtConfig({
   ssr: false,
   runtimeConfig: {
+    dbCredentials: {
+      url: process.env.DATABASE_URL ?? "",
+      ssl: process.env.NODE_ENV !== "development",
+    },
     public: {
       apiUrl: process.env.API_URL,
-      dbCredentials: {
-        url: process.env.DATABASE_URL,
-        ssl: process.env.NODE_ENV !== "development" ? true : false,
-      },
     },
   },
   compatibilityDate: "2026-09-26",
