@@ -13,7 +13,14 @@
     "db:studio": "drizzle-kit studio",
     "db:up": "docker compose up -d",
     "db:down": "docker compose down",
-    "db:seed": "NODE_ENV=development node --import tsx shared/db/seeds/seed.ts"
+    "db:seed": "NODE_ENV=development node --import tsx shared/db/seeds/seed.ts",
+    "test": "vitest run",
+    "typecheck": "nuxt typecheck",
+    "test:unit": "vitest run --project unit",
+    "test:integration": "vitest run --project integration",
+    "test:nuxt": "vitest run --project nuxt",
+    "test:e2e": "vitest run --project e2e",
+    "test:watch": "vitest --watch"
   },
   "dependencies": {
     "@nuxt/ui": "^4.11.2",
@@ -32,11 +39,14 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^10.6.0",
+    "@nuxt/test-utils": "^4.3.2",
     "@types/node": "^26.6.3",
     "@types/pg": "^8.23.1",
+    "@vue/test-utils": "^2.5.1",
     "drizzle-kit": "1.0.0-rc.4",
     "tsx": "^4.23.15",
-    "typescript": "^7.0.2",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.2",
     "vue-tsc": "^3.3.11"
   }
 }

@@ -1,4 +1,5 @@
 // shared/db/seeds/seed.ts
+import { closeDatabase } from "../../../server/db/connection";
 import { db } from "./client";
 import * as seeders from "./index";
 
@@ -9,5 +10,5 @@ try {
     }
   }
 } finally {
-  await db.$client.end();
+  await closeDatabase(db);
 }

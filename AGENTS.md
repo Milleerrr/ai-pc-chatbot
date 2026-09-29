@@ -11,7 +11,10 @@ Nuxt 4 SPA (`ssr: false`) with tRPC, Drizzle, and Postgres. Package manager is p
 - `pnpm db:seed` — development seed data
 - `pnpm build` — production check
 
-No test or lint script yet. Do not invent one.
+- `pnpm test` — all Vitest projects (`unit`, `integration`, `e2e`, `nuxt`; layout follows the Nuxt testing guide under `test/`). `test:unit`, `test:integration`, `test:nuxt`, `test:e2e` run one project.
+- `pnpm typecheck` — `nuxt typecheck`
+
+Integration tests run against `DATABASE_URL` (the normal dev DB locally, a service Postgres in CI). `resetDb` truncates every table, so run `pnpm db:seed` afterwards. No lint script yet. Do not invent one.
 
 ## Layout
 

@@ -3,6 +3,8 @@ import { Pool } from "pg";
 
 export type Database = NodePgDatabase;
 
+const pools = new WeakMap<Database, Pool>();
+
 export function createDatabase(
   connectionString: string,
   ssl: boolean,
@@ -18,7 +20,20 @@ export function createDatabase(
     console.error("Idle client database error", error);
   });
 
-  return drizzle({ client: pool }) satisfies Database;
+  const database = drizzle({ client: pool }) satisfies Database;
+  pools.set(database, pool);
+
+  return database;
+}
+
+export async function closeDatabase(database: Database): Promise<void> {
+  const pool = pools.get(database);
+
+  if (!pool) return;
+
+  pools.delete(database);
+
+  await pool.end();
 }
 
 let database: Database | undefined;
