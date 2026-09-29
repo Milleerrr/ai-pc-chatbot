@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     dbCredentials: {
       url: process.env.DATABASE_URL ?? "",
-      ssl: process.env.NODE_ENV !== "development",
+      ssl: process.env.DATABASE_SSL === "true",
     },
     public: {
       apiUrl: process.env.API_URL,
@@ -17,4 +17,10 @@ export default defineNuxtConfig({
   },
   modules: ["@nuxt/ui"],
   css: ["~/assets/css/main.css"],
+  typescript: {
+    // Paths are relative to `.nuxt/tsconfig.node.json`.
+    nodeTsConfig: {
+      include: ["../drizzle.config.ts"],
+    },
+  },
 });
