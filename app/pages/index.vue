@@ -1,15 +1,20 @@
 <script setup lang="ts">
-const { $api } = useNuxtApp();
+import { authClient } from '~/lib/auth-client'
 
-const { data, pending, error } = await $api.getUsers.useQuery();
+const session = authClient.useSession()
 
+const handleSignOut = async () => {
+  await authClient.signOut()
+  await navigateTo('/login')
+}
 </script>
 
 <template>
-  <div v-if="pending">Loading...</div>
-  <div v-else-if="error">Error: {{ error.message }}</div>
-  <div v-else v-for="user in data" :key="user.id">
-      {{ user.firstName }} {{ user.lastName }} - {{ user.email }}
+  <div class="flex flex-col gap-4 p-4">
+    <h1>Hello {{ session.data?.user.name }}</h1>
+    <pre class="text-sm">{{ JSON.stringify(session.data, null, 2) }}</pre>
+    <div>
+      <UButton label="Sign out" color="neutral" variant="outline" @click="handleSignOut" />
     </div>
+  </div>
 </template>
-  
