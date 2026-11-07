@@ -15,6 +15,8 @@
     "db:up": "docker compose up -d",
     "db:down": "docker compose down",
     "db:seed": "NODE_ENV=development node --import tsx shared/db/seeds/seed.ts",
+    "db:reset": "docker compose exec -T db psql -U postgres -d postgres -q < shared/db/reset/reset.sql && pnpm db:migrate && pnpm db:seed",
+    "db:reset:railway": "bash shared/db/reset/railway.sh",
     "test": "vitest run",
     "typecheck": "nuxt typecheck",
     "unit:test": "vitest run --project unit",

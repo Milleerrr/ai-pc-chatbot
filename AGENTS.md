@@ -10,6 +10,8 @@ Nuxt 4 SPA (`ssr: false`) with tRPC, Drizzle, and Postgres. Package manager is p
 - `pnpm db:generate` then `pnpm db:migrate` — after schema changes (`db:migrate` also runs `db:app-role`)
 - `pnpm db:app-role` — create/update the restricted `app_user` role and its grants (idempotent)
 - `pnpm db:seed` — development seed data
+- `pnpm db:reset` — wipe the local DB (tables + migration history), then migrate and seed. Use after squashing migrations
+- `pnpm db:reset:railway` — wipe the linked Railway DB and redeploy the app. Interactive, asks for the project name. Only for humans, never run it from an agent
 - `pnpm build` — production check
 
 - `pnpm test` — all Vitest projects (`unit`, `integration`, `e2e`, `nuxt`; layout follows the Nuxt testing guide under `test/`). `unit:test`, `integration:test`, `nuxt:test`, `e2e:test` run one project (e.g. `pnpm integration:test test/integration/rls.test.ts` for one file).
