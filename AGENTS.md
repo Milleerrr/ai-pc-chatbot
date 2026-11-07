@@ -49,3 +49,17 @@ Database up, migrate, seed, `pnpm dev`, then hit the affected tRPC procedure or 
 - Do not commit `.env`, credentials, or edits to generated migrations.
 - `plan.md` is a backlog, not current architecture. Do not add auth, logging, or AI-provider code unless that work is in scope.
 - Do not restore deleted code without checking why it was removed.
+
+## Agent skills
+
+### Issue tracker
+
+Issues and PRDs are GitHub Issues on `Milleerrr/ai-pc-chatbot`, managed with the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Uses the five default label names (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one `CONTEXT.md` and one `docs/adr/` at the repo root. See `docs/agents/domain.md`.
