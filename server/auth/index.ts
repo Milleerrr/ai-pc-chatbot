@@ -1,4 +1,4 @@
-import { getDb } from "../db/connection";
+import { unrestrictedDb } from "../db/connection";
 import { createAuth, type Auth } from "./create-auth";
 
 let auth: Auth | undefined;
@@ -6,7 +6,7 @@ let auth: Auth | undefined;
 export function getAuth() {
   if (!auth) {
     const { auth: config } = useRuntimeConfig();
-    auth = createAuth({ db: getDb(), ...config });
+    auth = createAuth({ db: unrestrictedDb(), ...config });
   }
 
   return auth;

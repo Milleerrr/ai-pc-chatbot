@@ -7,6 +7,7 @@ import {
   timestamp,
   uuid,
 } from "drizzle-orm/pg-core";
+import { ownerPolicy } from "../rls";
 import { baseTable } from "../utils";
 
 export const userRoleEnum = pgEnum("user_role", ["user", "admin"]);
@@ -14,14 +15,18 @@ export type UserRole = (typeof userRoleEnum.enumValues)[number];
 
 const timestamptz = () => timestamp({ precision: 6, withTimezone: true });
 
-export const userTable = baseTable("user", {
-  name: text().notNull(),
-  email: text().notNull().unique(),
-  emailVerified: boolean().default(false).notNull(),
-  image: text(),
-  role: userRoleEnum().default("user").notNull(),
-  isAnonymous: boolean().default(false).notNull(),
-});
+export const userTable = baseTable(
+  "user",
+  {
+    name: text().notNull(),
+    email: text().notNull().unique(),
+    emailVerified: boolean().default(false).notNull(),
+    image: text(),
+    role: userRoleEnum().default("user").notNull(),
+    isAnonymous: boolean().default(false).notNull(),
+  },
+  (table) => [ownerPolicy(table.id)],
+);
 
 export const sessionTable = baseTable(
   "session",

@@ -38,6 +38,7 @@ CREATE TABLE "user" (
 	"updated_at" timestamp(6) with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
+ALTER TABLE "user" ENABLE ROW LEVEL SECURITY;--> statement-breakpoint
 CREATE TABLE "verification" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
 	"identifier" text NOT NULL,
@@ -51,4 +52,5 @@ CREATE INDEX "account_userId_idx" ON "account" ("user_id");--> statement-breakpo
 CREATE INDEX "session_userId_idx" ON "session" ("user_id");--> statement-breakpoint
 CREATE INDEX "verification_identifier_idx" ON "verification" ("identifier");--> statement-breakpoint
 ALTER TABLE "account" ADD CONSTRAINT "account_user_id_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "user"("id") ON DELETE CASCADE;--> statement-breakpoint
-ALTER TABLE "session" ADD CONSTRAINT "session_user_id_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "user"("id") ON DELETE CASCADE;
+ALTER TABLE "session" ADD CONSTRAINT "session_user_id_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "user"("id") ON DELETE CASCADE;--> statement-breakpoint
+CREATE POLICY "owner_isolation" ON "user" AS PERMISSIVE FOR ALL TO public USING ("user"."id" = (select nullif(current_setting('app.user_id', true), '')::uuid)) WITH CHECK ("user"."id" = (select nullif(current_setting('app.user_id', true), '')::uuid));

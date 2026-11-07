@@ -1,7 +1,7 @@
 {
   "version": "8",
   "dialect": "postgres",
-  "id": "d38ef786-80ed-4c1b-9933-5d989002e187",
+  "id": "27ebdcde-9aa9-4ae2-9f3d-8854eb746655",
   "prevIds": [
     "00000000-0000-0000-0000-000000000000"
   ],
@@ -28,7 +28,7 @@
       "schema": "public"
     },
     {
-      "isRlsEnabled": false,
+      "isRlsEnabled": true,
       "name": "user",
       "entityType": "tables",
       "schema": "public"
@@ -665,6 +665,19 @@
       "schema": "public",
       "table": "user",
       "entityType": "uniques"
+    },
+    {
+      "as": "PERMISSIVE",
+      "for": "ALL",
+      "roles": [
+        "public"
+      ],
+      "using": "\"user\".\"id\" = (select nullif(current_setting('app.user_id', true), '')::uuid)",
+      "withCheck": "\"user\".\"id\" = (select nullif(current_setting('app.user_id', true), '')::uuid)",
+      "name": "owner_isolation",
+      "entityType": "policies",
+      "schema": "public",
+      "table": "user"
     }
   ],
   "renames": []

@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     dbCredentials: {
       url: process.env.DATABASE_URL ?? "",
+      appUrl: process.env.APP_DATABASE_URL ?? "",
       ssl: process.env.DATABASE_SSL === "true",
     },
     auth: {

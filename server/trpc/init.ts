@@ -1,17 +1,29 @@
 import { initTRPC } from "@trpc/server";
 import type { H3Event } from "h3";
 import superjson from "superjson";
-import { getDb } from "../db/connection";
+import { getAuth } from "../auth";
+import { getDb, type DbClient } from "../db/connection";
+import { withUser, type UserContext } from "../db/with-user";
 import _createService from "../services/createService";
 
-export const createTRPCContext = async (event: H3Event) => {
+export type TRPCContext = {
+  user: UserContext | null;
+  db: DbClient;
+};
+
+export const createTRPCContext = async (
+  event: H3Event,
+): Promise<TRPCContext> => {
   /**
    * @see: https://trpc.io/docs/server/context
    */
-  return { auth: event.context.auth, db: getDb() };
-};
+  const session = await getAuth().api.getSession({ headers: event.headers });
 
-export type TRPCContext = Awaited<ReturnType<typeof createTRPCContext>>;
+  return {
+    user: session ? { userId: session.user.id } : null,
+    db: getDb(),
+  };
+};
 
 // Avoid exporting the entire t-object
 // since it's not very descriptive.
@@ -25,14 +37,21 @@ const t = initTRPC.context<TRPCContext>().create({
 });
 
 const appUser = t.middleware(async ({ ctx, next }) => {
-  const result = await next({
-    ctx: {
-      ...ctx,
-      services: _createService(ctx),
-    },
-  });
+  const { user } = ctx;
 
-  return result;
+  if (!user) {
+    return next({ ctx: { services: _createService({ db: ctx.db }) } });
+  }
+
+  return withUser(ctx.db, user, async (tx) => {
+    const result = await next({
+      ctx: { db: tx, services: _createService({ db: tx }) },
+    });
+
+    if (!result.ok) throw result.error;
+
+    return result;
+  });
 });
 
 // Base router and procedure helpers

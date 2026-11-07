@@ -1,7 +1,7 @@
 import { sql } from "drizzle-orm";
 import {
   closeDatabase,
-  createDatabase,
+  createDb,
   type Database,
 } from "../../server/db/connection";
 
@@ -16,7 +16,7 @@ const databaseUrl = () => {
 };
 
 export const testDb = (): Database => {
-  database ??= createDatabase(
+  database ??= createDb(
     databaseUrl(),
     process.env.DATABASE_SSL === "true",
   );
@@ -54,10 +54,23 @@ export const resetDb = async (): Promise<void> => {
   await db.execute(sql`truncate table ${tables} restart identity cascade`);
 };
 
-export const closeDb = async (): Promise<void> => {
-  if (!database) return;
+let appDatabase: Database | undefined;
 
-  await closeDatabase(database);
+/** Connection as the restricted app role, so RLS applies. */
+export const testAppDb = (): Database => {
+  const url = process.env.APP_DATABASE_URL;
+
+  if (!url) throw new Error("APP_DATABASE_URL is not set");
+
+  appDatabase ??= createDb(url, process.env.DATABASE_SSL === "true");
+
+  return appDatabase;
+};
+
+export const closeDb = async (): Promise<void> => {
+  if (database) await closeDatabase(database);
+  if (appDatabase) await closeDatabase(appDatabase);
 
   database = undefined;
+  appDatabase = undefined;
 };

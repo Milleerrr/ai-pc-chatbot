@@ -26,7 +26,7 @@ CI is deferred (spec *Later* table), so there is no "Wait for CI" setting.
 
 `drizzle-kit` is a devDependency, so the pre-deploy command has to work in an image where dev dependencies may be pruned.
 
-- Chosen approach: keep dev dependencies in the deploy image and run the existing script, `pnpm db:migrate` (`drizzle-kit migrate`), as the pre-deploy command.
+- Chosen approach: keep dev dependencies in the deploy image and run the existing script, `pnpm db:migrate` (`drizzle-kit migrate`), as the pre-deploy command. It also runs `pnpm db:app-role`, which creates/updates the restricted `app_user` role from `APP_DATABASE_URL` and reapplies its grants.
 - Why: it is the same command used locally, so there is no second migration script to maintain. The cost is that dev dependencies must stay in the image. If a build ever prunes them, switch to Drizzle's programmatic migrator (`drizzle-orm/node-postgres/migrator`), as `test/setup/global-setup.ts` already does.
 - Migrations live in `shared/db/migrations/` and are generated with `pnpm db:generate`. They are never hand-edited.
 
@@ -41,6 +41,7 @@ Names match `.env.example`. Set them on the app service.
 | Variable               | Status  | How it's set                                                             |
 | ---------------------- | ------- | ------------------------------------------------------------------------ |
 | `DATABASE_URL`         | **Set** | Reference variable: `${{Postgres.DATABASE_URL}}` (not a pasted string). Resolves to the **internal** (`*.railway.internal`) URL |
+| `APP_DATABASE_URL`     | Not yet set | Same host/db as `DATABASE_URL`, but user `app_user` and a generated password. The pre-deploy `pnpm db:migrate` creates the role from it. Must not be the owner/superuser (the script refuses) |
 | `DATABASE_SSL`         | **Set** | `false`, because the internal URL doesn't use SSL (a public proxy URL would need `true`) |
 | `BETTER_AUTH_URL`      | Not yet set | Public app URL (Day 2)                                               |
 | `BETTER_AUTH_SECRET`   | Not yet set | Secret (Day 2)                                                       |

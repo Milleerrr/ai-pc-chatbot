@@ -1,7 +1,7 @@
 import "dotenv/config";
-import { createDatabase } from "../../../server/db/connection";
+import { createDb } from "../../../server/db/connection";
 
-export const db = createDatabase(
+export const db = createDb(
   process.env.DATABASE_URL!,
   process.env.NODE_ENV !== "development",
 );
