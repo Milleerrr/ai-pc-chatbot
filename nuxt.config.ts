@@ -14,6 +14,7 @@ export default defineNuxtConfig({
         clientId: process.env.GOOGLE_CLIENT_ID ?? "",
         clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
       },
+      betterAuthApiKey: process.env.BETTER_AUTH_API_KEY ?? "",
     },
     public: {
       apiUrl: process.env.API_URL,

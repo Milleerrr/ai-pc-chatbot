@@ -8,13 +8,17 @@ import {
   userTable,
   verificationTable,
 } from "../../shared/db/schema/auth";
+import { dash } from "@better-auth/infra";
 
-export function createAuth(deps: {
+type Deps = {
   db: Database;
   baseURL: string;
   secret: string;
   google: { clientId: string; clientSecret: string };
-}) {
+  betterAuthApiKey: string;
+};
+
+export function createAuth(deps: Deps) {
   return betterAuth({
     database: drizzleAdapter(deps.db, {
       provider: "pg",
@@ -39,7 +43,12 @@ export function createAuth(deps: {
     socialProviders: {
       google: deps.google,
     },
-    plugins: [anonymous()],
+    plugins: [
+      anonymous(),
+      dash({
+        apiKey: deps.betterAuthApiKey,
+      }),
+    ],
     user: {
       additionalFields: {
         role: {
