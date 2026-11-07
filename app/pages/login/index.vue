@@ -7,6 +7,7 @@ const route = useRoute()
 const toast = useToast()
 
 const isSignUp = ref(false)
+const sessionExpired = computed(() => route.query.expired === '1')
 
 // Only follow same-site paths, never a full URL from the query string.
 const redirect = computed(() => {
@@ -95,6 +96,15 @@ async function onEmailAndPasswordSubmit({ data }: FormSubmitEvent<Schema>) {
 
 <template>
   <div class="flex flex-col items-center justify-center gap-4 p-4">
+    <UAlert
+      v-if="sessionExpired"
+      class="w-full max-w-md"
+      color="warning"
+      variant="subtle"
+      icon="i-lucide-clock"
+      title="Your session expired"
+      description="Sign in again to pick up where you left off."
+    />
     <UPageCard class="w-full max-w-md">
       <UAuthForm
         :key="isSignUp ? 'sign-up' : 'sign-in'"

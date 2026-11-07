@@ -1,6 +1,6 @@
 import { betterAuth } from "better-auth/minimal";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { anonymous } from "better-auth/plugins";
+import { anonymous, lastLoginMethod } from "better-auth/plugins";
 import type { Database } from "../db/connection";
 import {
   accountTable,
@@ -45,6 +45,11 @@ export function createAuth(deps: Deps) {
     },
     plugins: [
       anonymous(),
+      // Sets a JS-readable cookie with the method of the last real sign-in
+      // (guest sign-ins don't set it). The client reads it to tell an expired
+      // account session apart from a first-time visitor. Outlives the session
+      // on purpose: one year.
+      lastLoginMethod({ maxAge: 60 * 60 * 24 * 365 }),
       dash({
         apiKey: deps.betterAuthApiKey,
       }),
