@@ -1,10 +1,12 @@
 <script setup lang="ts">
-// Variant A, "Docs split": the Claude Docs idea taken literally.
-// Chat list left, Chat centre, Build Brief as a permanent read-only document on the right.
-// Meter is a slim bar docked under the composer.
+// Variant A, "Docs split" + B's drawer: Chat list left, Chat centre. The Build Brief is a
+// read-only document in a docked drawer that starts CLOSED. A header badge opens it, and
+// plays a power-up when the assistant updates the Brief. Meter is a slim bar under the composer.
 import { useProto, current, brief, requiredProgress, select, newBuild, menuItems, isChanged } from './state'
 const p = useProto()
 const shown = computed(() => p.chats.filter(c => (p.sidebarTab === 'archived' ? c.archived : !c.archived)))
+const drawer = ref(false)
+watch(() => p.scenario, () => { drawer.value = false })
 const archivedCount = computed(() => p.chats.filter(c => c.archived).length)
 </script>
 
@@ -50,6 +52,8 @@ const archivedCount = computed(() => p.chats.filter(c => c.archived).length)
           <h1 class="font-medium truncate">{{ current.title }}</h1>
           <UButton icon="i-lucide-pencil" size="xs" color="neutral" variant="ghost" @click="p.renaming = { id: current.id, value: current.title }" />
           <UBadge v-if="current.archived" label="Archived" color="neutral" variant="subtle" size="sm" />
+          <span class="flex-1" />
+          <PrototypeChatBriefBadge :open="drawer" @toggle="drawer = !drawer" />
         </header>
         <PrototypeChatThread>
           <template #below>
@@ -69,7 +73,8 @@ const archivedCount = computed(() => p.chats.filter(c => c.archived).length)
     </main>
 
     <!-- Brief document -->
-    <aside class="w-[380px] shrink-0 border-l border-default flex flex-col bg-elevated/30">
+    <aside class="shrink-0 overflow-hidden bg-elevated/30 transition-[width] duration-300 ease-out" :class="drawer && current ? 'w-[380px] border-l border-default' : 'w-0'">
+     <div class="w-[380px] h-full flex flex-col">
       <header class="h-12 shrink-0 px-4 flex items-center gap-2 border-b border-default">
         <UIcon name="i-lucide-file-text" class="text-muted" />
         <span class="font-medium">Build Brief</span>
@@ -78,6 +83,7 @@ const archivedCount = computed(() => p.chats.filter(c => c.archived).length)
         <span class="flex-1" />
         <span v-if="p.briefUpdating" class="text-xs text-primary flex items-center gap-1"><UIcon name="i-lucide-loader-circle" class="animate-spin" />Updating…</span>
         <span v-else-if="brief" class="text-xs text-muted">{{ requiredProgress.done }}/{{ requiredProgress.total }} required</span>
+        <UButton icon="i-lucide-x" color="neutral" variant="ghost" size="xs" @click="drawer = false" />
       </header>
       <div v-if="brief && current" class="flex-1 overflow-y-auto p-5 space-y-5">
         <h2 class="text-lg font-semibold leading-snug">{{ brief.headline }}</h2>
@@ -102,6 +108,7 @@ const archivedCount = computed(() => p.chats.filter(c => c.archived).length)
       <div v-else class="flex-1 grid place-items-center p-8 text-center text-sm text-muted">
         Your Build Brief fills in here as we talk. It's read-only, and the assistant keeps it up to date.
       </div>
+     </div>
     </aside>
     <PrototypeChatDialogs />
   </div>
