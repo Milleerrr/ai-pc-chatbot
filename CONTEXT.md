@@ -13,12 +13,27 @@ _Avoid_: Anonymous user, visitor
 ### Requirements
 
 **Build**:
-One computer a user wants parts for, such as "my gaming PC". Every Chat belongs to exactly one Build.
+One computer a user wants parts for, such as "my gaming PC". It can be a whole new computer or an upgrade to one they already own. Every Chat belongs to exactly one Build.
 _Avoid_: Project, order, rig
 
 **Build Brief**:
-The Build's record of what the interview has established about the user's needs, plus what is still unknown. It is the assistant's lasting memory of the Build and outlives any single Chat.
+The Build's record of what the interview has established about the user's needs, plus what is still unknown. It holds needs, constraints and preferences, never the assistant's choice of parts. It is the assistant's lasting memory of the Build and outlives any single Chat.
 _Avoid_: Requirements profile, memory, notes, summary
+
+**Existing Parts**:
+Parts and peripherals the user already owns and will reuse in the Build. In an upgrade, these are the parts being kept.
+_Avoid_: Current parts, old parts
+
+**Ready**:
+A Build Brief the user has confirmed as complete. Changing a required detail returns it to **In progress** until the user confirms it again.
+_Avoid_: Complete, done, finished
+
+**Confirmed / Assumed / Unknown / Not needed**:
+How sure the Build Brief is of each detail. **Confirmed**: the user said it. **Assumed**: the assistant inferred it and still needs to check. **Unknown**: not yet established. **Not needed**: the user doesn't care, or it doesn't apply.
+_Avoid_: Answered, inferred, known, guessed
+
+**Open Question**:
+Something the assistant still means to ask the user before the Build Brief is complete, including a contradiction it needs the user to resolve.
 
 ### Conversations
 
