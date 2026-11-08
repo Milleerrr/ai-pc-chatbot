@@ -1,0 +1,32 @@
+$ tsx probe.ts nitro baseline 15000 25000
+[nitro-baseline-1794136743489vpo0] client received 24 bytes; pressing STOP
+client ended: AbortError This operation was aborted 
+--- server events for nitro-baseline-1794136743489vpo0 (t relative to Stop, ms) ---
+ -15014 route.start {"eventKeys":["__is_event__","node","web","context","_method","_path","_headers","_requestBody","_handled","_onBeforeResponseCalled","_onAfterResponseCalled","fetch","$fetch","waitUntil","captureError"],"hasReqSignal":true,"runtimeKeys":[]}
+ -15014 upstream.request {}
+      2 req.signal.abort {}
+      2 node.res.close {"writableFinished":false}
+      2 node.req.close {}
+   2288 upstream.response {"status":200}
+   2289 upstream.read {"pulls":1,"bytes":462,"usage":{}}
+   3499 upstream.read {"pulls":6,"bytes":3079,"usage":{"promptTokenCount":"27","candidatesTokenCount":"119","thoughtsTokenCount":"1713","totalTokenCount":"1859"}}
+   4854 upstream.read {"pulls":11,"bytes":5675,"usage":{"promptTokenCount":"27","candidatesTokenCount":"254","thoughtsTokenCount":"1713","totalTokenCount":"1994"}}
+   5907 upstream.read {"pulls":16,"bytes":8028,"usage":{"promptTokenCount":"27","candidatesTokenCount":"383","thoughtsTokenCount":"1713","totalTokenCount":"2123"}}
+   6997 upstream.read {"pulls":21,"bytes":10490,"usage":{"promptTokenCount":"27","candidatesTokenCount":"512","thoughtsTokenCount":"1713","totalTokenCount":"2252"}}
+   8166 upstream.read {"pulls":26,"bytes":12941,"usage":{"promptTokenCount":"27","candidatesTokenCount":"644","thoughtsTokenCount":"1713","totalTokenCount":"2384"}}
+   9282 upstream.read {"pulls":31,"bytes":15401,"usage":{"promptTokenCount":"27","candidatesTokenCount":"775","thoughtsTokenCount":"1713","totalTokenCount":"2515"}}
+  10400 upstream.read {"pulls":36,"bytes":17834,"usage":{"promptTokenCount":"27","candidatesTokenCount":"906","thoughtsTokenCount":"1713","totalTokenCount":"2646"}}
+  11507 upstream.read {"pulls":41,"bytes":20244,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1035","thoughtsTokenCount":"1713","totalTokenCount":"2775"}}
+  12812 upstream.read {"pulls":46,"bytes":22727,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1166","thoughtsTokenCount":"1713","totalTokenCount":"2906"}}
+  13959 upstream.read {"pulls":51,"bytes":25165,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1297","thoughtsTokenCount":"1713","totalTokenCount":"3037"}}
+  14975 upstream.read {"pulls":56,"bytes":27601,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1423","thoughtsTokenCount":"1713","totalTokenCount":"3163"}}
+  16095 upstream.read {"pulls":61,"bytes":30014,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1554","thoughtsTokenCount":"1713","totalTokenCount":"3294"}}
+  17403 upstream.read {"pulls":66,"bytes":32552,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1679","thoughtsTokenCount":"1713","totalTokenCount":"3419"}}
+  18570 upstream.read {"pulls":71,"bytes":35008,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1816","thoughtsTokenCount":"1713","totalTokenCount":"3556"}}
+  19539 upstream.read {"pulls":76,"bytes":37385,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1946","thoughtsTokenCount":"1713","totalTokenCount":"3686"}}
+  20461 upstream.read {"pulls":81,"bytes":39885,"usage":{"promptTokenCount":"27","candidatesTokenCount":"2070","thoughtsTokenCount":"1713","totalTokenCount":"3810"}}
+  21657 upstream.read {"pulls":86,"bytes":42317,"usage":{"promptTokenCount":"27","candidatesTokenCount":"2200","thoughtsTokenCount":"1713","totalTokenCount":"3940"}}
+  22201 upstream.read {"pulls":91,"bytes":45996,"usage":{"promptTokenCount":"27","candidatesTokenCount":"2283","thoughtsTokenCount":"1713","totalTokenCount":"4023"}}
+  22207 upstream.read {"pulls":96,"bytes":51926,"usage":{"promptTokenCount":"27","candidatesTokenCount":"2283","thoughtsTokenCount":"1713","totalTokenCount":"4023"}}
+  22209 upstream.body.done {"bytes":53141,"usage":{"promptTokenCount":"27","candidatesTokenCount":"2283","thoughtsTokenCount":"1713","totalTokenCount":"4023"}}
+  22212 streamText.onFinish {"usage":{"inputTokens":27,"inputTokenDetails":{"noCacheTokens":27,"cacheReadTokens":0},"outputTokens":3996,"outputTokenDetails":{"textTokens":2283,"reasoningTokens":1713},"totalTokens":4023,"raw":{"thoughtsTokenCount":1713,"promptTokenCount":27,"candidatesTokenCount":2283,"totalTokenCount":4023,"serviceTier":"standard","promptTokensDetails":[{"modality":"TEXT","tokenCount":27}]}}}

@@ -1,0 +1,11 @@
+$ tsx probe.ts nitro reqsignal 15000 25000
+[nitro-reqsignal-1794136743474vsjh] client received 24 bytes; pressing STOP
+client ended: AbortError This operation was aborted 
+--- server events for nitro-reqsignal-1794136743474vsjh (t relative to Stop, ms) ---
+ -15010 route.start {"eventKeys":["__is_event__","node","web","context","_method","_path","_headers","_requestBody","_handled","_onBeforeResponseCalled","_onAfterResponseCalled","fetch","$fetch","waitUntil","captureError"],"hasReqSignal":true,"runtimeKeys":[]}
+ -15009 upstream.request {}
+      4 req.signal.abort {}
+      4 upstream.signal.abort {}
+      4 node.res.close {"writableFinished":false}
+      5 node.req.close {}
+      5 streamText.onAbort {}

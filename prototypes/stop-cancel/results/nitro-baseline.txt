@@ -1,0 +1,12 @@
+$ tsx probe.ts nitro baseline 15000 25000
+[nitro-baseline-1794136743489vpo0] client received 24 bytes; pressing STOP
+client ended: AbortError This operation was aborted 
+--- server events for nitro-baseline-1794136743489vpo0 (t relative to Stop, ms) ---
+ -15014 route.start {"eventKeys":["__is_event__","node","web","context","_method","_path","_headers","_requestBody","_handled","_onBeforeResponseCalled","_onAfterResponseCalled","fetch","$fetch","waitUntil","captureError"],"hasReqSignal":true,"runtimeKeys":[]}
+ -15014 upstream.request {}
+      2 req.signal.abort {}
+      2 node.res.close {"writableFinished":false}
+      2 node.req.close {}
+   2288 upstream.response {"status":200}
+  22209 upstream.body.done {"bytes":53141,"usage":{"promptTokenCount":"27","candidatesTokenCount":"2283","thoughtsTokenCount":"1713","totalTokenCount":"4023"}}
+  22212 streamText.onFinish {"usage":{"inputTokens":27,"inputTokenDetails":{"noCacheTokens":27,"cacheReadTokens":0},"outputTokens":3996,"outputTokenDetails":{"textTokens":2283,"reasoningTokens":1713},"totalTokens":4023,"raw":{"thoughtsTokenCount":1713,"promptTokenCount":27,"candidatesTokenCount":2283,"totalTokenCount":4023,"serviceTier":"standard","promptTokensDetails":[{"modality":"TEXT","tokenCo

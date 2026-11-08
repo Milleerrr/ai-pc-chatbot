@@ -1,0 +1,28 @@
+$ tsx probe.ts trpc baseline 15000 25000
+[trpc-baseline-1794136947220ip39] client received 0 bytes; pressing STOP
+client ended: AbortError This operation was aborted 
+--- server events for trpc-baseline-1794136947220ip39 (t relative to Stop, ms) ---
+ -14922 proc.start {"hasProcSignal":true,"eventKeys":["__is_event__","node","web","context","_method","_path","_headers","_requestBody","_handled","_onBeforeResponseCalled","_onAfterResponseCalled","fetch","$fetch","waitUntil","captureError"],"runtimeKeys":[]}
+ -14921 upstream.request {}
+     12 node.res.close {"writableFinished":false}
+   5609 upstream.response {"status":200}
+   5609 upstream.read {"pulls":1,"bytes":506,"usage":{}}
+   7009 upstream.read {"pulls":6,"bytes":3128,"usage":{"promptTokenCount":"27","candidatesTokenCount":"123","thoughtsTokenCount":"2139","totalTokenCount":"2289"}}
+   8419 upstream.read {"pulls":11,"bytes":5664,"usage":{"promptTokenCount":"27","candidatesTokenCount":"252","thoughtsTokenCount":"2139","totalTokenCount":"2418"}}
+   9781 upstream.read {"pulls":16,"bytes":8041,"usage":{"promptTokenCount":"27","candidatesTokenCount":"381","thoughtsTokenCount":"2139","totalTokenCount":"2547"}}
+  11147 upstream.read {"pulls":21,"bytes":10525,"usage":{"promptTokenCount":"27","candidatesTokenCount":"506","thoughtsTokenCount":"2139","totalTokenCount":"2672"}}
+  12002 upstream.read {"pulls":26,"bytes":12807,"usage":{"promptTokenCount":"27","candidatesTokenCount":"634","thoughtsTokenCount":"2139","totalTokenCount":"2800"}}
+  13100 upstream.read {"pulls":31,"bytes":15235,"usage":{"promptTokenCount":"27","candidatesTokenCount":"766","thoughtsTokenCount":"2139","totalTokenCount":"2932"}}
+  14169 upstream.read {"pulls":36,"bytes":17658,"usage":{"promptTokenCount":"27","candidatesTokenCount":"895","thoughtsTokenCount":"2139","totalTokenCount":"3061"}}
+  15306 upstream.read {"pulls":41,"bytes":20154,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1021","thoughtsTokenCount":"2139","totalTokenCount":"3187"}}
+  16456 upstream.read {"pulls":46,"bytes":22580,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1149","thoughtsTokenCount":"2139","totalTokenCount":"3315"}}
+  17583 upstream.read {"pulls":51,"bytes":25039,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1278","thoughtsTokenCount":"2139","totalTokenCount":"3444"}}
+  18746 upstream.read {"pulls":56,"bytes":27425,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1410","thoughtsTokenCount":"2139","totalTokenCount":"3576"}}
+  20098 upstream.read {"pulls":61,"bytes":29890,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1541","thoughtsTokenCount":"2139","totalTokenCount":"3707"}}
+  21278 upstream.read {"pulls":66,"bytes":32305,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1663","thoughtsTokenCount":"2139","totalTokenCount":"3829"}}
+  22404 upstream.read {"pulls":71,"bytes":34824,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1787","thoughtsTokenCount":"2139","totalTokenCount":"3953"}}
+  22808 upstream.read {"pulls":76,"bytes":39315,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1857","thoughtsTokenCount":"2139","totalTokenCount":"4023"}}
+  22809 upstream.read {"pulls":81,"bytes":45245,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1857","thoughtsTokenCount":"2139","totalTokenCount":"4023"}}
+  22810 upstream.body.done {"bytes":47366,"usage":{"promptTokenCount":"27","candidatesTokenCount":"1857","thoughtsTokenCount":"2139","totalTokenCount":"4023"}}
+  22812 streamText.onFinish {"usage":{"inputTokens":27,"inputTokenDetails":{"noCacheTokens":27,"cacheReadTokens":0},"outputTokens":3996,"outputTokenDetails":{"textTokens":1857,"reasoningTokens":2139},"totalTokens":4023,"raw":{"thoughtsTokenCount":2139,"promptTokenCount":27,"candidatesTokenCount":1857,"totalTokenCount":4023,"serviceTier":"standard","promptTokensDetails":[{"modality":"TEXT","tokenCount":27}]}}}
+  22812 proc.generator.finally {}

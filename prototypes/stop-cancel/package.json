@@ -1,0 +1,27 @@
+{
+  "name": "prototype-stop-cancel",
+  "private": true,
+  "type": "module",
+  "description": "SPIKE, throwaway. Does Stop cancel the server-side Gemini call on a Nitro route and a tRPC streaming procedure? (wayfinder ticket #16)",
+  "scripts": {
+    "dev": "nuxt dev --port 3100",
+    "build": "nuxt build",
+    "preview": "node .output/server/index.mjs",
+    "probe": "tsx probe.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "4.0.114",
+    "@trpc/client": "^11.19.0",
+    "@trpc/server": "^11.19.0",
+    "ai": "7.0.165",
+    "nuxt": "4.6.4",
+    "trpc-nuxt": "^2.1.3",
+    "vue": "^3.5.43",
+    "vue-router": "^5.3.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15",
+    "@types/node": "^22"
+  }
+}

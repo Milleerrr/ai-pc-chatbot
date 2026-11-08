@@ -1,0 +1,10 @@
+$ tsx probe.ts trpc close 15000 25000
+[trpc-close-1794136947220i890] client received 0 bytes; pressing STOP
+client ended: AbortError This operation was aborted 
+--- server events for trpc-close-1794136947220i890 (t relative to Stop, ms) ---
+ -14941 proc.start {"hasProcSignal":true,"eventKeys":["__is_event__","node","web","context","_method","_path","_headers","_requestBody","_handled","_onBeforeResponseCalled","_onAfterResponseCalled","fetch","$fetch","waitUntil","captureError"],"runtimeKeys":[]}
+ -14935 upstream.request {}
+      5 node.res.close {"writableFinished":false}
+      5 upstream.signal.abort {}
+      7 streamText.onAbort {}
+     11 proc.generator.finally {}

@@ -1,0 +1,11 @@
+$ tsx probe.ts nitro close 15000 25000
+[nitro-close-1794136743474ryec] client received 24 bytes; pressing STOP
+client ended: AbortError This operation was aborted 
+--- server events for nitro-close-1794136743474ryec (t relative to Stop, ms) ---
+ -15013 route.start {"eventKeys":["__is_event__","node","web","context","_method","_path","_headers","_requestBody","_handled","_onBeforeResponseCalled","_onAfterResponseCalled","fetch","$fetch","waitUntil","captureError"],"hasReqSignal":true,"runtimeKeys":[]}
+ -15011 upstream.request {}
+      4 req.signal.abort {}
+      4 node.res.close {"writableFinished":false}
+      4 upstream.signal.abort {}
+      5 node.req.close {}
+      5 streamText.onAbort {}
