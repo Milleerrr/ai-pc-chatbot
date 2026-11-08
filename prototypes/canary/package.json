@@ -1,0 +1,18 @@
+{
+  "name": "prototype-canary",
+  "private": true,
+  "type": "module",
+  "description": "PROTOTYPE, throwaway. Does a hidden opening canary phrase track recall loss in long Chats? (wayfinder ticket #15)",
+  "scripts": {
+    "run": "tsx --env-file=../../.env run.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "4.0.114",
+    "ai": "7.0.165",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15",
+    "@types/node": "^22"
+  }
+}

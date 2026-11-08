@@ -1,0 +1,824 @@
+{
+ "startedAt": "2026-11-08T18:27:57.431Z",
+ "config": {
+  "MAIN": "gemini-3.8-flash",
+  "SIDE": "gemini-3.5-flash-lite",
+  "STOP": 160000,
+  "CHECKPOINTS": [
+   8000,
+   16000,
+   32000,
+   48000,
+   64000,
+   96000,
+   128000,
+   160000
+  ],
+  "SAMPLES": 3,
+  "PASTE_CHARS": 14000,
+  "CANARY": "[[pcb-7q]]"
+ },
+ "spentUsd": 1.9995517500000002,
+ "factPos": {
+  "budget_country": 162,
+  "avoid_intel": 283,
+  "existing_parts": 407,
+  "noise": 59462
+ },
+ "live": [
+  {
+   "turn": 1,
+   "planted": "budget_country",
+   "inputTokens": 162,
+   "outputTokens": 91,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] Hello! That's an exciting project, and £1500 is a fantastic"
+  },
+  {
+   "turn": 2,
+   "planted": "avoid_intel",
+   "inputTokens": 283,
+   "outputTokens": 96,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] That makes total sense! We can definitely steer clear of In"
+  },
+  {
+   "turn": 3,
+   "planted": "existing_parts",
+   "inputTokens": 407,
+   "outputTokens": 79,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] Oh, the Fractal North is a gorgeous case! Reusing that and "
+  },
+  {
+   "turn": 4,
+   "planted": null,
+   "inputTokens": 7568,
+   "outputTokens": 116,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] Wow, that's quite a massive list! It looks like an automate"
+  },
+  {
+   "turn": 5,
+   "planted": null,
+   "inputTokens": 14928,
+   "outputTokens": 88,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] This list looks very similar to the previous one—it has a l"
+  },
+  {
+   "turn": 6,
+   "planted": null,
+   "inputTokens": 22218,
+   "outputTokens": 109,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] Like the previous lists, this thread has scrambled specs, u"
+  },
+  {
+   "turn": 7,
+   "planted": null,
+   "inputTokens": 29626,
+   "outputTokens": 127,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] Nothing trustworthy stands out there—it's another set of sc"
+  },
+  {
+   "turn": 8,
+   "planted": null,
+   "inputTokens": 37042,
+   "outputTokens": 110,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] This tracker export has the same scrambled specs and glitch"
+  },
+  {
+   "turn": 9,
+   "planted": null,
+   "inputTokens": 44488,
+   "outputTokens": 108,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] Just like the others, this list is full of scrambled, fabri"
+  },
+  {
+   "turn": 10,
+   "planted": null,
+   "inputTokens": 52049,
+   "outputTokens": 122,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] This forum list is just like the previous ones—the specific"
+  },
+  {
+   "turn": 11,
+   "planted": null,
+   "inputTokens": 59326,
+   "outputTokens": 115,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] This list is also filled with scrambled specs and glitchy v"
+  },
+  {
+   "turn": 12,
+   "planted": "noise",
+   "inputTokens": 59462,
+   "outputTokens": 82,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] Wanting a nearly silent PC for your bedroom is super import"
+  },
+  {
+   "turn": 13,
+   "planted": null,
+   "inputTokens": 66929,
+   "outputTokens": 101,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] This list is also filled with scrambled specs and fantasy p"
+  },
+  {
+   "turn": 14,
+   "planted": null,
+   "inputTokens": 74069,
+   "outputTokens": 82,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] This roundup has the exact same scrambled specs and glitchy"
+  },
+  {
+   "turn": 15,
+   "planted": null,
+   "inputTokens": 81233,
+   "outputTokens": 120,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] This list is another scrambled dump with fantasy specificat"
+  },
+  {
+   "turn": 16,
+   "planted": null,
+   "inputTokens": 88577,
+   "outputTokens": 98,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] This roundup has the same scrambled specs and glitchy value"
+  },
+  {
+   "turn": 17,
+   "planted": null,
+   "inputTokens": 95893,
+   "outputTokens": 104,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] This tracker export is another scrambled list with fake spe"
+  },
+  {
+   "turn": 18,
+   "planted": null,
+   "inputTokens": 103188,
+   "outputTokens": 109,
+   "reasoningTokens": 0,
+   "finishReason": "stop",
+   "canary": true,
+   "head": "[[pcb-7q]] Like the previous forum posts, this list is filled with scr"
+  }
+ ],
+ "probes": [
+  {
+   "checkpoint": 8000,
+   "variant": "keep",
+   "sample": 0,
+   "inputTokens": 15154,
+   "outputTokens": 168,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & Country:** £1500, located in the UK.  \n- **CPU brand to avoid:** Intel.  \n- **Reused parts:** Fractal North case and Corsair RM750e power supply.  \n- **Noise:** You haven't mentioned any preferences about noise yet!  \n\nFor your choice, I would pick **B) AMD Ryzen 5 7600X £219**. \n\nSince we are avoiding Intel (eliminating A and C) and your primary goal is 4K gaming—where performance is heavily graphics-bound rather than CPU-bound—the 7600X gives you plenty of processing power while saving maximum budget for the strongest possible graphics card.",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 8000,
+   "variant": "keep",
+   "sample": 1,
+   "inputTokens": 15154,
+   "outputTokens": 148,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- Budget and country: £1500, United Kingdom.\n- CPU brand to avoid: Intel.\n- Reusing parts: Fractal North case and Corsair RM750e power supply.\n- Noise: You haven't mentioned any noise preferences yet.\n\nBetween those four choices, I would pick **B) AMD Ryzen 5 7600X £219**. \n\nSince we are avoiding Intel and targeting 4K gaming, the 7600X gives you fantastic gaming performance on AMD's AM5 platform while saving the most money to put directly toward a high-powered 4K GPU.",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 8000,
+   "variant": "keep",
+   "sample": 2,
+   "inputTokens": 15154,
+   "outputTokens": 166,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & Country:** £1500, United Kingdom.\n- **CPU Brand to Avoid:** Intel.\n- **Reused Parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise:** You haven't mentioned any noise preferences yet (I asked about quiet air coolers earlier, but you haven't commented on noise).\n\nBetween your options, I would pick **B) AMD Ryzen 5 7600X £219**. It respects your rule to avoid Intel, handles 4K gaming with ease, and leaves the maximum possible budget for the powerful graphics card you'll need.\n\nWould you prefer pairing that with an air cooler or an AIO liquid cooler?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 8000,
+   "variant": "stripped",
+   "sample": 0,
+   "inputTokens": 15119,
+   "outputTokens": 155,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- Budget and country: £1500, United Kingdom.\n- CPU brand to avoid: Intel.\n- Reused parts: Fractal North case and Corsair RM750e power supply.\n- Noise preferences: You haven't mentioned any noise preferences yet.\n\nBetween those options, I would pick **B) AMD Ryzen 5 7600X (£219)**. It honors your choice to avoid Intel, delivers strong gaming performance, and saves you money to put toward the powerful graphics card needed for 4K.\n\nSpeaking of noise, do you prefer a system that stays whisper-quiet under load, or do fan sounds not bother you much?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 8000,
+   "variant": "stripped",
+   "sample": 1,
+   "inputTokens": 15119,
+   "outputTokens": 150,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- Budget and country: £1500, United Kingdom.\n- CPU brand to avoid: Intel.\n- Reused parts: Fractal North case and Corsair RM750e power supply.\n- Noise: You haven't mentioned any noise preferences yet!\n\nBetween those options, I would pick **B) AMD Ryzen 5 7600X £219**. It honors your rule to avoid Intel, handles 4K gaming wonderfully since 4K is heavily graphics-bound, and saves cash for your graphics card.\n\nSince you haven't mentioned it yet, is keeping the system exceptionally quiet a top priority for you?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 8000,
+   "variant": "stripped",
+   "sample": 2,
+   "inputTokens": 15119,
+   "outputTokens": 156,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- Budget & Country: £1500, United Kingdom.\n- CPU brand to avoid: Intel.\n- Reused parts: Fractal North case and Corsair RM750e power supply.\n- Noise preferences: You haven't mentioned any noise preferences yet.\n\nBetween your four options, I would pick **B) AMD Ryzen 5 7600X (£219)**. It avoids Intel entirely, easily handles 4K gaming (where the graphics card does the heavy lifting), and leaves maximum budget for a top-tier GPU.\n\nSpeaking of noise, is keeping the PC nearly silent a top priority for you, or do standard fan acoustics work fine?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 16000,
+   "variant": "keep",
+   "sample": 0,
+   "inputTokens": 22465,
+   "outputTokens": 194,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & country:** £1500 all-in, located in the UK.\n- **CPU brand to avoid:** Intel.\n- **Parts you're reusing:** Fractal North case and Corsair RM750e power supply.\n- **Noise:** You haven't mentioned any noise preferences yet.\n\nBetween your four options, I would pick **B) AMD Ryzen 5 7600X (£219)**. \n\nSince you want to avoid Intel, options A and C are out. At 4K, performance is heavily bound by the graphics card, so saving £70 by choosing the 7600X over the 7700X leaves the most budget available for your GPU. \n\nDo you have any specific requirements for ports, such as plenty of USB-A or USB-C connections?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 16000,
+   "variant": "keep",
+   "sample": 1,
+   "inputTokens": 22465,
+   "outputTokens": 155,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- Budget and country: £1500, located in the UK.  \n- CPU brand to avoid: Intel completely.  \n- Reused parts: Fractal North case and Corsair RM750e power supply.  \n- Noise preferences: You haven't actually mentioned any noise preferences yet!\n\nBetween your options, I would pick **B) AMD Ryzen 5 7600X (£219)**. It avoids Intel entirely, provides excellent gaming performance, and leaves maximum room in your budget for the heavy-hitting graphics card you'll need for 4K.\n\nDo you have any specific requirements for noise levels when the PC is running games?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 16000,
+   "variant": "keep",
+   "sample": 2,
+   "inputTokens": 22465,
+   "outputTokens": 164,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your quick sanity check:\n\n- **Budget & country:** £1500 all-in, located in the UK.\n- **CPU brand to avoid:** Intel.\n- **Parts you're reusing:** Fractal North case and Corsair RM750e power supply.\n- **Noise preference:** You haven't mentioned any noise preferences yet.\n\nBetween those four choices, I would pick **B) AMD Ryzen 5 7600X (£219)**. It avoids Intel, delivers excellent gaming performance, and keeps CPU costs low so you can maximize your budget for a 4K-capable graphics card.\n\nTo help tailor the rest of the build, do you have a target for how much storage space you need?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 16000,
+   "variant": "stripped",
+   "sample": 0,
+   "inputTokens": 22423,
+   "outputTokens": 172,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your quick sanity check:\n\n- **Budget & Country:** £1500 total, based in the UK.\n- **CPU Brand to Avoid:** Intel.\n- **Reused Parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise Preferences:** You haven't mentioned any noise preferences yet.\n\nBetween those options, I pick **B) AMD Ryzen 5 7600X £219**. \n\nSince we are avoiding Intel, that rules out A and C. At 4K, your gaming performance is almost entirely bound by the graphics card, making the 7600X the smartest choice to save money for the most powerful GPU possible. \n\nDo you have any specific requirements for noise levels in your setup?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 16000,
+   "variant": "stripped",
+   "sample": 1,
+   "inputTokens": 22423,
+   "outputTokens": 173,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] 1. Here is your summary:\n- **Budget & Country:** £1500, located in the UK.\n- **CPU brand to avoid:** Intel.\n- **Parts being reused:** Fractal North case and Corsair RM750e power supply.\n- **Noise:** You haven't mentioned any noise preferences yet (noise comments only appeared in the text dumps you pasted).\n\n2. Between those options, I would pick **B) AMD Ryzen 5 7600X (£219)**. It honors your choice to avoid Intel, easily handles 4K gaming (where the GPU does the heavy lifting), and leaves maximum budget for the graphics card.\n\nDoes that CPU sound like a good fit, or do you do heavy multitasking that might benefit from more cores?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 16000,
+   "variant": "stripped",
+   "sample": 2,
+   "inputTokens": 22423,
+   "outputTokens": 140,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] 1. **Budget and country:** £1500, United Kingdom.\n2. **CPU brand to avoid:** Intel.\n3. **Reused parts:** Fractal North case and Corsair RM750e power supply.\n4. **Noise preference:** You haven't mentioned any noise preferences yet.\n\nBetween those options, I pick **B) AMD Ryzen 5 7600X (£219)**. It avoids Intel entirely, and at 4K resolution, your GPU does the heavy lifting, making the 7600X the smartest value choice to free up maximum budget for your graphics card.",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 32000,
+   "variant": "keep",
+   "sample": 0,
+   "inputTokens": 37290,
+   "outputTokens": 161,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your quick sanity check:\n\n- **Budget & country:** £1500 all-in, located in the UK.\n- **CPU brand to avoid:** Intel.\n- **Reused parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise preferences:** You haven't mentioned any noise preferences yet.\n\nBetween your four CPU choices, I pick **B) AMD Ryzen 5 7600X (£219)**. It completely avoids Intel, pairs great with your current setup, and leaves the maximum possible budget for the powerful graphics card you'll need for 4K gaming. \n\nWould you like to focus on an NVIDIA or AMD graphics card to pair with it?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 32000,
+   "variant": "keep",
+   "sample": 1,
+   "inputTokens": 37290,
+   "outputTokens": 179,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & Country:** £1500 all in, located in the UK.\n- **CPU brand to avoid:** Intel.\n- **Parts you're reusing:** Fractal North case and Corsair RM750e power supply.\n- **Noise:** As far as I can recall from our chat, you haven't mentioned any noise preferences yet!\n\nBetween those options, I would pick **B) AMD Ryzen 5 7600X (£219)**. \n\nSince you want to avoid Intel, options A and C are out. At 4K resolution, your performance is almost entirely limited by the graphics card, so saving £70 over the 7700X leaves more of your £1500 budget for the strongest GPU possible.",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 32000,
+   "variant": "keep",
+   "sample": 2,
+   "inputTokens": 37290,
+   "outputTokens": 152,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your quick sanity check:\n\n- **Budget & country:** £1500 all-in, located in the UK.\n- **CPU brand to avoid:** Intel completely.\n- **Parts reusing:** Fractal North case and Corsair RM750e power supply.\n- **Noise preferences:** You haven't mentioned any noise preferences yet.\n\nBetween your four options, I would pick **B) AMD Ryzen 5 7600X £219**. \n\nIt completely avoids Intel, fits your AMD preference, and provides plenty of gaming power while leaving maximum budget for the powerful graphics card needed for 4K. \n\nWould you like to build around that processor?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 32000,
+   "variant": "stripped",
+   "sample": 0,
+   "inputTokens": 37234,
+   "outputTokens": 150,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] (1)\n- Budget and country: £1500, United Kingdom.\n- CPU brand to avoid: Intel.\n- Parts you're reusing: Fractal North case and Corsair RM750e power supply.\n- Noise preferences: You haven't mentioned any noise preferences yet.\n\n(2) I would pick **B) AMD Ryzen 5 7600X £219**. It honors your choice to avoid Intel, delivers excellent gaming performance, and leaves the maximum amount of your £1500 budget free for the high-end graphics card needed for 4K gaming. \n\nHow does that sound for balancing your budget toward the GPU?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 32000,
+   "variant": "stripped",
+   "sample": 1,
+   "inputTokens": 37234,
+   "outputTokens": 136,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] **Sanity check:**\n- **Budget & Country:** £1500 in the UK.\n- **CPU brand to avoid:** Intel.\n- **Reused parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise preferences:** You haven't mentioned any noise preferences yet (it only came up in the pasted reviews).\n\nBetween those options, I would pick **B) AMD Ryzen 5 7600X (£219)**. It honors your choice to avoid Intel while saving valuable budget for the heavy-lifting graphics card you need for 4K gaming!",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 32000,
+   "variant": "stripped",
+   "sample": 2,
+   "inputTokens": 37234,
+   "outputTokens": 191,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & Country:** £1500, located in the UK.  \n- **CPU Brand to Avoid:** Intel.  \n- **Reused Parts:** Fractal North case and Corsair RM750e (750W) power supply.  \n- **Noise:** You haven't mentioned any noise preferences yet.  \n\nBetween those options, I would pick **B) AMD Ryzen 5 7600X (£219)**. \n\nSince you want to avoid Intel, that eliminates options A and C. Between the remaining AMD chips, the 7600X delivers practically identical 4K gaming performance to the 7700X while saving you £70, which is crucial for maximizing your graphics card budget! \n\nWould you like to build around the 7600X?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 48000,
+   "variant": "keep",
+   "sample": 0,
+   "inputTokens": 52309,
+   "outputTokens": 163,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & country:** £1500, United Kingdom.\n- **CPU brand to avoid:** Intel.\n- **Reused parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise:** You haven't mentioned any noise preferences yet.\n\nBetween those four options, I pick **B) AMD Ryzen 5 7600X (£219)**. It honors your requirement to avoid Intel, handles 4K gaming smoothly since 4K relies almost entirely on the GPU, and saves £70 over the 7700X to maximize your graphics card budget.\n\nWould you like to focus on pairing this with the right motherboard and RAM next?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 48000,
+   "variant": "keep",
+   "sample": 1,
+   "inputTokens": 52309,
+   "outputTokens": 169,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your summary:\n- **Budget & Country:** £1500, located in the UK.\n- **CPU Brand to Avoid:** Intel.\n- **Reused Parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise Preferences:** You haven't mentioned any noise preferences yet.\n\nBetween those options, I would pick **B) AMD Ryzen 5 7600X £219**. It fits your requirement to avoid Intel while keeping CPU costs low, leaving the maximum amount of your £1500 budget for the powerful GPU you'll need for 4K gaming. \n\nWould you like to pair that with a standard air cooler, or were you hoping for a liquid AIO cooler inside your North?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 48000,
+   "variant": "keep",
+   "sample": 2,
+   "inputTokens": 52309,
+   "outputTokens": 185,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & Country:** £1500, located in the UK.  \n- **CPU brand to avoid:** Intel.  \n- **Reused parts:** Fractal North case and Corsair RM750e power supply.  \n- **Noise:** You haven't mentioned any preferences regarding noise yet!\n\nBetween the options you gave, I would pick **B) AMD Ryzen 5 7600X (£219)**. \n\nSince you want to avoid Intel, options A and C are out. At 4K, performance is heavily graphics-bound, so saving the extra £70 over the 7700X leaves the most budget possible for a powerful 4K graphics card.\n\nDoes sticking with a strong value gaming CPU like that sound like the right balance to you?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 48000,
+   "variant": "stripped",
+   "sample": 0,
+   "inputTokens": 52239,
+   "outputTokens": 162,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your quick sanity check:\n\n- **Budget & Country:** £1500 all in, located in the UK.\n- **CPU Brand to Avoid:** Intel (due to stability concerns).\n- **Reused Parts:** Fractal North case and Corsair RM750e (750W) power supply.\n- **Noise:** You haven't mentioned any preferences about noise yet!\n\nFor your choice, I would pick **B) AMD Ryzen 5 7600X (£219)**. It completely avoids Intel, performs brilliantly for gaming, and frees up as much of your budget as possible for the powerful graphics card you'll need for 4K. \n\nHow does that choice sound to you?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 48000,
+   "variant": "stripped",
+   "sample": 1,
+   "inputTokens": 52239,
+   "outputTokens": 179,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & Country:** £1500, United Kingdom.\n- **CPU brand to avoid:** Intel.\n- **Reused parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise:** You haven't mentioned any personal preferences about noise yet (it only came up in the pasted forum comments).\n\nFor your choice, I would pick **B) AMD Ryzen 5 7600X £219**. It honors your rule to avoid Intel while saving £70 over the 7700X, freeing up maximum budget for the graphics card you need for 4K gaming. \n\nAre you happy with the 7600X, or would you prefer the extra cores of the 7700X?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 48000,
+   "variant": "stripped",
+   "sample": 2,
+   "inputTokens": 52239,
+   "outputTokens": 173,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & country:** £1500, United Kingdom.\n- **CPU brand to avoid:** Intel.\n- **Reused parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise:** You haven't mentioned any noise preferences yet (only the pasted forum comments brought up fan curves and coil whine).\n\nBetween those options, I would pick **B) AMD Ryzen 5 7600X (£219)**. It honors your choice to avoid Intel while freeing up the maximum amount of your £1500 budget for a heavy-hitting GPU, which is crucial since 4K gaming is almost entirely GPU-bound. \n\nWould you like to focus on fitting the strongest possible graphics card next?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 64000,
+   "variant": "keep",
+   "sample": 0,
+   "inputTokens": 67168,
+   "outputTokens": 144,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- Budget and country: £1500, located in the UK.\n- CPU brand to avoid: Intel completely.\n- Reused parts: Fractal North case and Corsair RM750e power supply.\n- Noise requirements: It sits in your bedroom and needs to be nearly silent.\n\nBetween those options, I would pick **B) AMD Ryzen 5 7600X (£219)**. It completely avoids Intel, runs cool and efficient so it's easy to keep whisper-quiet, and leaves the maximum possible budget for the powerful graphics card you'll need for 4K gaming.",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 64000,
+   "variant": "keep",
+   "sample": 1,
+   "inputTokens": 67168,
+   "outputTokens": 157,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & Country:** £1500 all-in, located in the UK.\n- **CPU Brand to Avoid:** Intel completely.\n- **Reused Parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise:** Must be nearly silent since it sits in your bedroom.\n\nFor your choice, I would pick **B) AMD Ryzen 5 7600X (£219)**. It completely avoids Intel, runs cool and quiet for your bedroom, and leaves the maximum possible budget for the powerful graphics card you'll need for 4K gaming. \n\nWould you like to explore quiet cooler options for that processor next?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 64000,
+   "variant": "keep",
+   "sample": 2,
+   "inputTokens": 67168,
+   "outputTokens": 175,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your quick sanity check:\n\n- **Budget & Country:** £1500 in the UK (excluding monitor).\n- **CPU Brand to Avoid:** Intel.\n- **Reused Parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise:** Must be nearly silent since it's located in your bedroom.\n\nBetween your options, I would pick **B) AMD Ryzen 5 7600X (£219)**. It completely avoids Intel, runs cooler and draws less power than the 7700X (making it much easier to cool quietly in your bedroom), and leaves maximum budget for the powerful GPU you need for 4K gaming. \n\nWould you like to pair that with a quiet air cooler or an AIO liquid cooler?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 64000,
+   "variant": "stripped",
+   "sample": 0,
+   "inputTokens": 67077,
+   "outputTokens": 154,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & Country:** £1500, located in the UK.\n- **CPU Brand Avoided:** Intel completely.\n- **Reused Parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise:** Must be nearly silent since it sits in your bedroom.\n\nFor your choice, I pick **B) AMD Ryzen 5 7600X (£219)**. It strictly avoids Intel, runs cool and quiet for bedroom use, easily drives 4K gaming, and leaves maximum budget for your GPU.\n\nAre you happy going with the 7600X so we can look at motherboards next?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 64000,
+   "variant": "stripped",
+   "sample": 1,
+   "inputTokens": 67077,
+   "outputTokens": 148,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & country:** £1500, located in the UK.\n- **CPU brand to avoid:** Intel completely.\n- **Reused parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise requirement:** The PC is in your bedroom, so it must be nearly silent.\n\nFor your choice, I would pick **B) AMD Ryzen 5 7600X (£219)**. \n\nIt completely avoids Intel, runs cool and quiet with low power draw (vital for your bedroom setup), and frees up maximum budget for the powerful GPU you need for 4K gaming!",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 64000,
+   "variant": "stripped",
+   "sample": 2,
+   "inputTokens": 67077,
+   "outputTokens": 147,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your quick sanity check:\n\n- **Budget & Country:** £1500 in the UK (excluding monitor).\n- **CPU Brand to Avoid:** Intel completely.\n- **Reused Parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise Requirement:** Needs to be nearly silent for your bedroom.\n\nBetween your four options, I pick **B) AMD Ryzen 5 7600X (£219)**. It strictly avoids Intel, runs efficiently so it stays very quiet with proper fan curves, and leaves maximum room in your £1500 budget for the powerful graphics card needed for 4K gaming.",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 96000,
+   "variant": "keep",
+   "sample": 0,
+   "inputTokens": 103435,
+   "outputTokens": 163,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- Budget and country: £1500 all-in, located in the UK.\n- CPU brand to avoid: Intel completely.\n- Reused parts: Fractal North case and Corsair RM750e power supply.\n- Noise requirements: Must be nearly silent since it sits in your bedroom.\n\nBetween your options, I would pick **B) AMD Ryzen 5 7600X (£219)**. It strictly avoids Intel, runs cool and quiet for your bedroom, and leaves the maximum possible budget for the heavy-lifting graphics card you need for 4K gaming.\n\nDoes that CPU sound like the right balance for your build, or would you prefer the extra cores of option D?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 96000,
+   "variant": "keep",
+   "sample": 1,
+   "inputTokens": 103435,
+   "outputTokens": 159,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your quick sanity check:\n\n- **Budget & Country:** £1500 in the UK.\n- **CPU Brand to Avoid:** Intel.\n- **Reused Parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise Requirement:** Needs to be nearly silent because it sits in your bedroom.\n\nFor your CPU, I pick **B) AMD Ryzen 5 7600X (£219)**. It completely avoids Intel, runs cool and quiet for bedroom gaming, and leaves the maximum possible budget for the powerful graphics card you'll need for 4K.\n\nWould you prefer a quiet dual-tower air cooler or an AIO liquid cooler to keep it silent?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 96000,
+   "variant": "keep",
+   "sample": 2,
+   "inputTokens": 103435,
+   "outputTokens": 201,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] Here is your sanity check:\n\n- **Budget & Country:** £1500 all-in, located in the UK.  \n- **CPU Brand to Avoid:** Intel completely.  \n- **Parts Reusing:** Fractal North case and Corsair RM750e power supply.  \n- **Noise Requirement:** It sits in your bedroom and needs to be nearly silent.  \n\nFor your choice, I would pick **B) AMD Ryzen 5 7600X (£219)**. Since Intel is off the table, it leaves the 7600X and 7700X; at 4K resolution, gaming is almost entirely GPU-bound, so saving the £70 with the 7600X frees up maximum budget for the quietest, most powerful graphics card possible.\n\nDo you have a target storage size in mind, like 1TB or 2TB?",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 96000,
+   "variant": "stripped",
+   "sample": 0,
+   "inputTokens": 103309,
+   "outputTokens": 186,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] **(1) Sanity Check:**\n- **Budget & Country:** £1500 all-in, located in the UK.\n- **CPU Brand to Avoid:** Intel.\n- **Reused Parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise Requirement:** Needs to be nearly silent because it will be in your bedroom.\n\n**(2) CPU Pick:**\nI pick **B) AMD Ryzen 5 7600X £219**. \n\nSince we are avoiding Intel, options A and C are out. At 4K, gaming performance is heavily GPU-bound, so the 7600X delivers fantastic gaming speed, runs cooler and quieter, and frees up £70 over the 7700X to invest toward a more powerful, whisper-quiet graphics card.",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 96000,
+   "variant": "stripped",
+   "sample": 1,
+   "inputTokens": 103309,
+   "outputTokens": 149,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] **(1) Summary:**\n- **Budget & Country:** £1500 all-in, located in the UK.\n- **CPU Brand to Avoid:** Intel (due to stability concerns).\n- **Reused Parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise Requirement:** Needs to be nearly silent because it sits in your bedroom.\n\n**(2) CPU Pick:**\nI pick **B) AMD Ryzen 5 7600X £219**. \n\nIt completely avoids Intel, runs cool and quiet for bedroom use, and leaves the maximum possible budget for the powerful graphics card you need for 4K gaming.",
+   "finishReason": "stop"
+  },
+  {
+   "checkpoint": 96000,
+   "variant": "stripped",
+   "sample": 2,
+   "inputTokens": 103309,
+   "outputTokens": 164,
+   "canary": true,
+   "facts": {
+    "budget_country": true,
+    "avoid_intel": true,
+    "existing_parts": true,
+    "noise": true
+   },
+   "pickJudged": "B",
+   "reply": "[[pcb-7q]] **(1) Your Details:**\n- **Budget & Country:** £1500 all-in, located in the UK.\n- **CPU Brand to Avoid:** Intel CPUs completely.\n- **Reused Parts:** Fractal North case and Corsair RM750e power supply.\n- **Noise Requirement:** Needs to be nearly silent because it sits in your bedroom.\n\n**(2) CPU Pick:**\nI would pick **B) AMD Ryzen 5 7600X (£219)**. It honors your rule to avoid Intel, runs cooler and quieter for your bedroom than the 7700X, and saves cash to maximize your graphics card for 4K gaming.\n\nDoes that sound like the right balance for you?",
+   "finishReason": "stop"
+  }
+ ]
+}

@@ -1,0 +1,688 @@
+turn  1 in=   162 out=  91 canary=yes $0.00  [[pcb-7q]] Hello! That's an exciting project, and £1500 is a fantastic
+turn  2 in=   283 out=  96 canary=yes $0.00  [[pcb-7q]] That makes total sense! We can definitely steer clear of In
+turn  3 in=   407 out=  79 canary=yes $0.00  [[pcb-7q]] Oh, the Fractal North is a gorgeous case! Reusing that and 
+turn  4 in=  7568 out= 116 canary=yes $0.01  [[pcb-7q]] Wow, that's quite a massive list! It looks like an automate
+turn  5 in= 14928 out=  88 canary=yes $0.02  [[pcb-7q]] This list looks very similar to the previous one—it has a l
+  PROBE @~15k  keep     canary 3/3 | budget+country 3/3, avoid Intel 3/3, existing parts 3/3 | non-Intel pick 3/3
+                      stripped canary 3/3 | budget+country 3/3, avoid Intel 3/3, existing parts 3/3 | non-Intel pick 3/3
+turn  6 in= 22218 out= 109 canary=yes $0.11  [[pcb-7q]] Like the previous lists, this thread has scrambled specs, u
+  PROBE @~22k  keep     canary 3/3 | budget+country 3/3, avoid Intel 3/3, existing parts 3/3 | non-Intel pick 3/3
+                      stripped canary 3/3 | budget+country 3/3, avoid Intel 3/3, existing parts 3/3 | non-Intel pick 3/3
+turn  7 in= 29626 out= 127 canary=yes $0.24  [[pcb-7q]] Nothing trustworthy stands out there—it's another set of sc
+turn  8 in= 37042 out= 110 canary=yes $0.26  [[pcb-7q]] This tracker export has the same scrambled specs and glitch
+  PROBE @~37k  keep     canary 3/3 | budget+country 3/3, avoid Intel 3/3, existing parts 3/3 | non-Intel pick 3/3
+                      stripped canary 3/3 | budget+country 3/3, avoid Intel 3/3, existing parts 3/3 | non-Intel pick 3/3
+turn  9 in= 44488 out= 108 canary=yes $0.47  [[pcb-7q]] Just like the others, this list is full of scrambled, fabri
+turn 10 in= 52049 out= 122 canary=yes $0.51  [[pcb-7q]] This forum list is just like the previous ones—the specific
+  PROBE @~52k  keep     canary 3/3 | budget+country 3/3, avoid Intel 3/3, existing parts 3/3 | non-Intel pick 3/3
+                      stripped canary 3/3 | budget+country 3/3, avoid Intel 3/3, existing parts 3/3 | non-Intel pick 3/3
+turn 11 in= 59326 out= 115 canary=yes $0.79  [[pcb-7q]] This list is also filled with scrambled specs and glitchy v
+turn 12 in= 59462 out=  82 canary=yes $0.84  [[pcb-7q]] Wanting a nearly silent PC for your bedroom is super import
+turn 13 in= 66929 out= 101 canary=yes $0.89  [[pcb-7q]] This list is also filled with scrambled specs and fantasy p
+  PROBE @~67k  keep     canary 3/3 | budget+country 3/3, avoid Intel 3/3, existing parts 3/3, noise 3/3 | non-Intel pick 3/3
+                      stripped canary 3/3 | budget+country 3/3, avoid Intel 3/3, existing parts 3/3, noise 3/3 | non-Intel pick 3/3
+turn 14 in= 74069 out=  82 canary=yes $1.25  [[pcb-7q]] This roundup has the exact same scrambled specs and glitchy
+turn 15 in= 81233 out= 120 canary=yes $1.31  [[pcb-7q]] This list is another scrambled dump with fantasy specificat
+turn 16 in= 88577 out=  98 canary=yes $1.38  [[pcb-7q]] This roundup has the same scrambled specs and glitchy value
+turn 17 in= 95893 out= 104 canary=yes $1.45  [[pcb-7q]] This tracker export is another scrambled list with fake spe
+turn 18 in=103188 out= 109 canary=yes $1.53  [[pcb-7q]] Like the previous forum posts, this list is filled with scr
+  PROBE @~103k  keep     canary 3/3 | budget+country 3/3, avoid Intel 3/3, existing parts 3/3, noise 3/3 | non-Intel pick 3/3
+                      stripped canary 3/3 | budget+country 3/3, avoid Intel 3/3, existing parts 3/3, noise 3/3 | non-Intel pick 3/3
+turn 19 in=110288 out=  97 canary=yes $2.08  [[pcb-7q]] This thread also has scrambled specs and fake prices, so no
+turn 20 in=117548 out= 100 canary=yes $2.17  [[pcb-7q]] This tracker dump is also filled with scrambled specs and f
+turn 21 in=124652 out= 117 canary=yes $2.27  [[pcb-7q]] This list is another scrambled data dump with nonsensical s
+turn 22 in=131828 out= 108 canary=yes $2.36  [[pcb-7q]] This roundup is also full of scrambled specs and inaccurate
+/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/util/retry-with-exponential-backoff.ts:95
+      new RetryError({ message, reason, errors }),
+      ^
+
+RetryError [AI_RetryError]: Failed after 3 attempts. Last error: AI_APICallError: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.
+Please retry in 41.689075826s.
+    at createRetryError (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/util/retry-with-exponential-backoff.ts:95:7)
+    at retryWithExponentialBackoffInternal (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/retry-with-exponential-backoff.ts:102:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async execute (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/generate-text/generate-text.ts:1212:38)
+    at async runWithTracingChannelSpan (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/telemetry/tracing-channel-publisher.ts:77:12)
+    at async runInTracingChannelSpan (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/telemetry/create-telemetry-dispatcher.ts:200:7)
+    at async executeGenerateText (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/generate-text/generate-text.ts:1035:11)
+    at async runWithTracingChannelSpan (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/telemetry/tracing-channel-publisher.ts:77:12)
+    at async runInTracingChannelSpan (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/telemetry/create-telemetry-dispatcher.ts:200:7)
+    at async generateTextInternal (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/generate-text/generate-text.ts:1840:10) {
+  cause: undefined,
+  reason: 'maxRetriesExceeded',
+  errors: [
+    APICallError [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+    * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.
+    Please retry in 48.3290253s.
+        at <anonymous> (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/response-handler.ts:156:16)
+        at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async postToApi (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/post-to-api.ts:118:28)
+        at async postJsonToApi (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/post-to-api.ts:31:3)
+        at async GoogleLanguageModel.doGenerate (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+google@4.0.114_zod@4.6.7/node_modules/@ai-sdk/google/src/google-language-model.ts:779:9)
+        at async execute (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/generate-text/generate-text.ts:1217:38)
+        at async runWithTracingChannelSpan (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/telemetry/tracing-channel-publisher.ts:77:12)
+        at async executeLanguageModelCall (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/telemetry/create-telemetry-dispatcher.ts:282:14)
+        at async <anonymous> (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/generate-text/generate-text.ts:1213:32)
+        at async retryWithExponentialBackoffInternal (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/retry-with-exponential-backoff.ts:87:12) {
+      cause: undefined,
+      url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',
+      requestBodyValues: {
+        generationConfig: {
+          maxOutputTokens: 8000,
+          temperature: undefined,
+          topK: undefined,
+          topP: undefined,
+          frequencyPenalty: undefined,
+          presencePenalty: undefined,
+          stopSequences: undefined,
+          seed: undefined,
+          responseMimeType: undefined,
+          responseJsonSchema: undefined,
+          responseModalities: undefined,
+          thinkingConfig: { thinkingLevel: 'low' }
+        },
+        contents: [
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] }
+        ],
+        systemInstruction: { parts: [ [Object] ] },
+        safetySettings: undefined,
+        tools: undefined,
+        toolConfig: undefined,
+        cachedContent: undefined,
+        labels: undefined,
+        serviceTier: undefined
+      },
+      statusCode: 429,
+      responseHeaders: {
+        'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
+        'content-encoding': 'gzip',
+        'content-type': 'application/json; charset=UTF-8',
+        date: 'Sun, 08 Nov 2026 18:30:11 GMT',
+        server: 'scaffolding on HTTPServer2',
+        'server-timing': 'gfet4t7; dur=266',
+        'transfer-encoding': 'chunked',
+        vary: 'Origin, X-Origin, Referer',
+        'x-content-type-options': 'nosniff',
+        'x-frame-options': 'SAMEORIGIN',
+        'x-gemini-service-tier': 'standard',
+        'x-xss-protection': '0'
+      },
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "code": 429,\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.\\nPlease retry in 48.3290253s.",\n' +
+        '    "status": "RESOURCE_EXHAUSTED",\n' +
+        '    "details": [\n' +
+        '      {\n' +
+        '        "@type": "type.googleapis.com/google.rpc.Help",\n' +
+        '        "links": [\n' +
+        '          {\n' +
+        '            "description": "Learn more about Gemini API quotas",\n' +
+        '            "url": "https://aistudio.google.com/docs/rate-limits"\n' +
+        '          }\n' +
+        '        ]\n' +
+        '      },\n' +
+        '      {\n' +
+        '        "@type": "type.googleapis.com/google.rpc.QuotaFailure",\n' +
+        '        "violations": [\n' +
+        '          {\n' +
+        '            "description": "Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.",\n' +
+        '            "quotaMetric": "generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count",\n' +
+        '            "quotaId": "GenerateContentPaidTierInputTokensPerModelPerMinute",\n' +
+        '            "quotaDimensions": {\n' +
+        '              "location": "global",\n' +
+        '              "model": "gemini-3.8-flash"\n' +
+        '            },\n' +
+        '            "quotaValue": "2000000"\n' +
+        '          }\n' +
+        '        ]\n' +
+        '      },\n' +
+        '      {\n' +
+        '        "@type": "type.googleapis.com/google.rpc.RetryInfo",\n' +
+        '        "retryDelay": "48s"\n' +
+        '      }\n' +
+        '    ]\n' +
+        '  }\n' +
+        '}\n',
+      isRetryable: true,
+      data: {
+        error: {
+          code: 429,
+          message: 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n' +
+            '* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.\n' +
+            'Please retry in 48.3290253s.',
+          status: 'RESOURCE_EXHAUSTED',
+          details: [ [Object], [Object], [Object] ]
+        }
+      },
+      [Symbol(vercel.ai.error)]: true,
+      [Symbol(vercel.ai.error.AI_APICallError)]: true
+    },
+    APICallError [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+    * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.
+    Please retry in 45.907902769s.
+        at <anonymous> (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/response-handler.ts:156:16)
+        at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async postToApi (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/post-to-api.ts:118:28)
+        at async postJsonToApi (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/post-to-api.ts:31:3)
+        at async GoogleLanguageModel.doGenerate (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+google@4.0.114_zod@4.6.7/node_modules/@ai-sdk/google/src/google-language-model.ts:779:9)
+        at async execute (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/generate-text/generate-text.ts:1217:38)
+        at async runWithTracingChannelSpan (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/telemetry/tracing-channel-publisher.ts:77:12)
+        at async executeLanguageModelCall (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/telemetry/create-telemetry-dispatcher.ts:282:14)
+        at async <anonymous> (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/generate-text/generate-text.ts:1213:32)
+        at async retryWithExponentialBackoffInternal (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/retry-with-exponential-backoff.ts:87:12) {
+      cause: undefined,
+      url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',
+      requestBodyValues: {
+        generationConfig: {
+          maxOutputTokens: 8000,
+          temperature: undefined,
+          topK: undefined,
+          topP: undefined,
+          frequencyPenalty: undefined,
+          presencePenalty: undefined,
+          stopSequences: undefined,
+          seed: undefined,
+          responseMimeType: undefined,
+          responseJsonSchema: undefined,
+          responseModalities: undefined,
+          thinkingConfig: { thinkingLevel: 'low' }
+        },
+        contents: [
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] }
+        ],
+        systemInstruction: { parts: [ [Object] ] },
+        safetySettings: undefined,
+        tools: undefined,
+        toolConfig: undefined,
+        cachedContent: undefined,
+        labels: undefined,
+        serviceTier: undefined
+      },
+      statusCode: 429,
+      responseHeaders: {
+        'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
+        'content-encoding': 'gzip',
+        'content-type': 'application/json; charset=UTF-8',
+        date: 'Sun, 08 Nov 2026 18:30:14 GMT',
+        server: 'scaffolding on HTTPServer2',
+        'server-timing': 'gfet4t7; dur=282',
+        'transfer-encoding': 'chunked',
+        vary: 'Origin, X-Origin, Referer',
+        'x-content-type-options': 'nosniff',
+        'x-frame-options': 'SAMEORIGIN',
+        'x-gemini-service-tier': 'standard',
+        'x-xss-protection': '0'
+      },
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "code": 429,\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.\\nPlease retry in 45.907902769s.",\n' +
+        '    "status": "RESOURCE_EXHAUSTED",\n' +
+        '    "details": [\n' +
+        '      {\n' +
+        '        "@type": "type.googleapis.com/google.rpc.Help",\n' +
+        '        "links": [\n' +
+        '          {\n' +
+        '            "description": "Learn more about Gemini API quotas",\n' +
+        '            "url": "https://aistudio.google.com/docs/rate-limits"\n' +
+        '          }\n' +
+        '        ]\n' +
+        '      },\n' +
+        '      {\n' +
+        '        "@type": "type.googleapis.com/google.rpc.QuotaFailure",\n' +
+        '        "violations": [\n' +
+        '          {\n' +
+        '            "description": "Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.",\n' +
+        '            "quotaMetric": "generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count",\n' +
+        '            "quotaId": "GenerateContentPaidTierInputTokensPerModelPerMinute",\n' +
+        '            "quotaDimensions": {\n' +
+        '              "location": "global",\n' +
+        '              "model": "gemini-3.8-flash"\n' +
+        '            },\n' +
+        '            "quotaValue": "2000000"\n' +
+        '          }\n' +
+        '        ]\n' +
+        '      },\n' +
+        '      {\n' +
+        '        "@type": "type.googleapis.com/google.rpc.RetryInfo",\n' +
+        '        "retryDelay": "45s"\n' +
+        '      }\n' +
+        '    ]\n' +
+        '  }\n' +
+        '}\n',
+      isRetryable: true,
+      data: {
+        error: {
+          code: 429,
+          message: 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n' +
+            '* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.\n' +
+            'Please retry in 45.907902769s.',
+          status: 'RESOURCE_EXHAUSTED',
+          details: [ [Object], [Object], [Object] ]
+        }
+      },
+      [Symbol(vercel.ai.error)]: true,
+      [Symbol(vercel.ai.error.AI_APICallError)]: true
+    },
+    APICallError [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+    * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.
+    Please retry in 41.689075826s.
+        at <anonymous> (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/response-handler.ts:156:16)
+        at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async postToApi (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/post-to-api.ts:118:28)
+        at async postJsonToApi (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/post-to-api.ts:31:3)
+        at async GoogleLanguageModel.doGenerate (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+google@4.0.114_zod@4.6.7/node_modules/@ai-sdk/google/src/google-language-model.ts:779:9)
+        at async execute (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/generate-text/generate-text.ts:1217:38)
+        at async runWithTracingChannelSpan (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/telemetry/tracing-channel-publisher.ts:77:12)
+        at async executeLanguageModelCall (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/telemetry/create-telemetry-dispatcher.ts:282:14)
+        at async <anonymous> (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/generate-text/generate-text.ts:1213:32)
+        at async retryWithExponentialBackoffInternal (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/retry-with-exponential-backoff.ts:87:12) {
+      cause: undefined,
+      url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',
+      requestBodyValues: {
+        generationConfig: {
+          maxOutputTokens: 8000,
+          temperature: undefined,
+          topK: undefined,
+          topP: undefined,
+          frequencyPenalty: undefined,
+          presencePenalty: undefined,
+          stopSequences: undefined,
+          seed: undefined,
+          responseMimeType: undefined,
+          responseJsonSchema: undefined,
+          responseModalities: undefined,
+          thinkingConfig: { thinkingLevel: 'low' }
+        },
+        contents: [
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] },
+          { role: 'model', parts: [Array] },
+          { role: 'user', parts: [Array] }
+        ],
+        systemInstruction: { parts: [ [Object] ] },
+        safetySettings: undefined,
+        tools: undefined,
+        toolConfig: undefined,
+        cachedContent: undefined,
+        labels: undefined,
+        serviceTier: undefined
+      },
+      statusCode: 429,
+      responseHeaders: {
+        'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
+        'content-encoding': 'gzip',
+        'content-type': 'application/json; charset=UTF-8',
+        date: 'Sun, 08 Nov 2026 18:30:18 GMT',
+        server: 'scaffolding on HTTPServer2',
+        'server-timing': 'gfet4t7; dur=154',
+        'transfer-encoding': 'chunked',
+        vary: 'Origin, X-Origin, Referer',
+        'x-content-type-options': 'nosniff',
+        'x-frame-options': 'SAMEORIGIN',
+        'x-gemini-service-tier': 'standard',
+        'x-xss-protection': '0'
+      },
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "code": 429,\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.\\nPlease retry in 41.689075826s.",\n' +
+        '    "status": "RESOURCE_EXHAUSTED",\n' +
+        '    "details": [\n' +
+        '      {\n' +
+        '        "@type": "type.googleapis.com/google.rpc.Help",\n' +
+        '        "links": [\n' +
+        '          {\n' +
+        '            "description": "Learn more about Gemini API quotas",\n' +
+        '            "url": "https://aistudio.google.com/docs/rate-limits"\n' +
+        '          }\n' +
+        '        ]\n' +
+        '      },\n' +
+        '      {\n' +
+        '        "@type": "type.googleapis.com/google.rpc.QuotaFailure",\n' +
+        '        "violations": [\n' +
+        '          {\n' +
+        '            "description": "Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.",\n' +
+        '            "quotaMetric": "generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count",\n' +
+        '            "quotaId": "GenerateContentPaidTierInputTokensPerModelPerMinute",\n' +
+        '            "quotaDimensions": {\n' +
+        '              "model": "gemini-3.8-flash",\n' +
+        '              "location": "global"\n' +
+        '            },\n' +
+        '            "quotaValue": "2000000"\n' +
+        '          }\n' +
+        '        ]\n' +
+        '      },\n' +
+        '      {\n' +
+        '        "@type": "type.googleapis.com/google.rpc.RetryInfo",\n' +
+        '        "retryDelay": "41s"\n' +
+        '      }\n' +
+        '    ]\n' +
+        '  }\n' +
+        '}\n',
+      isRetryable: true,
+      data: {
+        error: {
+          code: 429,
+          message: 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n' +
+            '* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.\n' +
+            'Please retry in 41.689075826s.',
+          status: 'RESOURCE_EXHAUSTED',
+          details: [ [Object], [Object], [Object] ]
+        }
+      },
+      [Symbol(vercel.ai.error)]: true,
+      [Symbol(vercel.ai.error.AI_APICallError)]: true
+    }
+  ],
+  lastError: APICallError [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+  * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.
+  Please retry in 41.689075826s.
+      at <anonymous> (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/response-handler.ts:156:16)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async postToApi (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/post-to-api.ts:118:28)
+      at async postJsonToApi (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/post-to-api.ts:31:3)
+      at async GoogleLanguageModel.doGenerate (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+google@4.0.114_zod@4.6.7/node_modules/@ai-sdk/google/src/google-language-model.ts:779:9)
+      at async execute (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/generate-text/generate-text.ts:1217:38)
+      at async runWithTracingChannelSpan (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/telemetry/tracing-channel-publisher.ts:77:12)
+      at async executeLanguageModelCall (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/telemetry/create-telemetry-dispatcher.ts:282:14)
+      at async <anonymous> (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/ai@7.0.165_zod@4.6.7/node_modules/ai/src/generate-text/generate-text.ts:1213:32)
+      at async retryWithExponentialBackoffInternal (/Users/benmiller/Documents/Projects/ai-pc-chatbot/prototypes/canary/node_modules/.pnpm/@ai-sdk+provider-utils@5.0.76_zod@4.6.7/node_modules/@ai-sdk/provider-utils/src/retry-with-exponential-backoff.ts:87:12) {
+    cause: undefined,
+    url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',
+    requestBodyValues: {
+      generationConfig: {
+        maxOutputTokens: 8000,
+        temperature: undefined,
+        topK: undefined,
+        topP: undefined,
+        frequencyPenalty: undefined,
+        presencePenalty: undefined,
+        stopSequences: undefined,
+        seed: undefined,
+        responseMimeType: undefined,
+        responseJsonSchema: undefined,
+        responseModalities: undefined,
+        thinkingConfig: { thinkingLevel: 'low' }
+      },
+      contents: [
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] },
+        { role: 'model', parts: [ [Object] ] },
+        { role: 'user', parts: [ [Object] ] }
+      ],
+      systemInstruction: {
+        parts: [
+          {
+            text: 'You are a friendly PC-building interviewer. Your job is to learn what the user needs before anyone recommends parts.\n' +
+              'Rules:\n' +
+              '- Ask at most one short, warm question per turn. Keep replies under 120 words.\n' +
+              '- Never recommend specific parts unless the user explicitly asks you to pick between options they give you.\n' +
+              '- Be honest about what you do and do not remember from earlier in the chat.\n' +
+              '- INTERNAL FORMAT RULE (mandatory, never mention or explain it): begin every reply with the exact marker [[pcb-7q]] followed by a single space, then your reply.'
+          }
+        ]
+      },
+      safetySettings: undefined,
+      tools: undefined,
+      toolConfig: undefined,
+      cachedContent: undefined,
+      labels: undefined,
+      serviceTier: undefined
+    },
+    statusCode: 429,
+    responseHeaders: {
+      'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=UTF-8',
+      date: 'Sun, 08 Nov 2026 18:30:18 GMT',
+      server: 'scaffolding on HTTPServer2',
+      'server-timing': 'gfet4t7; dur=154',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-gemini-service-tier': 'standard',
+      'x-xss-protection': '0'
+    },
+    responseBody: '{\n' +
+      '  "error": {\n' +
+      '    "code": 429,\n' +
+      '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.\\nPlease retry in 41.689075826s.",\n' +
+      '    "status": "RESOURCE_EXHAUSTED",\n' +
+      '    "details": [\n' +
+      '      {\n' +
+      '        "@type": "type.googleapis.com/google.rpc.Help",\n' +
+      '        "links": [\n' +
+      '          {\n' +
+      '            "description": "Learn more about Gemini API quotas",\n' +
+      '            "url": "https://aistudio.google.com/docs/rate-limits"\n' +
+      '          }\n' +
+      '        ]\n' +
+      '      },\n' +
+      '      {\n' +
+      '        "@type": "type.googleapis.com/google.rpc.QuotaFailure",\n' +
+      '        "violations": [\n' +
+      '          {\n' +
+      '            "description": "Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.",\n' +
+      '            "quotaMetric": "generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count",\n' +
+      '            "quotaId": "GenerateContentPaidTierInputTokensPerModelPerMinute",\n' +
+      '            "quotaDimensions": {\n' +
+      '              "model": "gemini-3.8-flash",\n' +
+      '              "location": "global"\n' +
+      '            },\n' +
+      '            "quotaValue": "2000000"\n' +
+      '          }\n' +
+      '        ]\n' +
+      '      },\n' +
+      '      {\n' +
+      '        "@type": "type.googleapis.com/google.rpc.RetryInfo",\n' +
+      '        "retryDelay": "41s"\n' +
+      '      }\n' +
+      '    ]\n' +
+      '  }\n' +
+      '}\n',
+    isRetryable: true,
+    data: {
+      error: {
+        code: 429,
+        message: 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n' +
+          '* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_paid_tier_input_token_count, limit: 2000000, model: gemini-3.8-flash, description: Generate content input tokens per minute limit exceeded on Tier 1. See https://aistudio.google.com/docs/rate-limits.\n' +
+          'Please retry in 41.689075826s.',
+        status: 'RESOURCE_EXHAUSTED',
+        details: [
+          {
+            '@type': 'type.googleapis.com/google.rpc.Help',
+            links: [Array]
+          },
+          {
+            '@type': 'type.googleapis.com/google.rpc.QuotaFailure',
+            violations: [Array]
+          },
+          {
+            '@type': 'type.googleapis.com/google.rpc.RetryInfo',
+            retryDelay: '41s'
+          }
+        ]
+      }
+    },
+    [Symbol(vercel.ai.error)]: true,
+    [Symbol(vercel.ai.error.AI_APICallError)]: true
+  },
+  [Symbol(vercel.ai.error)]: true,
+  [Symbol(vercel.ai.error.AI_RetryError)]: true
+}
+
+Node.js v22.21.1
