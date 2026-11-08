@@ -53,8 +53,8 @@ A Chat the user has removed. It no longer appears anywhere in the app and cannot
 _Avoid_: Archived chat (that is a different action)
 
 **Context Limit**:
-The point at which a Chat holds too much conversation to continue. The user is then asked to continue in a new Chat.
+The point at which everything the assistant must read to answer in a Chat (instructions, Build Brief and conversation) has grown to a fixed size allowance. The user is warned as it approaches, then asked to continue in a new Chat. A reply already underway is never cut off by it.
 
 **Continuation**:
-A new Chat started from a Chat that reached its Context Limit. It carries forward what has been learned so far, and the original Chat becomes read-only.
+A new Chat started from a Chat that reached its Context Limit. It carries forward the Build Brief plus a short note on where the interview stood, and the assistant speaks first. The original Chat becomes read-only. The original stays read-only even if its Continuation is later deleted, but can be continued again.
 _Avoid_: Moved chat, fork
