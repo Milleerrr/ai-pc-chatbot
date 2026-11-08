@@ -1,0 +1,5338 @@
+{
+  "MAIN": "gemini-3.8-flash",
+  "SIDE": "gemini-3.5-flash-lite",
+  "VARIANTS": [
+    "A-auto",
+    "A-forced",
+    "B-post",
+    "B-pre"
+  ],
+  "SCENARIO_IDS": [
+    "S1",
+    "S2",
+    "S3"
+  ],
+  "RUNS": 1,
+  "rows": [
+    {
+      "variant": "A-auto",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 1,
+      "user": "Hi, I want a PC for gaming, around £1500. I'm in the UK.",
+      "pass": 4,
+      "total": 4,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4695.384999999999,
+        "totalMs": 5321.708708,
+        "extractMs": null,
+        "inputTokens": 1774,
+        "outputTokens": 192,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 4,
+        "rejected": 0,
+        "reply": "That’s a solid budget for a gaming rig in the UK!\n\nTo get started:\n1. Does that £1,500 budget need to cover just the PC tower itself, or do you also need a monitor, keyboard, mouse, or Windows license included?\n2. Are you starting completely from scratch, or do you have any existing parts you plan to reuse?",
+        "brief": {
+          "headline": "£1,500 Gaming PC (UK)",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "Gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-auto",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 2,
+      "user": "Mostly 1440p, ideally 144fps. Cyberpunk and Valorant mainly.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 5311.364041999999,
+        "totalMs": 5941.161,
+        "extractMs": null,
+        "inputTokens": 1975,
+        "outputTokens": 185,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Great, targeting 1440p high-refresh for Cyberpunk and Valorant gives us a clear goal. \n\nTo help frame the budget:\n1. Does the £1,500 need to cover just the PC tower, or peripherals like a monitor, keyboard, and mouse too?\n2. Are you building entirely from scratch, or upgrading/reusing any existing parts?",
+        "brief": {
+          "headline": "£1,500 1440p 144fps Gaming PC (UK)",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "Gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk 2077, Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "1440p, ideally 144 fps",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-auto",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 3,
+      "user": "Actually make that 4K, I just bought a 4K monitor.",
+      "note": "correction",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4599.175417,
+        "totalMs": 5221.471041999999,
+        "extractMs": null,
+        "inputTokens": 2130,
+        "outputTokens": 133,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 1,
+        "rejected": 0,
+        "reply": "Nice, 4K will look stunning!\n\nSince you already have the monitor:\n1. Does the £1,500 budget need to cover just the PC tower itself, or do you still need other peripherals like a keyboard, mouse, or headset?\n2. Are you building completely from scratch, or do you have any existing PC parts to carry over?",
+        "brief": {
+          "headline": "£1,500 4K Gaming PC (UK)",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "Gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk 2077, Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K gaming",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-auto",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 4,
+      "user": "I'd rather avoid Intel after all the stability news. Not fussed about looks at all.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3309.608500000002,
+        "totalMs": 3802.169958000002,
+        "extractMs": null,
+        "inputTokens": 2316,
+        "outputTokens": 151,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Got it—pure performance focus and avoiding Intel CPUs.\n\nTo make sure the budget is allocated properly:\n1. Does the £1,500 need to cover just the PC tower, or do you need peripherals like a keyboard, mouse, or Windows license included?\n2. Are you building entirely from scratch, or reusing any parts (like storage, power supply, or a case) from an older PC?",
+        "brief": {
+          "headline": "£1,500 4K Gaming PC (UK)",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "Gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk 2077, Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K gaming",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": "Not fussed about looks / purely function over form",
+              "status": "confirmed"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": "Avoid Intel CPUs",
+              "status": "confirmed"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-auto",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 5,
+      "user": "The £1500 is for the tower only, I already have the monitor.",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3921.1609580000004,
+        "totalMs": 4694.017875000001,
+        "extractMs": null,
+        "inputTokens": 2502,
+        "outputTokens": 123,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 1,
+        "rejected": 0,
+        "reply": "Perfect, tower-only keeps the full £1,500 focused on performance.\n\nTwo quick questions to help narrow things down:\n1. Are you building entirely from scratch, or do you have any existing parts to carry over?\n2. How strict is that £1,500 limit—is there any wiggle room if a slight stretch offers a major jump in 4K performance?",
+        "brief": {
+          "headline": "£1,500 4K Gaming PC (UK)",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": "Tower only (already has monitor)",
+              "status": "confirmed"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "Gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk 2077, Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K gaming",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": "Not fussed about looks / purely function over form",
+              "status": "confirmed"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": "Avoid Intel CPUs",
+              "status": "confirmed"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-auto",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 1,
+      "user": "I've got a GTX 1060 and a Ryzen 5 1600. I want to upgrade, keeping my case and PSU.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4087.910584000001,
+        "totalMs": 4395.114874999999,
+        "extractMs": null,
+        "inputTokens": 1833,
+        "outputTokens": 162,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "That should make for a noticeable performance jump!\n\nTo get started, what will you primarily use this PC for (e.g., gaming, video editing, general use), and what kind of budget do you have in mind (including currency)?",
+        "brief": {
+          "headline": "PC upgrade keeping current case and PSU (replacing GTX 1060 / Ryzen 1600)",
+          "fields": {
+            "budget.amount": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "Current setup: GTX 1060, Ryzen 5 1600. Keeping: Case and PSU.",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": "Upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-auto",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 2,
+      "user": "dunno, maybe 600?",
+      "note": "vague",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4041.676875000001,
+        "totalMs": 4403.922792000001,
+        "extractMs": null,
+        "inputTokens": 1926,
+        "outputTokens": 108,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Around 600 sounds like a reasonable target! \n\nCould you let me know what currency that is (and which country you're buying in)? Also, what games or applications will you be using most?",
+        "brief": {
+          "headline": "PC upgrade keeping current case and PSU (replacing GTX 1060 / Ryzen 1600)",
+          "fields": {
+            "budget.amount": {
+              "value": "~600",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": "flexible (~600)",
+              "status": "assumed"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "Current setup: GTX 1060, Ryzen 5 1600. Keeping: Case and PSU.",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": "Upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-auto",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 3,
+      "user": "Ok let's say 900 then.",
+      "note": "correction",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4078.675458000005,
+        "totalMs": 4459.140458000002,
+        "extractMs": null,
+        "inputTokens": 2015,
+        "outputTokens": 104,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 1,
+        "rejected": 0,
+        "reply": "Got it, 900 it is! \n\nWhat currency is that, and which country will you be purchasing the parts in? Also, what will you primarily be using the PC for (e.g., specific games, work apps)?",
+        "brief": {
+          "headline": "PC upgrade keeping current case and PSU, ~900 budget",
+          "fields": {
+            "budget.amount": {
+              "value": "900",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": "flexible (~600)",
+              "status": "assumed"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "Current setup: GTX 1060, Ryzen 5 1600. Keeping: Case and PSU.",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": "Upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-auto",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 4,
+      "user": "I'm in Canada.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4653.1049580000035,
+        "totalMs": 4750.102958000003,
+        "extractMs": null,
+        "inputTokens": 2152,
+        "outputTokens": 164,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 3,
+        "rejected": 0,
+        "reply": "Thanks! That makes it ~$900 CAD.\n\nWhat will you primarily use the PC for, and what specific games or apps do you plan to run? Also, what kind of performance or resolution (like 1080p, 1440p, specific frame rates) are you aiming for?",
+        "brief": {
+          "headline": "PC upgrade in Canada (~$900 CAD), keeping case and PSU",
+          "fields": {
+            "budget.amount": {
+              "value": "900",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "CAD",
+              "status": "assumed"
+            },
+            "budget.coverage": {
+              "value": "Upgrade components only",
+              "status": "assumed"
+            },
+            "budget.flexibility": {
+              "value": "flexible (~600)",
+              "status": "assumed"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "Current setup: GTX 1060, Ryzen 5 1600. Keeping: Case and PSU.",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "Canada",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "Upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-auto",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 5,
+      "user": "It's for video editing in Premiere with 4K footage.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4135.603875000001,
+        "totalMs": 4786.487083,
+        "extractMs": null,
+        "inputTokens": 2314,
+        "outputTokens": 185,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 3,
+        "rejected": 0,
+        "reply": "Handling 4K in Premiere will definitely benefit from a solid upgrade!\n\nA couple of quick questions to help narrow things down:\n1. Besides video editing, do you have any secondary uses like gaming or 3D modeling?\n2. Do you know the wattage of your current power supply (PSU), or the model of your motherboard/case?",
+        "brief": {
+          "headline": "$900 CAD upgrade for 4K video editing in Premiere Pro, keeping case and PSU",
+          "fields": {
+            "budget.amount": {
+              "value": "900",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "CAD",
+              "status": "assumed"
+            },
+            "budget.coverage": {
+              "value": "Upgrade components only",
+              "status": "assumed"
+            },
+            "budget.flexibility": {
+              "value": "flexible (~600)",
+              "status": "assumed"
+            },
+            "use.primary": {
+              "value": "Video editing",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Adobe Premiere Pro",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "Smooth editing/playback with 4K footage",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "Current setup: GTX 1060, Ryzen 5 1600. Keeping: Case and PSU.",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "Canada",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "Upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-auto",
+      "scenario": "S3",
+      "run": 1,
+      "turn": 1,
+      "user": "Hello!",
+      "pass": 0,
+      "total": 0,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1873.8449170000022,
+        "totalMs": 2340.0536250000005,
+        "extractMs": null,
+        "inputTokens": 803,
+        "outputTokens": 56,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 0,
+        "rejected": 0,
+        "reply": "Hello! I'd love to help you plan your PC build. \n\nTo get started, what will be the primary use for this PC (e.g., gaming, video editing, everyday office work), and are you building completely from scratch or upgrading an existing setup?",
+        "brief": {
+          "headline": "",
+          "fields": {
+            "budget.amount": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-auto",
+      "scenario": "S3",
+      "run": 1,
+      "turn": 2,
+      "user": "What's the difference between a CPU and a GPU?",
+      "pass": 0,
+      "total": 0,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1683.8364589999983,
+        "totalMs": 2339.5764589999962,
+        "extractMs": null,
+        "inputTokens": 873,
+        "outputTokens": 102,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 0,
+        "rejected": 0,
+        "reply": "Think of the **CPU** (Central Processing Unit) as the brain of the computer—it handles general logic, runs the operating system, and coordinates everything. \n\nThe **GPU** (Graphics Processing Unit) is a specialist designed to crunch massive amounts of visual and parallel data simultaneously, like rendering 3D graphics in games or processing video effects.\n\nReturning to your project: what will you mainly be using this computer for, and are you planning a brand-new build or upgrading an existing machine?",
+        "brief": {
+          "headline": "",
+          "fields": {
+            "budget.amount": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-auto",
+      "scenario": "S3",
+      "run": 1,
+      "turn": 3,
+      "user": "OK. I want something quiet for office work and some light photo editing. Budget is 800 euros, in Germany, building new.",
+      "pass": 6,
+      "total": 6,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4258.768541999998,
+        "totalMs": 4867.277332999998,
+        "extractMs": null,
+        "inputTokens": 2192,
+        "outputTokens": 275,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 7,
+        "rejected": 0,
+        "reply": "That sounds like a great project! \n\nTo help tailor the parts:\n1. Does your €800 budget need to cover just the PC tower itself, or do you also need a monitor, keyboard, mouse, or Windows license included in that amount?\n2. What software will you be using for your photo editing (e.g., Lightroom, Photoshop, GIMP) and what resolution are the photos you'll typically work with?",
+        "brief": {
+          "headline": "€800 quiet office and light photo editing PC build in Germany",
+          "fields": {
+            "budget.amount": {
+              "value": "800",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "EUR",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "Office work",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": "Light photo editing",
+              "status": "confirmed"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": "Quiet",
+              "status": "confirmed"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "Germany",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "New build",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 1,
+      "user": "Hi, I want a PC for gaming, around £1500. I'm in the UK.",
+      "pass": 4,
+      "total": 4,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3877.2227920000005,
+        "totalMs": 4318.061667000002,
+        "extractMs": null,
+        "inputTokens": 1774,
+        "outputTokens": 199,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 4,
+        "rejected": 0,
+        "reply": "Hi! That's a great budget for a gaming build in the UK. \n\nTo help get started:\n1. Does the £1500 need to cover just the PC tower itself, or do you also need peripherals like a monitor, keyboard, mouse, or Windows license?\n2. Is this a completely new build from scratch, or an upgrade where you already have some parts you plan to reuse?",
+        "brief": {
+          "headline": "£1500 gaming PC build in the UK",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "Gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 2,
+      "user": "Mostly 1440p, ideally 144fps. Cyberpunk and Valorant mainly.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3520.423290999999,
+        "totalMs": 4260.1210000000065,
+        "extractMs": null,
+        "inputTokens": 2003,
+        "outputTokens": 201,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "1440p at high refresh rates for Cyberpunk and Valorant sounds like an awesome target!\n\nTo make sure the budget is allocated properly:\n1. Does the £1,500 budget need to cover just the PC tower, or do you also need a monitor, mouse, keyboard, or headset included in that total?\n2. Are you starting completely fresh, or do you have any existing parts you plan to reuse?",
+        "brief": {
+          "headline": "£1500 1440p 144fps gaming PC build in the UK (Cyberpunk, Valorant)",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "Gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk 2077, Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "1440p, ideally 144 fps",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 3,
+      "user": "Actually make that 4K, I just bought a 4K monitor.",
+      "note": "correction",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3684.420208999989,
+        "totalMs": 4416.240916999988,
+        "extractMs": null,
+        "inputTokens": 2209,
+        "outputTokens": 185,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Nice, congrats on the new monitor! 4K gaming will look incredible.\n\nTo help narrow down the rest:\n1. Does the £1,500 budget need to cover just the PC tower itself, or do you also need other peripherals (keyboard, mouse, headset, Windows license)?\n2. Is this a completely fresh build from scratch, or do you have an old PC with parts you can reuse (like storage or a case)?",
+        "brief": {
+          "headline": "£1500 4K gaming PC build in the UK (Cyberpunk, Valorant)",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "Gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk 2077, Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K gaming",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "Already has a 4K monitor",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 4,
+      "user": "I'd rather avoid Intel after all the stability news. Not fussed about looks at all.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 5864.290374999997,
+        "totalMs": 6578.981125000006,
+        "extractMs": null,
+        "inputTokens": 2402,
+        "outputTokens": 165,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Understood, we'll avoid Intel and focus purely on performance over looks!\n\nTo make sure we're planning for the right components:\n1. Does your £1,500 budget need to cover just the PC tower itself, or do you also need peripherals (keyboard, mouse, headset, Windows license)?\n2. Is this a completely new build from scratch, or are there any existing parts from an old PC you're planning to reuse?",
+        "brief": {
+          "headline": "£1500 4K gaming PC build in the UK (Cyberpunk, Valorant)",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "Gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk 2077, Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K gaming",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": "No preference / not fussed about aesthetics",
+              "status": "confirmed"
+            },
+            "existing_parts.list": {
+              "value": "Already has a 4K monitor",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": "Avoid Intel (due to stability issues), AMD preferred",
+              "status": "confirmed"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 5,
+      "user": "The £1500 is for the tower only, I already have the monitor.",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4082.4532499999914,
+        "totalMs": 4630.182042,
+        "extractMs": null,
+        "inputTokens": 2626,
+        "outputTokens": 150,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Got it, tower only! \n\nA couple of quick questions about your physical setup:\n1. Do you have any preference for the size of the PC (e.g., standard mid-tower, a compact desk-friendly case, or does size not matter)?\n2. How important is noise level to you—does it need to run whisper-quiet, or is standard fan noise totally fine?",
+        "brief": {
+          "headline": "£1500 4K gaming PC build in the UK (Cyberpunk, Valorant)",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": "PC tower only",
+              "status": "confirmed"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "Gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk 2077, Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K gaming",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": "No preference / not fussed about aesthetics",
+              "status": "confirmed"
+            },
+            "existing_parts.list": {
+              "value": "Already has a 4K monitor",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": "Avoid Intel (due to stability issues), AMD preferred",
+              "status": "confirmed"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "New build from scratch (tower only)",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 1,
+      "user": "I've got a GTX 1060 and a Ryzen 5 1600. I want to upgrade, keeping my case and PSU.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4759.6527919999935,
+        "totalMs": 5425.7854579999985,
+        "extractMs": null,
+        "inputTokens": 1971,
+        "outputTokens": 319,
+        "reasoningTokens": 132,
+        "toolCalls": 1,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "That sounds like a solid upgrade path! \n\nTo help tailor the recommendations:\n\n1. **What will be the primary use for this PC?** (If gaming, what specific games, resolution, and target frame rates are you aiming for?)\n2. **What is your target budget and currency**, and what country are you buying parts in?",
+        "brief": {
+          "headline": "PC upgrade keeping case and PSU (upgrading from Ryzen 5 1600 / GTX 1060)",
+          "fields": {
+            "budget.amount": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "Keeping existing case and PSU; replacing/upgrading from GTX 1060 and Ryzen 5 1600",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": "Upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 2,
+      "user": "dunno, maybe 600?",
+      "note": "vague",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3292.53845800001,
+        "totalMs": 4012.5807080000086,
+        "extractMs": null,
+        "inputTokens": 1984,
+        "outputTokens": 138,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Got it, around 600 sounds like a reasonable target!\n\n1. **Which currency and country** will you be purchasing the parts in?\n2. **What will you mainly use the PC for?** (e.g., specific games, work, video editing, and what resolution or frame rate are you hoping to achieve?)",
+        "brief": {
+          "headline": "PC upgrade keeping case and PSU (upgrading from Ryzen 5 1600 / GTX 1060)",
+          "fields": {
+            "budget.amount": {
+              "value": "around 600",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": "flexible (estimated 'maybe 600')",
+              "status": "confirmed"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "Keeping existing case and PSU; replacing/upgrading from GTX 1060 and Ryzen 5 1600",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": "Upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 3,
+      "user": "Ok let's say 900 then.",
+      "note": "correction",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3984.4975419999973,
+        "totalMs": 4669.528417000009,
+        "extractMs": null,
+        "inputTokens": 2160,
+        "outputTokens": 153,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 1,
+        "rejected": 0,
+        "reply": "Got it, $900 gives you a lot more room for a great jump in performance!\n\nTo make sure the parts fit your needs:\n\n1. **What currency and country** are you shopping in?\n2. **What will be the primary use** for the PC (e.g., specific games, creative work), and what resolution or frame rate are you aiming for?",
+        "brief": {
+          "headline": "PC upgrade keeping case and PSU (upgrading from Ryzen 5 1600 / GTX 1060, budget ~900)",
+          "fields": {
+            "budget.amount": {
+              "value": "900",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": "flexible (estimated 'maybe 600')",
+              "status": "confirmed"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "Keeping existing case and PSU; replacing/upgrading from GTX 1060 and Ryzen 5 1600",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": "Upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 4,
+      "user": "I'm in Canada.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3853.064207999996,
+        "totalMs": 4505.009165999989,
+        "extractMs": null,
+        "inputTokens": 2375,
+        "outputTokens": 206,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 3,
+        "rejected": 0,
+        "reply": "Canada, perfect! We'll work with ~900 CAD.\n\nTo help narrow things down:\n\n1. **What is the primary use for the PC?** (If gaming, what specific titles do you play?)\n2. **What resolution and target frame rate** (e.g., 1080p at 60fps, 1440p high-refresh) are you aiming for?",
+        "brief": {
+          "headline": "PC upgrade keeping case and PSU (from Ryzen 5 1600 / GTX 1060, budget ~900 CAD, Canada)",
+          "fields": {
+            "budget.amount": {
+              "value": "900 CAD",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "CAD",
+              "status": "assumed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": "flexible (estimated 'maybe 600')",
+              "status": "confirmed"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "Keeping existing case and PSU; replacing/upgrading from GTX 1060 and Ryzen 5 1600",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "Canada",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "Upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 5,
+      "user": "It's for video editing in Premiere with 4K footage.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4264.964334000004,
+        "totalMs": 5179.19541700001,
+        "extractMs": null,
+        "inputTokens": 2550,
+        "outputTokens": 217,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 3,
+        "rejected": 0,
+        "reply": "That helps a lot! Premiere with 4K footage definitely benefits from a smart upgrade balance.\n\n1. **Does the 900 CAD budget need to cover just the core components** (CPU, GPU, RAM, motherboard, storage), or do you also need extra drives, a monitor, or other peripherals?\n2. **What motherboard, RAM, and power supply wattage/model** are you currently using? (This helps check if any existing parts can be reused or if the BIOS can simply be updated.)",
+        "brief": {
+          "headline": "PC upgrade for 4K video editing in Premiere Pro (~900 CAD, Canada)",
+          "fields": {
+            "budget.amount": {
+              "value": "900 CAD",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "CAD",
+              "status": "assumed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": "flexible (estimated 'maybe 600')",
+              "status": "confirmed"
+            },
+            "use.primary": {
+              "value": "Video editing",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Adobe Premiere Pro",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "Smooth editing/playback with 4K footage",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "Keeping existing case and PSU; replacing/upgrading from GTX 1060 and Ryzen 5 1600",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "Canada",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "Upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S3",
+      "run": 1,
+      "turn": 1,
+      "user": "Hello!",
+      "pass": 0,
+      "total": 0,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3455.539625000005,
+        "totalMs": 3613.3494999999966,
+        "extractMs": null,
+        "inputTokens": 1646,
+        "outputTokens": 42,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 0,
+        "rejected": 0,
+        "reply": "Hello! Are you looking to build a completely new PC or upgrade an existing one, and what will be the primary purpose of this system?",
+        "brief": {
+          "headline": "",
+          "fields": {
+            "budget.amount": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S3",
+      "run": 1,
+      "turn": 2,
+      "user": "What's the difference between a CPU and a GPU?",
+      "pass": 0,
+      "total": 0,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4140.644,
+        "totalMs": 5052.687291000009,
+        "extractMs": null,
+        "inputTokens": 1730,
+        "outputTokens": 113,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 0,
+        "rejected": 0,
+        "reply": "A **CPU** (Central Processing Unit) is the \"brain\" of the computer, handling general tasks, calculations, and running the operating system and apps. \n\nA **GPU** (Graphics Processing Unit) is a specialized processor designed to handle visual data, complex 3D graphics, rendering, and video output.\n\nTo help tailor your build brief: Are you looking to build a brand-new PC or upgrade an existing one, and what will you primarily be using it for?",
+        "brief": {
+          "headline": "",
+          "fields": {
+            "budget.amount": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "A-forced",
+      "scenario": "S3",
+      "run": 1,
+      "turn": 3,
+      "user": "OK. I want something quiet for office work and some light photo editing. Budget is 800 euros, in Germany, building new.",
+      "pass": 6,
+      "total": 6,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 4310.926416000002,
+        "totalMs": 4867.479999999996,
+        "extractMs": null,
+        "inputTokens": 2130,
+        "outputTokens": 254,
+        "reasoningTokens": 0,
+        "toolCalls": 1,
+        "appliedEdits": 7,
+        "rejected": 0,
+        "reply": "That sounds like a great project! \n\n1. Does your €800 budget need to cover just the PC tower itself, or do you also need peripherals like a monitor, keyboard, mouse, or Windows license included?\n2. Which specific photo editing programs do you plan to use (e.g., Lightroom, Photoshop, GIMP)?",
+        "brief": {
+          "headline": "Quiet €800 office and light photo editing PC in Germany",
+          "fields": {
+            "budget.amount": {
+              "value": "800",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "EUR",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "Office work",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": "Light photo editing",
+              "status": "confirmed"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": "Quiet operation",
+              "status": "confirmed"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "Germany",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "New build",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 1,
+      "user": "Hi, I want a PC for gaming, around £1500. I'm in the UK.",
+      "pass": 4,
+      "total": 4,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1733.1837079999968,
+        "totalMs": 2825.5932500000054,
+        "extractMs": 666.7973340000026,
+        "inputTokens": 1255,
+        "outputTokens": 153,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 4,
+        "rejected": 0,
+        "reply": "Hello! That’s a great starting point. \n\nTo help narrow things down:\n1. Does that £1,500 budget need to cover just the PC tower itself, or do you also need peripherals like a monitor, keyboard, or mouse included?\n2. Are you building an entirely new system from scratch, or upgrading an existing PC?",
+        "brief": {
+          "headline": "Gaming PC in the UK for around £1500",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 2,
+      "user": "Mostly 1440p, ideally 144fps. Cyberpunk and Valorant mainly.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1863.4421250000014,
+        "totalMs": 3242.234209000002,
+        "extractMs": 717.1285830000124,
+        "inputTokens": 1393,
+        "outputTokens": 178,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Those are great targets—Valorant will easily fly at 144fps, and we can aim for high settings on Cyberpunk at 1440p!\n\nTo make sure we budget correctly:\n1. Does the £1,500 need to cover just the PC tower, or do you also need a monitor and accessories included?\n2. Are you building an entirely new PC from scratch, or do you have any existing parts you plan to reuse?",
+        "brief": {
+          "headline": "Gaming PC in the UK for £1500 targeting 1440p 144fps for Cyberpunk and Valorant",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk, Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "1440p 144fps",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 3,
+      "user": "Actually make that 4K, I just bought a 4K monitor.",
+      "note": "correction",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1824.0816250000062,
+        "totalMs": 3062.5964999999997,
+        "extractMs": 698.4335419999989,
+        "inputTokens": 1561,
+        "outputTokens": 183,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Nice upgrade! 4K gaming looks incredible, though demanding titles like Cyberpunk will definitely push the hardware. \n\nSince you just bought the monitor:\n1. Does the £1,500 budget need to cover just the PC tower itself, or do you still need any other accessories (like a keyboard, mouse, or headset)?\n2. Are you building completely new from scratch, or do you have any parts from an old PC to reuse?",
+        "brief": {
+          "headline": "Gaming PC in the UK for £1500 targeting 4K for Cyberpunk and Valorant",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": "tower only",
+              "status": "assumed"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk, Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "Are you building an entirely new PC from scratch, or do you have any existing parts you plan to reuse?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 4,
+      "user": "I'd rather avoid Intel after all the stability news. Not fussed about looks at all.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1834.4667920000065,
+        "totalMs": 3024.7413340000057,
+        "extractMs": 693.3993749999936,
+        "inputTokens": 1675,
+        "outputTokens": 143,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Understood—no Intel CPUs, and pure performance over aesthetics!\n\nTo help me lock down the foundation of the build:\n1. Is this a completely new build from scratch, or do you have any existing parts to carry over?\n2. Does the £1,500 need to cover just the PC tower itself, or do you need any accessories (mouse, keyboard, etc.) included in that budget?",
+        "brief": {
+          "headline": "Gaming PC in the UK for £1500 targeting 4K, avoiding Intel",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": "tower only",
+              "status": "assumed"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk, Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": "not fussed",
+              "status": "confirmed"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": "avoid Intel",
+              "status": "confirmed"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "Are you building an entirely new PC from scratch, or do you have any existing parts you plan to reuse?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 5,
+      "user": "The £1500 is for the tower only, I already have the monitor.",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1610.8549160000111,
+        "totalMs": 2801.502625000023,
+        "extractMs": 615.8691249999974,
+        "inputTokens": 1747,
+        "outputTokens": 98,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 1,
+        "rejected": 0,
+        "reply": "Perfect, that gives us the full £1,500 to dedicate purely to the tower's performance.\n\nJust two quick questions to help round out the requirements:\n1. Are you building entirely from scratch, or do you have any existing parts (like storage drives or a case) to reuse?\n2. How soon are you planning to buy and build the PC?",
+        "brief": {
+          "headline": "Gaming PC in the UK for £1500 targeting 4K, avoiding Intel",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": "tower only",
+              "status": "confirmed"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk, Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": "not fussed",
+              "status": "confirmed"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": "avoid Intel",
+              "status": "confirmed"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "Are you building an entirely new PC from scratch, or do you have any existing parts you plan to reuse?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 1,
+      "user": "I've got a GTX 1060 and a Ryzen 5 1600. I want to upgrade, keeping my case and PSU.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1327.1439170000085,
+        "totalMs": 3072.669292000006,
+        "extractMs": 878.4620409999916,
+        "inputTokens": 1275,
+        "outputTokens": 187,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "That's a classic setup ready for a solid boost! \n\nTo get started on your upgrade plan:\n1. What is your **budget** (and currency), and what **country** are you buying parts in?\n2. What will be the **primary use** for this PC (e.g., gaming, video editing), and what kind of **performance target** are you aiming for (e.g., 1080p high fps, 1440p)?",
+        "brief": {
+          "headline": "Upgrading from Ryzen 5 1600 / GTX 1060, keeping case and PSU",
+          "fields": {
+            "budget.amount": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "GTX 1060, Ryzen 5 1600, case, PSU",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": "upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 2,
+      "user": "dunno, maybe 600?",
+      "note": "vague",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1965.8821670000034,
+        "totalMs": 3195.266042000003,
+        "extractMs": 758.6761669999978,
+        "inputTokens": 1497,
+        "outputTokens": 186,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 1,
+        "rejected": 0,
+        "reply": "Got it, around 600! \n\n1. Which **currency/country** is that in (e.g., USD in the US, EUR in Germany)?\n2. What will be the **primary use** for the PC (like gaming or work), and do you have a specific **performance goal** in mind (like 1080p gaming)?",
+        "brief": {
+          "headline": "Upgrading system with a roughly 600 budget, keeping case and PSU",
+          "fields": {
+            "budget.amount": {
+              "value": "600",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "GTX 1060, Ryzen 5 1600, case, PSU",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": "upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What currency and country are you buying in?",
+            "What is the primary use and performance target for the upgrade?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 3,
+      "user": "Ok let's say 900 then.",
+      "note": "correction",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1719.2726659999753,
+        "totalMs": 2890.412290999986,
+        "extractMs": 599.4623750000028,
+        "inputTokens": 1583,
+        "outputTokens": 169,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 1,
+        "rejected": 0,
+        "reply": "Got it, bumping the budget to 900!\n\nTo help narrow down the options:\n1. Which **country** are you buying in, and in what **currency** is that 900?\n2. What is your **primary use** for the upgrade (e.g., gaming, video editing), and what kind of **performance target** are you aiming for (e.g., 1080p, 1440p)?",
+        "brief": {
+          "headline": "Upgrading system with a roughly 900 budget, keeping case and PSU",
+          "fields": {
+            "budget.amount": {
+              "value": "900",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "GTX 1060, Ryzen 5 1600, case, PSU",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": "upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What currency and country are you buying in?",
+            "What is the primary use and performance target for the upgrade?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 4,
+      "user": "I'm in Canada.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1447.3859170000069,
+        "totalMs": 2825.1344999999856,
+        "extractMs": 828.9164579999924,
+        "inputTokens": 1706,
+        "outputTokens": 164,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Perfect, Canada and 900 CAD!\n\n1. Does that 900 CAD budget need to cover **taxes and shipping**, or is it strictly for the parts?\n2. What will be the **primary use** for the PC (e.g., gaming, video editing), and what kind of **performance target** are you aiming for (e.g., 1080p, 1440p)?",
+        "brief": {
+          "headline": "Upgrading system with a 900 CAD budget in Canada, keeping case and PSU",
+          "fields": {
+            "budget.amount": {
+              "value": "900",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "CAD",
+              "status": "assumed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "GTX 1060, Ryzen 5 1600, case, PSU",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "Canada",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What currency and country are you buying in?",
+            "What is the primary use and performance target for the upgrade?",
+            "What is your primary use and performance target for the upgrade?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 5,
+      "user": "It's for video editing in Premiere with 4K footage.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1537.7317499999772,
+        "totalMs": 2948.245957999985,
+        "extractMs": 971.808040999982,
+        "inputTokens": 1823,
+        "outputTokens": 258,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 3,
+        "rejected": 0,
+        "reply": "Editing 4K footage in Premiere Pro is a demanding workload, so that's very helpful to know!\n\n1. Does the 900 CAD budget need to include **taxes and shipping**, or is it strictly for the parts alone?\n2. What are the specs of your **power supply (PSU)** (wattage and model) and your **motherboard**, if you happen to know them?",
+        "brief": {
+          "headline": "Upgrading system for 4K video editing in Premiere with a 900 CAD budget in Canada",
+          "fields": {
+            "budget.amount": {
+              "value": "900",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "CAD",
+              "status": "assumed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "video editing",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Premiere",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K footage editing",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "GTX 1060, Ryzen 5 1600, case, PSU",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "Canada",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What currency and country are you buying in?",
+            "What is the primary use and performance target for the upgrade?",
+            "What is your primary use and performance target for the upgrade?",
+            "Does the 900 CAD budget need to cover taxes and shipping?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S3",
+      "run": 1,
+      "turn": 1,
+      "user": "Hello!",
+      "pass": 0,
+      "total": 0,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 2038.8586249999935,
+        "totalMs": 3116.29574999999,
+        "extractMs": 692.5123749999912,
+        "inputTokens": 1213,
+        "outputTokens": 109,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 0,
+        "rejected": 0,
+        "reply": "Hello! I'd love to help you plan your PC build. \n\nTo get started, are you looking to build a completely new PC or upgrade an existing one? Also, what will be the primary use for this system (e.g., gaming, video editing, office work)?",
+        "brief": {
+          "headline": "New PC Build",
+          "fields": {
+            "budget.amount": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What country are you buying from?",
+            "What is your total budget?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S3",
+      "run": 1,
+      "turn": 2,
+      "user": "What's the difference between a CPU and a GPU?",
+      "pass": 0,
+      "total": 0,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 1610.5439999999944,
+        "totalMs": 3543.0110409999907,
+        "extractMs": 1263.8942919999827,
+        "inputTokens": 1366,
+        "outputTokens": 417,
+        "reasoningTokens": 299,
+        "toolCalls": 0,
+        "appliedEdits": 0,
+        "rejected": 0,
+        "reply": "Think of the **CPU** (Central Processing Unit) as the \"brain\" of the computer—it handles general instructions, runs the operating system, and coordinates all the tasks. \n\nThe **GPU** (Graphics Processing Unit) is specialized for handling visual tasks and heavy mathematical calculations simultaneously, which makes it essential for things like 3D gaming, video rendering, and graphic design.\n\nTo help tailor a build to your needs: are you planning to build a completely new PC or upgrade an existing one, and what country will you be purchasing parts in?",
+        "brief": {
+          "headline": "New PC Build",
+          "fields": {
+            "budget.amount": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What country are you buying from?",
+            "What is your total budget?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-post",
+      "scenario": "S3",
+      "run": 1,
+      "turn": 3,
+      "user": "OK. I want something quiet for office work and some light photo editing. Budget is 800 euros, in Germany, building new.",
+      "pass": 6,
+      "total": 6,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 2061.3723750000063,
+        "totalMs": 3652.6923750000133,
+        "extractMs": 1115.2095419999969,
+        "inputTokens": 1581,
+        "outputTokens": 405,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 7,
+        "rejected": 0,
+        "reply": "That sounds like a great plan! \n\nTo narrow things down:\n\n1. Does that €800 budget need to cover just the PC tower itself, or do you also need a monitor, keyboard, mouse, or Windows license included in it?\n2. How strict is that €800 limit—is there a bit of wiggle room if a small stretch offers a noticeable boost in quietness or performance?",
+        "brief": {
+          "headline": "Quiet office and photo editing PC in Germany for 800 EUR",
+          "fields": {
+            "budget.amount": {
+              "value": "800",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "EUR",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "office work",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": "light photo editing",
+              "status": "confirmed"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": "quiet",
+              "status": "confirmed"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "Germany",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "new",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What country are you buying from?",
+            "What is your total budget?",
+            "What is your budget coverage (tower only, or including monitor/peripherals/OS)?",
+            "Do you have any specific performance targets or apps in mind for the photo editing?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 1,
+      "user": "Hi, I want a PC for gaming, around £1500. I'm in the UK.",
+      "pass": 4,
+      "total": 4,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3071.4974590000056,
+        "totalMs": 3880.799834000005,
+        "extractMs": 866.5074589999858,
+        "inputTokens": 1232,
+        "outputTokens": 228,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 5,
+        "rejected": 0,
+        "reply": "Welcome! A £1500 budget offers plenty of great gaming options in the UK. \n\nTo help tailor your build brief:\n\n1. Does that £1500 budget need to cover just the PC tower itself, or do you also need peripherals included (like a monitor, keyboard, mouse, or Windows license)?\n2. What resolution and frame rate are you aiming to play at (e.g., 1080p, 1440p, or 4K; 60fps or high-refresh 144fps+), and are there specific games you have in mind?",
+        "brief": {
+          "headline": "£1500 Gaming PC in the UK",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "new",
+              "status": "assumed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 2,
+      "user": "Mostly 1440p, ideally 144fps. Cyberpunk and Valorant mainly.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 2414.8571250000095,
+        "totalMs": 3236.3130419999943,
+        "extractMs": 671.8522919999959,
+        "inputTokens": 1496,
+        "outputTokens": 189,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "That sounds like a great target—Cyberpunk looks stunning at 1440p, and high frame rates will be perfect for Valorant. \n\nTo help nail down the budget details:\n\n1. Does the £1500 need to cover **just the PC tower**, or do you also need a monitor, keyboard, mouse, or headset included in that total?\n2. How strict is that £1500 limit—is it a hard cap, or is there a bit of wiggle room if a small stretch offers a noticeable jump in performance?",
+        "brief": {
+          "headline": "£1500 1440p 144fps Gaming PC in the UK",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk and Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "1440p 144fps",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "new",
+              "status": "assumed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 3,
+      "user": "Actually make that 4K, I just bought a 4K monitor.",
+      "note": "correction",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 2565.524375000008,
+        "totalMs": 3185.690459000005,
+        "extractMs": 814.1009170000034,
+        "inputTokens": 1606,
+        "outputTokens": 126,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 1,
+        "rejected": 0,
+        "reply": "Nice, 4K will look incredible! Since you've already sorted the monitor:\n\n1. Does the £1500 budget need to cover **just the PC tower**, or do you need other peripherals (like a keyboard, mouse, or Windows license) included too?\n2. How strict is that £1500 limit—is it a hard maximum, or do you have a little flexibility if needed?",
+        "brief": {
+          "headline": "£1500 4K Gaming PC in the UK",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk and Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "new",
+              "status": "assumed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 4,
+      "user": "I'd rather avoid Intel after all the stability news. Not fussed about looks at all.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 2102.711499999976,
+        "totalMs": 2881.262583999982,
+        "extractMs": 710.7570419999829,
+        "inputTokens": 1670,
+        "outputTokens": 159,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Understood—we'll keep it focused purely on performance and reliability, avoiding Intel. \n\nTo help nail down the remaining details:\n\n1. Does the £1500 need to cover **just the PC tower**, or do you also need any other accessories (like a keyboard, mouse, or Windows license) included in that total?\n2. Are you starting completely from scratch, or do you have any existing PC parts (like storage drives or a power supply) you plan to reuse?",
+        "brief": {
+          "headline": "£1500 4K Gaming PC in the UK (No Intel)",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk and Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": "not fussed",
+              "status": "confirmed"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": "avoid Intel",
+              "status": "confirmed"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "new",
+              "status": "assumed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S1",
+      "run": 1,
+      "turn": 5,
+      "user": "The £1500 is for the tower only, I already have the monitor.",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 2747.253832999995,
+        "totalMs": 3541.0552919999755,
+        "extractMs": 794.614957999991,
+        "inputTokens": 1796,
+        "outputTokens": 213,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Perfect, that gives us £1500 entirely for the tower.\n\nJust two quick questions:\n\n1. How strict is that £1500 budget—is it a hard limit, or do you have a little flexibility if needed?\n2. Do you have any preferences for the size of the case (standard mid-tower, or something more compact), or any noise constraints?",
+        "brief": {
+          "headline": "£1500 4K Gaming PC Tower in the UK (No Intel)",
+          "fields": {
+            "budget.amount": {
+              "value": "1500",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "GBP",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": "tower only",
+              "status": "confirmed"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "gaming",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Cyberpunk and Valorant",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": "not fussed",
+              "status": "confirmed"
+            },
+            "existing_parts.list": {
+              "value": "monitor",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": "avoid Intel",
+              "status": "confirmed"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "UK",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "new",
+              "status": "assumed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "budget.flexibility",
+            "physical.form_factor"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 1,
+      "user": "I've got a GTX 1060 and a Ryzen 5 1600. I want to upgrade, keeping my case and PSU.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3461.984041000018,
+        "totalMs": 3983.6859160000167,
+        "extractMs": 624.5786669999943,
+        "inputTokens": 1294,
+        "outputTokens": 330,
+        "reasoningTokens": 165,
+        "toolCalls": 0,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "That's a solid foundation to build upon! \n\nTo get started, what will be the **primary use** for this upgraded PC (e.g., specific games, editing, general use), and what kind of **performance target** are you aiming for (like resolution and framerates)? \n\nAlso, what is your **target budget** and **country** for purchasing the parts?",
+        "brief": {
+          "headline": "Upgrading from Ryzen 5 1600 / GTX 1060, keeping case and PSU",
+          "fields": {
+            "budget.amount": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "GTX 1060, Ryzen 5 1600, case, PSU",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": "upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": []
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 2,
+      "user": "dunno, maybe 600?",
+      "note": "vague",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3242.636958999996,
+        "totalMs": 3710.3080840000184,
+        "extractMs": 1664.303917000012,
+        "inputTokens": 1469,
+        "outputTokens": 561,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 1,
+        "rejected": 0,
+        "reply": "Got it, around 600 sounds like a good starting point! \n\nTo make sure we're on the right track:\n1. What **currency** is that (and what **country** will you be buying the parts in)?\n2. What will be the **primary use** for this PC (e.g., specific games, work, video editing)?",
+        "brief": {
+          "headline": "Upgrading from Ryzen 5 1600 / GTX 1060, budget around 600",
+          "fields": {
+            "budget.amount": {
+              "value": "600",
+              "status": "assumed"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "GTX 1060, Ryzen 5 1600, case, PSU",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": "upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What country are you purchasing in?",
+            "What will be the primary use for this upgraded PC?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 3,
+      "user": "Ok let's say 900 then.",
+      "note": "correction",
+      "pass": 1,
+      "total": 1,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3476.340709000011,
+        "totalMs": 3689.908584000019,
+        "extractMs": 598.6841249999998,
+        "inputTokens": 1574,
+        "outputTokens": 82,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 1,
+        "rejected": 0,
+        "reply": "900 gives you a lot more room to work with!\n\n1. What **country** (and **currency**) will you be buying the parts in?\n2. What will be the **primary use** for this upgraded PC (e.g., specific games, streaming, video editing)?",
+        "brief": {
+          "headline": "Upgrading from Ryzen 5 1600 / GTX 1060, budget around 600",
+          "fields": {
+            "budget.amount": {
+              "value": "900",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "GTX 1060, Ryzen 5 1600, case, PSU",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": "upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What country are you purchasing in?",
+            "What will be the primary use for this upgraded PC?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 4,
+      "user": "I'm in Canada.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3103.9373339999875,
+        "totalMs": 3524.7723750000005,
+        "extractMs": 720.397042000026,
+        "inputTokens": 1597,
+        "outputTokens": 209,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 2,
+        "rejected": 0,
+        "reply": "Awesome, Canada and 900 CAD it is!\n\n1. What will be the **primary use** for this upgraded PC (e.g., gaming, video editing, everyday tasks)?\n2. If gaming, what specific games and what kind of **performance target** are you aiming for (e.g., 1080p, 1440p, 60+ FPS)?",
+        "brief": {
+          "headline": "Upgrading PC in Canada, budget around 900 CAD",
+          "fields": {
+            "budget.amount": {
+              "value": "900",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "CAD",
+              "status": "assumed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "GTX 1060, Ryzen 5 1600, case, PSU",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "Canada",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What country are you purchasing in?",
+            "What will be the primary use for this upgraded PC?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S2",
+      "run": 1,
+      "turn": 5,
+      "user": "It's for video editing in Premiere with 4K footage.",
+      "pass": 2,
+      "total": 2,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 3314.5777499999967,
+        "totalMs": 3877.76129200001,
+        "extractMs": 1176.8838329999999,
+        "inputTokens": 1726,
+        "outputTokens": 273,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 3,
+        "rejected": 0,
+        "reply": "Editing 4K footage in Premiere is a demanding task, so that's very helpful to know!\n\n1. Does the **900 CAD budget** need to cover just the upgraded PC components, or do you also need a monitor, mouse/keyboard, or software licenses?\n2. How **flexible** is that 900 CAD limit (is it a hard cap, or can you stretch slightly if it significantly improves your editing workflow)?",
+        "brief": {
+          "headline": "Upgrading PC in Canada for 4K video editing, budget around 900 CAD",
+          "fields": {
+            "budget.amount": {
+              "value": "900",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "CAD",
+              "status": "assumed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "video editing",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": "Adobe Premiere",
+              "status": "confirmed"
+            },
+            "use.performance_target": {
+              "value": "4K footage editing",
+              "status": "confirmed"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": "GTX 1060, Ryzen 5 1600, case, PSU",
+              "status": "confirmed"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "Canada",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "upgrade",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What country are you purchasing in?",
+            "What will be the primary use for this upgraded PC?",
+            "Does the 900 CAD budget need to cover any peripherals or a monitor, or just the upgraded internal parts?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S3",
+      "run": 1,
+      "turn": 1,
+      "user": "Hello!",
+      "pass": 0,
+      "total": 0,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 2585.2850830000243,
+        "totalMs": 2913.2767920000188,
+        "extractMs": 666.4621249999909,
+        "inputTokens": 1222,
+        "outputTokens": 71,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 0,
+        "rejected": 0,
+        "reply": "Hello! I'd love to help you plan your PC build. \n\nTo get started, what country are you buying parts in, and are you planning a completely new build or upgrading an existing PC?",
+        "brief": {
+          "headline": "New build enquiry started",
+          "fields": {
+            "budget.amount": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What country are you buying from and what is your budget?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S3",
+      "run": 1,
+      "turn": 2,
+      "user": "What's the difference between a CPU and a GPU?",
+      "pass": 0,
+      "total": 0,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 2256.822125000006,
+        "totalMs": 2888.7137910000165,
+        "extractMs": 623.9528749999881,
+        "inputTokens": 1330,
+        "outputTokens": 123,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 0,
+        "rejected": 0,
+        "reply": "Think of the **CPU** (Central Processing Unit) as the \"brain\" of the computer—it handles general instructions, runs the operating system, and coordinates all the hardware. \n\nThe **GPU** (Graphics Processing Unit) is specialized for heavy visual and parallel tasks, like rendering 3D graphics in games, editing video, or processing AI workloads.\n\nTo help tailor the right build for you: what country will you be buying parts in, and are you looking to build a brand-new PC or upgrade an existing one?",
+        "brief": {
+          "headline": "New build enquiry started",
+          "fields": {
+            "budget.amount": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.currency": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.new_or_upgrade": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What country are you buying from and what is your budget?"
+          ]
+        }
+      }
+    },
+    {
+      "variant": "B-pre",
+      "scenario": "S3",
+      "run": 1,
+      "turn": 3,
+      "user": "OK. I want something quiet for office work and some light photo editing. Budget is 800 euros, in Germany, building new.",
+      "pass": 6,
+      "total": 6,
+      "missed": [],
+      "falseEdit": false,
+      "r": {
+        "ttftMs": 2981.8351249999832,
+        "totalMs": 3782.0651249999937,
+        "extractMs": 1326.4674170000071,
+        "inputTokens": 1561,
+        "outputTokens": 410,
+        "reasoningTokens": 0,
+        "toolCalls": 0,
+        "appliedEdits": 7,
+        "rejected": 0,
+        "reply": "That sounds like a great plan! \n\nTo help nail down the budget and requirements:\n\n1. Does the **800 EUR** budget need to cover just the PC tower, or do you also need a monitor, keyboard, and mouse included?\n2. Which specific photo editing programs do you plan to use (e.g., Lightroom, Photoshop, GIMP), and are you working with standard JPEGs or large RAW files?",
+        "brief": {
+          "headline": "Quiet office and photo editing PC in Germany for 800 EUR",
+          "fields": {
+            "budget.amount": {
+              "value": "800",
+              "status": "confirmed"
+            },
+            "budget.currency": {
+              "value": "EUR",
+              "status": "confirmed"
+            },
+            "budget.coverage": {
+              "value": null,
+              "status": "unknown"
+            },
+            "budget.flexibility": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.primary": {
+              "value": "office",
+              "status": "confirmed"
+            },
+            "use.apps": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.performance_target": {
+              "value": null,
+              "status": "unknown"
+            },
+            "use.secondary": {
+              "value": "light photo editing",
+              "status": "confirmed"
+            },
+            "physical.form_factor": {
+              "value": null,
+              "status": "unknown"
+            },
+            "physical.noise": {
+              "value": "quiet",
+              "status": "confirmed"
+            },
+            "physical.looks": {
+              "value": null,
+              "status": "unknown"
+            },
+            "existing_parts.list": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.brands": {
+              "value": null,
+              "status": "unknown"
+            },
+            "preferences.deal_breakers": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.country": {
+              "value": "Germany",
+              "status": "confirmed"
+            },
+            "context.new_or_upgrade": {
+              "value": "new",
+              "status": "confirmed"
+            },
+            "context.timeframe": {
+              "value": null,
+              "status": "unknown"
+            },
+            "context.upgrade_horizon": {
+              "value": null,
+              "status": "unknown"
+            }
+          },
+          "openQuestions": [
+            "What country are you buying from and what is your budget?",
+            "Does the 800 EUR budget need to include a monitor and peripherals, or just the tower?",
+            "Do you have any specific performance targets or apps you use for photo editing?"
+          ]
+        }
+      }
+    }
+  ]
+}

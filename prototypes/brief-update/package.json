@@ -1,0 +1,18 @@
+{
+  "name": "prototype-brief-update",
+  "private": true,
+  "type": "module",
+  "description": "PROTOTYPE, throwaway. Compares in-turn update_brief tool vs separate extraction pass for Build Brief updates (wayfinder ticket #10).",
+  "scripts": {
+    "run": "tsx --env-file=../../.env run.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "4.0.114",
+    "ai": "7.0.165",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15",
+    "@types/node": "^22"
+  }
+}
