@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { authClient } from '~/lib/auth-client'
 
+const route = useRoute()
 const session = authClient.useSession()
 
 const user = computed(() => session.value.data?.user)
@@ -17,7 +18,8 @@ const handleSignOut = async () => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-4 p-4">
+  <PrototypeChatHost v-if="route.query.variant" />
+  <div v-else class="flex flex-col gap-4 p-4">
     <p v-if="session.isPending">Loading…</p>
 
     <template v-else-if="isGuest">
