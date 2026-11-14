@@ -20,6 +20,14 @@ _Avoid_: Project, order, rig
 The Build's record of what the interview has established about the user's needs, plus what is still unknown. It holds needs, constraints and preferences, never the assistant's choice of parts. It is the assistant's lasting memory of the Build and outlives any single Chat.
 _Avoid_: Requirements profile, memory, notes, summary
 
+**Profile**:
+What the app knows about a person that stays true across every Build: their country, currency, and the brands they like or avoid. Anything that changes from one Build to the next belongs in that Build's Build Brief instead.
+_Avoid_: Memory, settings, account
+
+**Setup Form**:
+The short form a user fills in when starting a new Build, before the assistant speaks. What the user enters goes straight into the Build Brief as Confirmed, and the interview then continues in the Chat. Every question can be left as "not sure", and the whole form can be skipped.
+_Avoid_: Onboarding, wizard, intake
+
 **Existing Parts**:
 Parts and peripherals the user already owns and will reuse in the Build. In an upgrade, these are the parts being kept.
 _Avoid_: Current parts, old parts
@@ -51,6 +59,10 @@ _Avoid_: Hidden chat
 **Deleted Chat**:
 A Chat the user has removed. It no longer appears anywhere in the app and cannot be restored by the user.
 _Avoid_: Archived chat (that is a different action)
+
+**Message Allowance**:
+How many Messages a user may send before being asked to wait. It is measured over a short recent window and a longer weekly one, and a Guest's is smaller than a signed-in user's. Only the user's own Messages use it up, and they come back gradually as old ones age out of the window.
+_Avoid_: Quota, rate limit, daily cap
 
 **Context Limit**:
 The point at which everything the assistant must read to answer in a Chat (instructions, Build Brief and conversation) has grown to a fixed size allowance. The user is warned as it approaches, then asked to continue in a new Chat. A reply already underway is never cut off by it.

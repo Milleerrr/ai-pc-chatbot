@@ -33,7 +33,7 @@
     "better-auth": "^1.7.18",
     "dotenv": "^18.0.4",
     "drizzle-orm": "1.0.0-rc.4",
-    "nuxt": "^4.5.2",
+    "nuxt": "^4.6.4",
     "pg": "^8.23.0",
     "superjson": "^2.2.6",
     "tailwindcss": "^4.3.3",
