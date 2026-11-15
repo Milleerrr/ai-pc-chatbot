@@ -1,6 +1,5 @@
 import type { ChatsApi } from "~/queries/chats";
 
-/** The tRPC calls behind the chat queries, in the shape `~/queries/chats` takes. */
 export function useChatsApi(): ChatsApi {
   const { $api } = useNuxtApp();
 

@@ -5,17 +5,8 @@ import {
   useQuery,
   useQueryClient,
 } from "@tanstack/vue-query";
-import {
-  chatKeys,
-  chatListQuery,
-  startChatMutation,
-} from "~/queries/chats";
+import { chatKeys, chatListQuery, startChatMutation } from "~/queries/chats";
 
-/**
- * The Chat list and New chat (ADR 0004: server state lives in Vue Query).
- * Several components call this; they share one cache, and the New chat state
- * comes from the mutation cache so every "New chat" button agrees.
- */
 export function useChats() {
   const api = useChatsApi();
   const queryClient = useQueryClient();

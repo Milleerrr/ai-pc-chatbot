@@ -1,28 +1,24 @@
-// The app's QueryClient (ADR 0004). Plain module, no Nuxt, so the `unit`
-// project tests the same client the app runs.
+/**
+ * The app's QueryClient.
+ */
+
 import { TRPCClientError } from "@trpc/client";
-import {
-  MutationCache,
-  QueryClient,
-  type QueryKey,
-} from "@tanstack/vue-query";
+import { MutationCache, QueryClient, type QueryKey } from "@tanstack/vue-query";
+import type { AppRouter } from "../../server/trpc/routers";
 
 declare module "@tanstack/vue-query" {
   interface Register {
     mutationMeta: {
-      /**
-       * Query keys (or key prefixes) this mutation changes. They are
-       * invalidated when it succeeds, and the mutation stays pending until
-       * the active ones have refetched.
-       */
+      // Query keys (or key prefixes) this mutation invalidates
       invalidates?: QueryKey[];
     };
   }
 }
 
 const isClientError = (error: unknown) => {
-  const status =
-    error instanceof TRPCClientError ? error.data?.httpStatus : undefined;
+  if (!(error instanceof TRPCClientError)) return false;
+
+  const status = (error as TRPCClientError<AppRouter>).data?.httpStatus;
 
   return typeof status === "number" && status >= 400 && status < 500;
 };
@@ -41,10 +37,7 @@ export function createQueryClient() {
     }),
     defaultOptions: {
       queries: {
-        // Data changes through this app, and mutations invalidate what they
-        // touch, so a short window avoids refetching on every mount.
         staleTime: 30_000,
-        // A 4xx (not found, forbidden, bad input) won't change on retry.
         retry: (failureCount, error) =>
           !isClientError(error) && failureCount < 3,
       },

@@ -16,7 +16,6 @@ const handleSignIn = () => navigateTo('/login')
 
 const handleSignOut = async () => {
   await authClient.signOut()
-  // A deliberate sign-out shouldn't later show "your session expired".
   authClient.clearLastUsedLoginMethod()
   await navigateTo('/login')
 }

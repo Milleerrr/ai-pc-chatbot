@@ -16,8 +16,9 @@ Nuxt 4 SPA (`ssr: false`) with tRPC, Drizzle, and Postgres. Package manager is p
 
 - `pnpm test` — all Vitest projects (`unit`, `integration`, `e2e`, `nuxt`; layout follows the Nuxt testing guide under `test/`). `unit:test`, `integration:test`, `nuxt:test`, `e2e:test` run one project (e.g. `pnpm integration:test test/integration/rls.test.ts` for one file).
 - `pnpm typecheck` — `nuxt typecheck`
+- `pnpm lint` — ESLint, zero warnings. `pnpm knip` — unused files, exports, and dependencies
 
-Integration tests run against `DATABASE_URL` (the normal dev DB locally, a service Postgres in CI). `resetDb` truncates every table, so run `pnpm db:seed` afterwards. No lint script yet. Do not invent one.
+Integration tests run against `DATABASE_URL` (the normal dev DB locally, a service Postgres in CI). `resetDb` truncates every table, so run `pnpm db:seed` afterwards. The pre-commit hook runs `pnpm knip`, ESLint on staged files, and `pnpm unit:test`. Pull requests run `.github/workflows/branch-deploy.yml` (lint, Knip, typecheck, and the full test suite). A published release runs the same checks, then deploys the Railway `staging` environment. Production deploys only when `.github/workflows/deploy-production.yml` is run manually. A merge to `main` does not deploy.
 
 ## Layout
 
@@ -25,7 +26,8 @@ Integration tests run against `DATABASE_URL` (the normal dev DB locally, a servi
 - `server/trpc/` — context, middleware, routers. Procedures stay thin and call services.
 - `server/api/trpc/[trpc].ts` — HTTP entry for tRPC.
 - `server/db/` — Postgres connections and `withUser()`. Reads `dbCredentials` from private runtime config. `getDb()` is the RLS-enforced app connection; `unrestrictedDb()` bypasses RLS and is for Better Auth only.
-- `server/services/` — business logic. Each domain extends `Service` and is reached through `createService`.
+- `server/services/` — business logic. Each domain is a folder, `server/services/<Domain>/index.ts`, whose class extends `Service` and is reached through `createService`.
+- `shared/types/` — types used by both `app/` and `server/` (Nuxt's `#shared` alias).
 - `shared/db/schema/` — Drizzle tables. Migrations in `shared/db/migrations/` are generated, never hand-written.
 - `shared/db/seeds/` — seed data, run outside Nuxt.
 
@@ -39,6 +41,7 @@ Integration tests run against `DATABASE_URL` (the normal dev DB locally, a servi
 - Row-level security: user-owned tables get a `userId` column (indexed) and `ownerPolicy(table.userId)` from `shared/db/rls.ts`. Child tables (e.g. messages) carry their own `userId` rather than joining to the parent. Shared tables with no owner skip the policy and say so in a comment. Add a case to `test/integration/rls.test.ts`.
 - The app queries as `app_user` (`APP_DATABASE_URL`), never the table owner. `baseProcedure` wraps each procedure in `withUser()`, so `ctx.db` and services are already scoped. Don't reach for `unrestrictedDb()` to get around a policy.
 - `app_user` has no access to Better Auth's `session`, `account`, `verification` tables and can only update `name`/`image` on `user`. Change grants in `shared/db/app-role/index.ts`.
+- Where types go: a type used by both client and server is declared once in `shared/types/<domain>.ts` and imported explicitly with `import type { … } from "#shared/types/<domain>"`, not through auto-imports. Database row types stay in `shared/db/schema`. A type owned by one module (e.g. `ChatsApi` in `app/queries/chats.ts`) is declared there, and other modules import it from there. A client type no single module owns goes in `app/types/<domain>.ts`. A server domain type used by several files goes in `server/services/<Domain>/types.ts`. Cross-service plumbing (`RequestContext`) stays in `server/services/types.ts`. Don't create these ahead of need. See `docs/adr/0005-shared-types-live-in-nuxt-shared.md`.
 - Validate inputs with Zod. tRPC uses SuperJSON.
 - Schema changes: edit `shared/db/schema`, then `pnpm db:generate` and `pnpm db:migrate`.
 - `DATABASE_URL` and `APP_DATABASE_URL` are server-only, via private `runtimeConfig.dbCredentials`. Do not put it on `runtimeConfig.public`, hardcode credentials, or commit `.env`.

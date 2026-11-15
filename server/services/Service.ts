@@ -1,6 +1,6 @@
 import { TRPCError } from "@trpc/server";
 import type Services from ".";
-import { type RequestContext } from "./types";
+import type { RequestContext } from "./types";
 
 export class Service {
   protected readonly context: RequestContext;

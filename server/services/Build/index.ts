@@ -1,5 +1,5 @@
-import { buildTable, type SelectBuild } from "../../shared/db/schema";
-import { Service } from "./Service";
+import { buildTable, type SelectBuild } from "../../../shared/db/schema";
+import { Service } from "../Service";
 
 export class BuildService extends Service {
   async create(): Promise<SelectBuild> {

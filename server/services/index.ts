@@ -1,7 +1,7 @@
-import { BuildService } from "./BuildService";
-import { ChatService } from "./ChatService";
-import { MessageService } from "./MessageService";
-import { type RequestContext } from "./types";
+import { BuildService } from "./Build";
+import { ChatService } from "./Chat";
+import { MessageService } from "./Message";
+import type { RequestContext } from "./types";
 
 export default class Services {
   readonly builds: BuildService;

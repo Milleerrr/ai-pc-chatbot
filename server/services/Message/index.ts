@@ -1,10 +1,7 @@
-import type { UIMessage } from "ai";
 import { asc, eq } from "drizzle-orm";
-import { messageTable, type SelectMessage } from "../../shared/db/schema";
-import { Service } from "./Service";
-
-/** A stored Message in the shape the AI SDK chat hook renders. */
-export type ChatMessage = UIMessage;
+import { messageTable, type SelectMessage } from "../../../shared/db/schema";
+import type { ChatMessage } from "#shared/types/chat";
+import { Service } from "../Service";
 
 function toChatMessage(row: SelectMessage): ChatMessage {
   return {
@@ -30,7 +27,6 @@ export class MessageService extends Service {
     return toChatMessage(row!);
   }
 
-  /** Every Message in a Chat, oldest first. */
   async listForChat(chatId: string): Promise<ChatMessage[]> {
     const rows = await this.db
       .select()

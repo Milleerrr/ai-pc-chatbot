@@ -30,6 +30,8 @@ beforeEach(async () => {
 afterAll(closeDb);
 
 const OPENER = "What will you mainly use this PC for?";
+const anyString = expect.any(String) as string;
+const anyDate = expect.any(Date) as Date;
 
 describe("starting a Chat", () => {
   it("opens with the fixed assistant opener", async () => {
@@ -40,7 +42,7 @@ describe("starting a Chat", () => {
 
     expect(messages).toEqual([
       {
-        id: expect.any(String),
+        id: anyString,
         role: "assistant",
         parts: [{ type: "text", text: OPENER }],
       },
@@ -60,7 +62,7 @@ describe("listing Chats", () => {
     expect(chats[0]).toEqual({
       id: second.id,
       title: null,
-      createdAt: expect.any(Date),
+      createdAt: anyDate,
     });
   });
 
@@ -98,7 +100,7 @@ describe("reading a Chat's Messages", () => {
   it("returns them in sequence order, not creation time", async () => {
     const { chat } = await as(member).chats.create();
     const text = (t: string) => [{ type: "text" as const, text: t }];
-    // Later rows get earlier timestamps, so only `sequence` orders them.
+
     await testDb()
       .insert(messageTable)
       .values([

@@ -28,7 +28,7 @@ beforeEach(async () => {
 });
 afterAll(closeDb);
 
-/** Postgres error code from a drizzle-wrapped driver error. */
+// Postgres error code from a drizzle-wrapped driver error.
 const pgCode = (error: unknown) =>
   (error as { cause?: { code?: string } }).cause?.code;
 
@@ -139,7 +139,6 @@ describe("baseProcedure", () => {
 });
 
 describe("user-owned tables", () => {
-  /** A Build, Chat and Message owned by `userId`, via the owner role. */
   const seedOwned = async (userId: string) => {
     const [build] = await testDb()
       .insert(buildTable)
@@ -164,7 +163,6 @@ describe("user-owned tables", () => {
 
   type Owned = Awaited<ReturnType<typeof seedOwned>>;
 
-  // `insertFor` builds a row owned by A, using A's parents.
   const cases = [
     {
       name: "build",
@@ -207,7 +205,6 @@ describe("user-owned tables", () => {
       const ownedByA = await seedOwned(userA.id);
 
       const error = await withUser(testAppDb(), asB, (tx) =>
-        // @ts-expect-error each case's values match its own table
         tx.insert(table).values(insertFor(ownedByA)),
       ).catch((e: unknown) => e);
 

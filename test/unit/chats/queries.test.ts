@@ -7,12 +7,11 @@ import {
   chatMessagesQuery,
   chatTitle,
   startChatMutation,
-  type ChatMessage,
   type ChatsApi,
-  type ChatSummary,
   type StartChatDeps,
 } from "../../../app/queries/chats";
 import { createQueryClient } from "../../../app/queries/client";
+import type { ChatMessage, ChatSummary } from "#shared/types/chat";
 
 const existing: ChatSummary = {
   id: "chat-0",

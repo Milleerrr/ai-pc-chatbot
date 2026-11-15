@@ -1,26 +1,40 @@
 # Deploying to Railway
 
-Everything here is configured in the Railway dashboard, not in the repo. The `railway.json` / `railway.toml` config-as-code format is deprecated and stops being read on 2026-12-01, so we don't use it. This file is how to rebuild the service from scratch. It holds variable **names only**, never values.
+Service settings and variables live in the Railway dashboard. The `railway.json` / `railway.toml` config-as-code format is deprecated and stops being read on 2026-12-01, so we don't use it. This file is how to rebuild the service from scratch. It holds variable **names only**, never values.
+
+Deploys are started by GitHub Actions:
+
+| Workflow | File | When | Where |
+| --- | --- | --- | --- |
+| Branch deploy | `.github/workflows/branch-deploy.yml` | Pull request | Railway PR environment (dashboard setting). The workflow only runs checks. |
+| Deploy staging | `.github/workflows/deploy-staging.yml` | Published release, or manual | `railway up` to environment `staging`, service `App` |
+| Deploy production | `.github/workflows/deploy-production.yml` | Manual | `railway up` to environment `production`, service `App` |
+
+Each one runs lint, Knip, typecheck, and the full test suite first. The job name is `check`. On the merge ruleset, require that check.
+
+Turn off automatic GitHub deploys on the staging and production App services. A merge to `main` updates the branch and does not deploy. Leave PR environments enabled. That is the branch deploy.
+
+Project tokens are scoped to one environment. Create one for `staging` and one for `production` (project Settings → Tokens) and store them as `RAILWAY_TOKEN_STAGING` and `RAILWAY_TOKEN_PRODUCTION`. The `staging` Railway environment is a duplicate of production, with its own Postgres, and its App service watches nothing on its own.
 
 ## Project layout
 
 | Service  | Source                                   | Notes                            |
 | -------- | ---------------------------------------- | -------------------------------- |
-| App      | GitHub repo `Milleerrr/ai-pc-chatbot`, branch `main` | Nuxt 4 SPA + Nitro server |
+| App      | GitHub repo `Milleerrr/ai-pc-chatbot` | Nuxt 4 SPA + Nitro server. PR environments come from this connection. Staging and production ship from the workflows. |
 | Postgres | Railway PostgreSQL (+ New → Database)    | Major version **18** (matches local Docker) |
 
 ## App service settings
 
 | Setting             | Value                                                        |
 | ------------------- | ------------------------------------------------------------ |
-| Source              | GitHub repo, branch `main`                                   |
+| Source              | GitHub repo, for PR environments. Automatic deploys off.     |
 | Build command       | `pnpm build`                                                 |
 | Start command       | `node .output/server/index.mjs`                              |
 | Pre-deploy command  | `pnpm db:migrate`                                            |
 | Health check path   | `/api/health`                                                |
 | Public domain       | `https://builder.up.railway.app/` (generated under Networking) |
 
-CI is deferred (spec *Later* table), so there is no "Wait for CI" setting.
+On the production App service, turn on "Wait for CI" only if automatic GitHub deploys are still on. With those deploys off, production ships when `.github/workflows/deploy-production.yml` is run by hand. For pull requests, turn on "Wait for CI" so the PR environment waits for the `check` job in `branch-deploy.yml`.
 
 ### Pre-deploy migrations
 

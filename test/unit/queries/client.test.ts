@@ -44,7 +44,7 @@ describe("meta.invalidates", () => {
       queryKey: listKey,
       queryFn: fetchList,
     });
-    const unsubscribe = observer.subscribe(() => {});
+    const unsubscribe = observer.subscribe(() => undefined);
     await vi.waitFor(() => expect(fetchList).toHaveBeenCalledOnce());
 
     await new MutationObserver(queryClient, {

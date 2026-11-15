@@ -23,7 +23,7 @@ ADR 0003 sent every client-side state change through reducers in Pinia stores, i
 - **Keep reducers for server state (ADR 0003 as written).** Rejected: each feature would reimplement caching and invalidation by hand.
 - **Pinia Colada.** It's Pinia's own query layer and fits a Pinia app. Not chosen: it has a smaller ecosystem, and the team knows TanStack Query.
 - **trpc-nuxt's `useQuery`.** It's built on `useAsyncData` and Nuxt's payload, aimed at SSR, and has a thinner mutation and invalidation story.
-- **A tRPC adapter for Vue Query.** tRPC's official TanStack integration is React-only, and the Vue bindings are small community packages. We wrap the vanilla tRPC client in option factories instead, and types still flow from the router.
+- **A tRPC adapter for Vue Query.** tRPC's official TanStack integration is React-only, and the Vue bindings are small community packages. We wrap the vanilla tRPC client in option factories instead. The data types those factories use come from `shared/types` (ADR 0005), and the server's services return the same types. `useChatsApi` returns tRPC results as `ChatsApi`, so it fails to typecheck if a procedure's output stops matching.
 
 ## Consequences
 

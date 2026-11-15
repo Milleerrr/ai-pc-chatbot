@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// Resolves to a no-op stub outside development builds.
 import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
 </script>
 
