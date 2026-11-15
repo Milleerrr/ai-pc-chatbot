@@ -1,7 +1,5 @@
 import { authClient } from "~/lib/auth-client";
 
-// Call before the first action that saves data:
-//   if (!(await ensureSession())) return;
 // Creates a guest user if there's no session, unless this browser has signed in
 // to a real account before, in which case it sends them to /login instead.
 export function useEnsureSession() {

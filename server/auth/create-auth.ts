@@ -18,6 +18,8 @@ type Deps = {
   betterAuthApiKey: string;
 };
 
+const YEAR_IN_SECONDS = 60 * 60 * 24 * 365;
+
 export function createAuth(deps: Deps) {
   return betterAuth({
     database: drizzleAdapter(deps.db, {
@@ -45,11 +47,7 @@ export function createAuth(deps: Deps) {
     },
     plugins: [
       anonymous(),
-      // Sets a JS-readable cookie with the method of the last real sign-in
-      // (guest sign-ins don't set it). The client reads it to tell an expired
-      // account session apart from a first-time visitor. Outlives the session
-      // on purpose: one year.
-      lastLoginMethod({ maxAge: 60 * 60 * 24 * 365 }),
+      lastLoginMethod({ maxAge: YEAR_IN_SECONDS }),
       dash({
         apiKey: deps.betterAuthApiKey,
       }),

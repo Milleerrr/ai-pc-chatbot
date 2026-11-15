@@ -1,0 +1,56 @@
+name: Check
+description: Migration checks, lint, Knip, typecheck, and the full test suite
+
+# Needs the full history (`fetch-depth: 0` on checkout) for the upgrade check.
+inputs:
+  upgrade-from:
+    description: >-
+      Ref whose migrations and seed build the existing database the current
+      migrations must upgrade: the code the target environment runs now.
+      Empty skips the upgrade check.
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v4
+      with:
+        version: 12
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: pnpm
+    - shell: bash
+      run: pnpm install --frozen-lockfile
+    - name: Migrations are consistent
+      shell: bash
+      run: pnpm exec drizzle-kit check
+    - name: Migrations match the schema
+      shell: bash
+      run: |
+        pnpm db:generate
+        drift="$(git status --porcelain --untracked-files=all shared/db/migrations)"
+        if [[ -n "$drift" ]]; then
+          echo "::error::shared/db/schema has changes with no migration. Run pnpm db:generate and commit the result."
+          echo "$drift"
+          exit 1
+        fi
+    - name: Migrations upgrade an existing database
+      shell: bash
+      env:
+        UPGRADE_FROM: ${{ inputs.upgrade-from }}
+      run: |
+        if [[ -z "$UPGRADE_FROM" ]]; then
+          echo "::notice::No existing database to upgrade from. Skipping."
+          exit 0
+        fi
+        pnpm db:upgrade-check "$UPGRADE_FROM"
+    - shell: bash
+      run: pnpm lint
+    - shell: bash
+      run: pnpm knip
+    - shell: bash
+      run: pnpm typecheck
+    - shell: bash
+      run: pnpm test

@@ -1,6 +1,7 @@
 import type { DbClient } from "../db/connection";
+import type { UserContext } from "../db/with-user";
 
 export type RequestContext = {
-  /** Scoped to the signed-in user via withUser(), so RLS applies. */
   db: DbClient;
+  user: UserContext | null;
 };

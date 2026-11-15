@@ -8,6 +8,8 @@ export default defineEventHandler(async (event) => {
     await db.execute(sql`SELECT 1`);
   } catch (error) {
     setResponseStatus(event, 503, "Service Unavailable");
+    // The health check has no caller to hand this error to.
+    // eslint-disable-next-line no-console
     console.error(error);
 
     return {

@@ -40,12 +40,14 @@ const appUser = t.middleware(async ({ ctx, next }) => {
   const { user } = ctx;
 
   if (!user) {
-    return next({ ctx: { services: _createService({ db: ctx.db }) } });
+    return next({
+      ctx: { services: _createService({ db: ctx.db, user: null }) },
+    });
   }
 
   return withUser(ctx.db, user, async (tx) => {
     const result = await next({
-      ctx: { db: tx, services: _createService({ db: tx }) },
+      ctx: { db: tx, services: _createService({ db: tx, user }) },
     });
 
     if (!result.ok) throw result.error;

@@ -9,7 +9,6 @@ const toast = useToast()
 const isSignUp = ref(false)
 const sessionExpired = computed(() => route.query.expired === '1')
 
-// Only follow same-site paths, never a full URL from the query string.
 const redirect = computed(() => {
   const target = route.query.redirect
   return typeof target === 'string' && target.startsWith('/') && !target.startsWith('//') ? target : '/'
@@ -90,6 +89,7 @@ async function onEmailAndPasswordSubmit({ data }: FormSubmitEvent<Schema>) {
     : await authClient.signIn.email({ email: data.email, password: data.password })
 
   if (error) return showError(error.message)
+  
   await navigateTo(redirect.value)
 }
 </script>

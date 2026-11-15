@@ -1,26 +1,43 @@
 # Deploying to Railway
 
-Everything here is configured in the Railway dashboard, not in the repo. The `railway.json` / `railway.toml` config-as-code format is deprecated and stops being read on 2026-12-01, so we don't use it. This file is how to rebuild the service from scratch. It holds variable **names only**, never values.
+Service settings and variables live in the Railway dashboard. The `railway.json` / `railway.toml` config-as-code format is deprecated and stops being read on 2026-12-01, so we don't use it. This file is how to rebuild the service from scratch. It holds variable **names only**, never values.
+
+Railway deploys from GitHub. GitHub Actions only runs the checks and moves the `production` branch:
+
+| Environment | Railway deploys from | When | Gate |
+| --- | --- | --- | --- |
+| PR environment | The PR branch | A pull request is opened or updated | None from Railway. `ci.yml` reports on the PR separately |
+| `staging` | `main` | A merge to `main` | "Wait for CI": Railway waits for `.github/workflows/ci.yml` on the commit |
+| `production` | `production` | A GitHub release is published | `.github/workflows/release.yml` runs the checks, then fast-forwards `production` to the release commit |
+
+The checks are migration checks, lint, Knip, typecheck, and the full test suite (`.github/actions/check`). On the merge ruleset for `main`, require the `check` job. Nothing pushes to `production` except `release.yml`, so restrict it to that workflow in a ruleset. Each release is the record of what went to production.
+
+No workflow uses the Railway CLI, so the project needs no Railway tokens in GitHub. The `staging` Railway environment is a duplicate of production with its own Postgres.
 
 ## Project layout
 
 | Service  | Source                                   | Notes                            |
 | -------- | ---------------------------------------- | -------------------------------- |
-| App      | GitHub repo `Milleerrr/ai-pc-chatbot`, branch `main` | Nuxt 4 SPA + Nitro server |
+| App      | GitHub repo `Milleerrr/ai-pc-chatbot` | Nuxt 4 SPA + Nitro server. Staging, production, and PR environments all deploy from this connection. |
 | Postgres | Railway PostgreSQL (+ New → Database)    | Major version **18** (matches local Docker) |
 
 ## App service settings
 
 | Setting             | Value                                                        |
 | ------------------- | ------------------------------------------------------------ |
-| Source              | GitHub repo, branch `main`                                   |
+| Source              | GitHub repo. Branch `main` in `staging`, `production` in `production`. Automatic deploys on. |
+| Wait for CI         | On in `staging`. Not needed in `production`                  |
 | Build command       | `pnpm build`                                                 |
 | Start command       | `node .output/server/index.mjs`                              |
 | Pre-deploy command  | `pnpm db:migrate`                                            |
 | Health check path   | `/api/health`                                                |
 | Public domain       | `https://builder.up.railway.app/` (generated under Networking) |
 
-CI is deferred (spec *Later* table), so there is no "Wait for CI" setting.
+"Wait for CI" is in the App service's settings, but Railway only shows it once the deploy branch has a GitHub workflow that runs on `push` (`ci.yml` on `main`), and after the Railway GitHub App's updated permissions are accepted at https://github.com/settings/installations. With it on, a staging deploy sits in `WAITING` until every GitHub Actions workflow on the commit finishes, and is skipped if one fails (see **Show Skipped** in the deploy history). It ignores checks from other GitHub apps, and skips the deploy if the workflows haven't finished within two hours. A cancelled run only blocks if no other workflow on the commit passed, so `ci.yml` never cancels runs on `main`.
+
+Production doesn't need it. Nothing runs on a push to `production`, and `release.yml` runs the checks before it moves the branch. Restrict pushes to `production` to that workflow with a ruleset so the checks can't be bypassed.
+
+Railway's docs don't describe a CI gate for PR environments. A PR environment deploys as soon as the branch updates, and `ci.yml` reports on the PR separately.
 
 ### Pre-deploy migrations
 
@@ -63,7 +80,7 @@ Names match `.env.example`. Set them on the app service.
 
 ## Rebuilding from scratch
 
-1. New Project → Deploy from GitHub repo → pick the repo and `main`. The first deploy will likely fail; that's expected.
+1. New Project → Deploy from GitHub repo → pick the repo and `main`. The first deploy will likely fail; that's expected. In `production`, switch the App service's branch to `production` (publish a release first so the branch exists).
 2. Add PostgreSQL (+ New → Database → PostgreSQL), version 18.
 3. On the app service, set the build, start, pre-deploy and health check settings above.
 4. Add the variables above, with `DATABASE_URL` as a reference variable.

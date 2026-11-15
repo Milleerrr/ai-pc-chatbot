@@ -1,39 +1,26 @@
 <script setup lang="ts">
-import { authClient } from '~/lib/auth-client'
+definePageMeta({ layout: 'chat' })
 
-const session = authClient.useSession()
-
-const user = computed(() => session.value.data?.user)
-const isGuest = computed(() => !user.value || user.value.isAnonymous)
-
-const handleSignIn = () => navigateTo('/login')
-
-const handleSignOut = async () => {
-  await authClient.signOut()
-  // A deliberate sign-out shouldn't later show "your session expired".
-  authClient.clearLastUsedLoginMethod()
-  await navigateTo('/login')
-}
+const { creating, create } = useChats()
 </script>
 
 <template>
-  <div class="flex flex-col gap-4 p-4">
-    <p v-if="session.isPending">Loading…</p>
-
-    <template v-else-if="isGuest">
-      <h1>Hello guest</h1>
-      <p>You're browsing as a guest. Sign in to keep your chat history.</p>
-      <div>
-        <UButton label="Sign in" color="neutral" variant="outline" @click="handleSignIn" />
+  <UDashboardPanel id="chat-start">
+    <template #body>
+      <div class="grid flex-1 place-items-center">
+        <div class="max-w-sm space-y-3 text-center">
+          <h1 class="text-xl font-semibold">Plan your next PC</h1>
+          <p class="text-sm text-muted">
+            Start a Chat and the assistant will ask what you need, one question at a time.
+          </p>
+          <UButton
+            icon="i-lucide-square-pen"
+            label="New chat"
+            :loading="creating"
+            @click="create"
+          />
+        </div>
       </div>
     </template>
-
-    <template v-else>
-      <h1>Hello {{ user?.name }}</h1>
-      <div>
-        <UButton label="Sign out" color="neutral" variant="outline" @click="handleSignOut" />
-      </div>
-    </template>
-
-  </div>
+  </UDashboardPanel>
 </template>

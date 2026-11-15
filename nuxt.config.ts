@@ -25,12 +25,34 @@ export default defineNuxtConfig({
   build: {
     transpile: ["trpc-nuxt"],
   },
-  modules: ["@nuxt/ui", "@nuxt/test-utils/module"],
+  modules: [
+    "@nuxt/ui",
+    "@pinia/nuxt",
+    "@nuxt/test-utils/module",
+    "@nuxt/eslint",
+  ],
   css: ["~/assets/css/main.css"],
+  eslint: {
+    config: {
+      typescript: {
+        // Recommended type-checked rules, matching platform. Strict is a larger set.
+        strict: false,
+        tsconfigPath: "./tsconfig.json",
+      },
+    },
+  },
   typescript: {
     // Paths are relative to `.nuxt/tsconfig.node.json`.
     nodeTsConfig: {
       include: ["../drizzle.config.ts"],
+      // Tests are linted against this config (tsconfig.eslint.json) and import
+      // app and server modules that use `#shared` (ADR 0005).
+      compilerOptions: {
+        paths: {
+          "#shared": ["../shared"],
+          "#shared/*": ["../shared/*"],
+        },
+      },
     },
   },
 });
