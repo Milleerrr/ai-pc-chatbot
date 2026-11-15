@@ -1,7 +1,9 @@
+import { httpBatchStreamLink, loggerLink, splitLink } from "@trpc/client";
+import superjson from "superjson";
 import { createTRPCNuxtClient, httpBatchLink } from "trpc-nuxt/client";
 import type { AppRouter } from "../../server/trpc/routers";
-import superjson from "superjson";
-import { loggerLink } from "@trpc/client";
+
+const url = "/api/trpc";
 
 export default defineNuxtPlugin(() => {
   const api = createTRPCNuxtClient<AppRouter>({
@@ -9,9 +11,10 @@ export default defineNuxtPlugin(() => {
       loggerLink({
         enabled: () => import.meta.dev,
       }),
-      httpBatchLink({
-        url: "/api/trpc",
-        transformer: superjson,
+      splitLink({
+        condition: (op) => op.path === "chats.send",
+        true: httpBatchStreamLink({ url, transformer: superjson }),
+        false: httpBatchLink({ url, transformer: superjson }),
       }),
     ],
   });

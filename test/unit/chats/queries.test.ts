@@ -6,6 +6,7 @@ import {
   chatListQuery,
   chatMessagesQuery,
   chatTitle,
+  replyInvalidations,
   startChatMutation,
   type ChatsApi,
   type StartChatDeps,
@@ -95,6 +96,20 @@ describe("chat queries", () => {
 
     for (const key of [chatKeys.list(), chatKeys.messages("chat-1")])
       expect(queryClient.getQueryState(key)?.isInvalidated).toBe(true);
+  });
+
+  it("invalidates the Chat's Messages and the list when a reply finishes", async () => {
+    const api = fakeApi();
+    await queryClient.fetchQuery(chatListQuery(api));
+    await queryClient.fetchQuery(chatMessagesQuery(api, "chat-1"));
+
+    for (const queryKey of replyInvalidations("chat-1"))
+      await queryClient.invalidateQueries({ queryKey });
+
+    for (const key of [chatKeys.list(), chatKeys.messages("chat-1")])
+      expect(queryClient.getQueryState(key)?.isInvalidated).toBe(true);
+
+    expect(queryClient.getQueryState(chatKeys.messages("chat-2"))?.isInvalidated).toBeUndefined();
   });
 });
 
