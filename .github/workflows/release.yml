@@ -3,9 +3,13 @@ name: Release
 # Publishing a GitHub release is how production deploys. This runs the checks
 # against the release commit, then fast-forwards the `production` branch to
 # it. Railway deploys production from `production`.
+#
+# To run it by hand (e.g. to retry a promotion), pick the release tag under
+# "Use workflow from". Whatever ref you pick is what goes to production.
 on:
   release:
     types: [published]
+  workflow_dispatch:
 
 concurrency:
   group: release

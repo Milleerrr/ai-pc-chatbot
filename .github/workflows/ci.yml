@@ -7,12 +7,20 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      upgrade-from:
+        description: Ref the existing database is built from for the upgrade check (empty skips it)
+        required: false
+        default: origin/main
 
-# Never cancel a run on `main`. Railway ignores a cancelled run when another
-# workflow on the commit passed (e.g. CodeQL), so staging would deploy unchecked.
+# Only PR runs share a group, so a newer push cancels an older PR run. Runs on
+# `main` get their own group and are never cancelled, not even while queued:
+# Railway ignores a cancelled run when another workflow on the commit passed
+# (e.g. CodeQL), so staging would deploy unchecked.
 concurrency:
-  group: ci-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: ci-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
   check:
@@ -43,5 +51,5 @@ jobs:
       - uses: ./.github/actions/check
         with:
           # A PR upgrades its base branch; a push to `main` upgrades the
-          # commit staging was running before it.
-          upgrade-from: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event.before }}
+          # commit staging was running before it; a manual run uses its input.
+          upgrade-from: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event_name == 'workflow_dispatch' && inputs.upgrade-from || github.event.before }}
