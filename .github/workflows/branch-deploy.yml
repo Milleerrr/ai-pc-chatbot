@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   check:
-    name: check
+    name: branch-deploy
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -31,4 +31,8 @@ jobs:
       APP_DATABASE_URL: postgresql://app_user:app_user@localhost:5432/postgres
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: ./.github/actions/check
+        with:
+          upgrade-from: origin/${{ github.base_ref }}

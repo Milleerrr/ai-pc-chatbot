@@ -14,6 +14,7 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate && pnpm db:app-role",
     "db:app-role": "node --import tsx shared/db/app-role/run.ts",
+    "db:upgrade-check": "node --import tsx shared/db/upgrade-check/run.ts",
     "db:studio": "drizzle-kit studio",
     "db:up": "docker compose up -d",
     "db:down": "docker compose down",

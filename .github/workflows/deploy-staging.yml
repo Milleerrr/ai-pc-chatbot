@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   check:
-    name: check
+    name: deploy-staging
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -33,6 +33,8 @@ jobs:
       APP_DATABASE_URL: postgresql://app_user:app_user@localhost:5432/postgres
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: ./.github/actions/check
       - name: Deploy to Railway staging
         env:

@@ -9,6 +9,7 @@ Nuxt 4 SPA (`ssr: false`) with tRPC, Drizzle, and Postgres. Package manager is p
 - `pnpm db:up` / `pnpm db:down` — Postgres via Docker Compose
 - `pnpm db:generate` then `pnpm db:migrate` — after schema changes (`db:migrate` also runs `db:app-role`)
 - `pnpm db:app-role` — create/update the restricted `app_user` role and its grants (idempotent)
+- `pnpm db:upgrade-check <base-ref>` — migrate and seed a scratch `upgrade_check` database with the code at `<base-ref>`, then apply the current migrations to it. Catches migrations that only work on an empty database (e.g. `pnpm db:upgrade-check main`)
 - `pnpm db:seed` — development seed data
 - `pnpm db:reset` — wipe the local DB (tables + migration history), then migrate and seed. Use after squashing migrations
 - `pnpm db:reset:railway` — wipe the linked Railway DB and redeploy the app. Interactive, asks for the project name. Only for humans, never run it from an agent
@@ -18,7 +19,7 @@ Nuxt 4 SPA (`ssr: false`) with tRPC, Drizzle, and Postgres. Package manager is p
 - `pnpm typecheck` — `nuxt typecheck`
 - `pnpm lint` — ESLint, zero warnings. `pnpm knip` — unused files, exports, and dependencies
 
-Integration tests run against `DATABASE_URL` (the normal dev DB locally, a service Postgres in CI). `resetDb` truncates every table, so run `pnpm db:seed` afterwards. The pre-commit hook runs `pnpm knip`, ESLint on staged files, and `pnpm unit:test`. Pull requests run `.github/workflows/branch-deploy.yml` (lint, Knip, typecheck, and the full test suite). A published release runs the same checks, then deploys the Railway `staging` environment. Production deploys only when `.github/workflows/deploy-production.yml` is run manually. A merge to `main` does not deploy.
+Integration tests run against `DATABASE_URL` (the normal dev DB locally, a service Postgres in CI). `resetDb` truncates every table, so run `pnpm db:seed` afterwards. The pre-commit hook runs `pnpm knip`, ESLint on staged files, and `pnpm unit:test`. Pull requests run `.github/workflows/branch-deploy.yml` (migration checks, lint, Knip, typecheck, and the full test suite). The migration checks fail if `shared/db/schema` has changes with no generated migration, if `drizzle-kit check` finds the migrations inconsistent, or if `pnpm db:upgrade-check` fails. That script builds an existing database from an older ref (the PR's base branch, or the previous release tag on deploys) and migrates it to the current code, so never rename, squash, or edit a migration that has already been released. A published release runs the same checks, then deploys the Railway `staging` environment. Production deploys only when `.github/workflows/deploy-production.yml` is run manually. A merge to `main` does not deploy.
 
 ## Layout
 
