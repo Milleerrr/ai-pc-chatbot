@@ -1,0 +1,55 @@
+name: Release
+
+# Publishing a GitHub release is how production deploys. This runs the checks
+# against the release commit, then fast-forwards the `production` branch to
+# it. Railway deploys production from `production`.
+on:
+  release:
+    types: [published]
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: check and promote
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg18
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DATABASE_SSL: "false"
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+      APP_DATABASE_URL: postgresql://app_user:app_user@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      # The first release has no `production` branch, so nothing to upgrade.
+      - id: production
+        run: |
+          if git rev-parse --verify -q origin/production >/dev/null; then
+            echo "ref=origin/production" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: ./.github/actions/check
+        with:
+          upgrade-from: ${{ steps.production.outputs.ref }}
+      # Not forced: if `production` has commits the release lacks, this fails
+      # rather than dropping them.
+      - name: Promote to production
+        run: git push origin "${GITHUB_SHA}:refs/heads/production"

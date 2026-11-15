@@ -1,0 +1,47 @@
+name: CI
+
+# Railway deploys `main` to staging and waits for this workflow first
+# ("Wait for CI"). Railway only offers that setting when a workflow runs on
+# `push` to the deploy branch, so this can't be PR-only.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Never cancel a run on `main`. Railway ignores a cancelled run when another
+# workflow on the commit passed (e.g. CodeQL), so staging would deploy unchecked.
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  check:
+    name: check
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg18
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DATABASE_SSL: "false"
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+      APP_DATABASE_URL: postgresql://app_user:app_user@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/check
+        with:
+          # A PR upgrades its base branch; a push to `main` upgrades the
+          # commit staging was running before it.
+          upgrade-from: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event.before }}

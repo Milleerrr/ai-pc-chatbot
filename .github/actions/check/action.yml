@@ -6,7 +6,8 @@ inputs:
   upgrade-from:
     description: >-
       Ref whose migrations and seed build the existing database the current
-      migrations must upgrade. Defaults to the release tag before HEAD.
+      migrations must upgrade: the code the target environment runs now.
+      Empty skips the upgrade check.
     required: false
     default: ""
 
@@ -40,12 +41,11 @@ runs:
       env:
         UPGRADE_FROM: ${{ inputs.upgrade-from }}
       run: |
-        base="${UPGRADE_FROM:-$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || true)}"
-        if [[ -z "$base" ]]; then
-          echo "::notice::No previous release tag, so there is no existing database to upgrade. Skipping."
+        if [[ -z "$UPGRADE_FROM" ]]; then
+          echo "::notice::No existing database to upgrade from. Skipping."
           exit 0
         fi
-        pnpm db:upgrade-check "$base"
+        pnpm db:upgrade-check "$UPGRADE_FROM"
     - shell: bash
       run: pnpm lint
     - shell: bash
