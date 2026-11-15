@@ -2,15 +2,23 @@
 
 Service settings and variables live in the Railway dashboard. The `railway.json` / `railway.toml` config-as-code format is deprecated and stops being read on 2026-12-01, so we don't use it. This file is how to rebuild the service from scratch. It holds variable **names only**, never values.
 
-Railway deploys from GitHub. GitHub Actions only runs the checks and moves the `production` branch:
+Railway deploys from GitHub. GitHub Actions only runs the checks. Both environments deploy from `main`:
 
 | Environment | Railway deploys from | When | Gate |
 | --- | --- | --- | --- |
 | PR environment | The PR branch | A pull request is opened or updated | None from Railway. `ci.yml` reports on the PR separately |
 | `staging` | `main` | A merge to `main` | "Wait for CI": Railway waits for `.github/workflows/ci.yml` on the commit |
-| `production` | `production` | A GitHub release is published | `.github/workflows/release.yml` runs the checks, then fast-forwards `production` to the release commit |
+| `production` | `main`, automatic deploys off | Someone runs **Deploy Latest Commit** in Railway | A person decides, after testing on staging |
 
-The checks are migration checks, lint, Knip, typecheck, and the full test suite (`.github/actions/check`). On the merge ruleset for `main`, require the `check` job. Nothing pushes to `production` except `release.yml`, so restrict it to that workflow in a ruleset. Each release is the record of what went to production.
+The checks are migration checks, lint, Knip, typecheck, and the full test suite (`.github/actions/check`). On the merge ruleset for `main`, require the `check` job.
+
+To ship:
+
+1. Draft a GitHub release on `main` and generate the release notes. They list the pull requests merged since the last release: that's what to test on staging.
+2. Test those on the staging environment, then publish the release. Publishing deploys nothing; it is the record of what went out.
+3. Open the `production` environment in Railway, select the App service, then Cmd+K → **Deploy Latest Commit**.
+
+"Deploy Latest Commit" deploys the head of `main` at the moment you click, not the release tag. If something merged after you tested staging, it goes to production too, so promote straight after testing. Production may be several merges behind staging; its migrations run the same chain staging already ran, so that's fine.
 
 No workflow uses the Railway CLI, so the project needs no Railway tokens in GitHub. The `staging` Railway environment is a duplicate of production with its own Postgres.
 
@@ -25,8 +33,8 @@ No workflow uses the Railway CLI, so the project needs no Railway tokens in GitH
 
 | Setting             | Value                                                        |
 | ------------------- | ------------------------------------------------------------ |
-| Source              | GitHub repo. Branch `main` in `staging`, `production` in `production`. Automatic deploys on. |
-| Wait for CI         | On in `staging`. Not needed in `production`                  |
+| Source              | GitHub repo, branch `main` in both environments. Automatic deploys on in `staging`, off in `production` |
+| Wait for CI         | On in `staging`. Not needed in `production`, which only deploys by hand |
 | Build command       | `pnpm build`                                                 |
 | Start command       | `node .output/server/index.mjs`                              |
 | Pre-deploy command  | `pnpm db:migrate`                                            |
@@ -35,7 +43,7 @@ No workflow uses the Railway CLI, so the project needs no Railway tokens in GitH
 
 "Wait for CI" is in the App service's settings, but Railway only shows it once the deploy branch has a GitHub workflow that runs on `push` (`ci.yml` on `main`), and after the Railway GitHub App's updated permissions are accepted at https://github.com/settings/installations. With it on, a staging deploy sits in `WAITING` until every GitHub Actions workflow on the commit finishes, and is skipped if one fails (see **Show Skipped** in the deploy history). It ignores checks from other GitHub apps, and skips the deploy if the workflows haven't finished within two hours. A cancelled run only blocks if no other workflow on the commit passed, so `ci.yml` never cancels runs on `main`.
 
-Production doesn't need it. Nothing runs on a push to `production`, and `release.yml` runs the checks before it moves the branch. Restrict pushes to `production` to that workflow with a ruleset so the checks can't be bypassed.
+Production doesn't need it: it only deploys when someone promotes it, after the same commits have passed CI and run on staging.
 
 Railway's docs don't describe a CI gate for PR environments. A PR environment deploys as soon as the branch updates, and `ci.yml` reports on the PR separately.
 
@@ -80,7 +88,7 @@ Names match `.env.example`. Set them on the app service.
 
 ## Rebuilding from scratch
 
-1. New Project → Deploy from GitHub repo → pick the repo and `main`. The first deploy will likely fail; that's expected. In `production`, switch the App service's branch to `production` (publish a release first so the branch exists).
+1. New Project → Deploy from GitHub repo → pick the repo and `main`. The first deploy will likely fail; that's expected. In `production`, keep the branch `main` and disable automatic deploys in the App service's source settings (disable the trigger; don't disconnect the repo, or "Deploy Latest Commit" goes away).
 2. Add PostgreSQL (+ New → Database → PostgreSQL), version 18.
 3. On the app service, set the build, start, pre-deploy and health check settings above.
 4. Add the variables above, with `DATABASE_URL` as a reference variable.
