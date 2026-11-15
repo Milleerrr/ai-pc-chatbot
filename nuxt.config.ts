@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ["trpc-nuxt"],
   },
-  modules: ["@nuxt/ui", "@nuxt/test-utils/module"],
+  modules: ["@nuxt/ui", "@pinia/nuxt", "@nuxt/test-utils/module"],
   css: ["~/assets/css/main.css"],
   typescript: {
     // Paths are relative to `.nuxt/tsconfig.node.json`.

@@ -7,13 +7,20 @@ import {
   createCallerFactory,
   createTRPCRouter,
 } from "../../server/trpc/init";
-import { sessionTable, userTable } from "../../shared/db/schema/auth";
+import {
+  buildTable,
+  chatTable,
+  messageTable,
+  sessionTable,
+  userTable,
+} from "../../shared/db/schema";
 import { closeDb, resetDb, testAppDb, testDb } from "../helpers/db";
 
 const userA = { id: randomUUID(), name: "A", email: "a@example.com" };
 const userB = { id: randomUUID(), name: "B", email: "b@example.com" };
 
 const asA = { userId: userA.id };
+const asB = { userId: userB.id };
 
 beforeEach(async () => {
   await resetDb();
@@ -128,5 +135,83 @@ describe("baseProcedure", () => {
       .where(eq(userTable.id, userA.id));
 
     expect(row?.name).toBe("A");
+  });
+});
+
+describe("user-owned tables", () => {
+  /** A Build, Chat and Message owned by `userId`, via the owner role. */
+  const seedOwned = async (userId: string) => {
+    const [build] = await testDb()
+      .insert(buildTable)
+      .values({ userId })
+      .returning();
+    const [chat] = await testDb()
+      .insert(chatTable)
+      .values({ userId, buildId: build!.id })
+      .returning();
+    const [message] = await testDb()
+      .insert(messageTable)
+      .values({
+        userId,
+        chatId: chat!.id,
+        role: "assistant",
+        parts: [{ type: "text", text: "Hi" }],
+      })
+      .returning();
+
+    return { build: build!, chat: chat!, message: message! };
+  };
+
+  type Owned = Awaited<ReturnType<typeof seedOwned>>;
+
+  // `insertFor` builds a row owned by A, using A's parents.
+  const cases = [
+    {
+      name: "build",
+      table: buildTable,
+      idOf: (o: Owned) => o.build.id,
+      insertFor: (_o: Owned) => ({ userId: userA.id }),
+    },
+    {
+      name: "chat",
+      table: chatTable,
+      idOf: (o: Owned) => o.chat.id,
+      insertFor: (o: Owned) => ({ userId: userA.id, buildId: o.build.id }),
+    },
+    {
+      name: "message",
+      table: messageTable,
+      idOf: (o: Owned) => o.message.id,
+      insertFor: (o: Owned) => ({
+        userId: userA.id,
+        chatId: o.chat.id,
+        role: "user" as const,
+        parts: [{ type: "text" as const, text: "Hi" }],
+      }),
+    },
+  ];
+
+  describe.each(cases)("$name", ({ table, idOf, insertFor }) => {
+    it("is only visible to its owner", async () => {
+      const ownedByA = await seedOwned(userA.id);
+      await seedOwned(userB.id);
+
+      const rows = await withUser(testAppDb(), asA, (tx) =>
+        tx.select({ id: table.id }).from(table),
+      );
+
+      expect(rows).toEqual([{ id: idOf(ownedByA) }]);
+    });
+
+    it("rejects rows written for another user", async () => {
+      const ownedByA = await seedOwned(userA.id);
+
+      const error = await withUser(testAppDb(), asB, (tx) =>
+        // @ts-expect-error each case's values match its own table
+        tx.insert(table).values(insertFor(ownedByA)),
+      ).catch((e: unknown) => e);
+
+      expect(pgCode(error)).toBe("42501"); // RLS WITH CHECK violation
+    });
   });
 });
