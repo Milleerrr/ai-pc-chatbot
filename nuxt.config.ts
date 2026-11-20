@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     geminiApiKey: process.env.GEMINI_API_KEY ?? "",
     models: {
       main: process.env.MAIN_MODEL ?? "gemini-3.8-flash",
-      side: process.env.SIDE_MODEL ?? "gemini-3.5-flash-lite",
+      fallback: process.env.FALLBACK_MODEL ?? "gemini-3.5-flash-lite",
       maxOutputTokens: Number(process.env.MAX_OUTPUT_TOKENS ?? 8192),
     },
     public: {

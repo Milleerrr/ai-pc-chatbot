@@ -12,7 +12,7 @@ export type TRPCContext = {
   user: UserContext | null;
   db: DbClient;
   event?: H3Event;
-  /** Set by tests. Production builds one from private runtime config. */
+  // Set by tests
   models?: ModelSource;
 };
 
@@ -96,8 +96,9 @@ const streaming = t.middleware(async ({ ctx, next }) => {
       user,
       abortSignal: abortWhenClientLeaves(ctx.event),
       models: ctx.models ?? runtimeModelSource(),
-      scoped: <T>(fn: (services: ReturnType<typeof _createService>) => Promise<T>) =>
-        withUser(ctx.db, user, (tx) => fn(_createService({ db: tx, user }))),
+      scoped: <T>(
+        fn: (services: ReturnType<typeof _createService>) => Promise<T>,
+      ) => withUser(ctx.db, user, (tx) => fn(_createService({ db: tx, user }))),
     },
   });
 });
