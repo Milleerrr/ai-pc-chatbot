@@ -2,11 +2,11 @@ name: CI
 
 # Railway deploys `main` to staging and waits for this workflow first
 # ("Wait for CI"). Railway only offers that setting when a workflow runs on
-# `push` to the deploy branch, so this can't be PR-only.
+# `push` to the deploy branch, so this can't be PR-only. Every push to any
+# branch also runs the unit tests; the full `check` runs on PRs and `main`.
 on:
   pull_request:
   push:
-    branches: [main]
   workflow_dispatch:
     inputs:
       upgrade-from:
@@ -23,8 +23,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  unit:
+    name: unit
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm unit:test
+
   check:
     name: check
+    if: github.event_name != 'push' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     services:
       postgres:
