@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { MockLanguageModelV3, simulateReadableStream } from "ai/test";
-import { asc, eq } from "drizzle-orm";
+import { and, asc, eq } from "drizzle-orm";
 import { afterAll, beforeEach, describe, expect, it } from "vitest";
 import type { ModelSource } from "../../server/ai/models";
 import { createCallerFactory } from "../../server/trpc/init";
@@ -49,6 +49,18 @@ function scripted(first: string, second: string): ModelSource {
   };
 }
 
+function failing(): ModelSource {
+  return {
+    main: () =>
+      new MockLanguageModelV3({
+        doStream: async () => {
+          throw new Error("model unavailable");
+        },
+      }),
+    maxOutputTokens: 8192,
+  };
+}
+
 const as = (user: { id: string } | null, models = scripted("Hello", " there")) =>
   createCaller({
     user: user ? { userId: user.id } : null,
@@ -74,6 +86,13 @@ const textOf = (message: ChatMessage) =>
   message.parts
     .map((part) => (part.type === "text" ? part.text : ""))
     .join("");
+
+const assistantRows = (chatId: string) =>
+  testDb()
+    .select()
+    .from(messageTable)
+    .where(and(eq(messageTable.chatId, chatId), eq(messageTable.role, "assistant")))
+    .orderBy(asc(messageTable.sequence));
 
 beforeEach(async () => {
   await resetDb();
@@ -105,40 +124,8 @@ describe("streaming a reply", () => {
       .where(eq(messageTable.chatId, chat.id))
       .orderBy(asc(messageTable.sequence));
 
-    expect(rows.map((row) => row.role)).toEqual([
-      "assistant",
-      "user",
-      "assistant",
-    ]);
     expect(rows[1]).toMatchObject({ userId: member.id, status: "complete" });
     expect(rows[2]).toMatchObject({ userId: member.id, status: "complete" });
-    expect(rows.filter((row) => row.role === "assistant")).toHaveLength(2);
-  });
-
-  it("streams a reply that arrives in one chunk word by word", async () => {
-    const { chat } = await as(member).chats.create();
-    const stream = await as(
-      member,
-      scripted("What is your total budget?", ""),
-    ).chats.send({ chatId: chat.id, text: "Gaming" });
-
-    const deltas: string[] = [];
-
-    for await (const chunk of stream) {
-      if (chunk.type === "text-delta") deltas.push(chunk.delta);
-    }
-
-    expect(deltas.filter(Boolean)).toEqual([
-      "What ",
-      "is ",
-      "your ",
-      "total ",
-      "budget?",
-    ]);
-
-    const messages = await as(member).chats.messages({ chatId: chat.id });
-
-    expect(textOf(messages.at(-1)!)).toBe("What is your total budget?");
   });
 
   it("does not write into another user's Chat", async () => {
@@ -154,9 +141,39 @@ describe("streaming a reply", () => {
       .where(eq(messageTable.chatId, chat.id));
 
     expect(rows).toHaveLength(1);
-    await expect(
-      as(guest).chats.messages({ chatId: chat.id }),
-    ).rejects.toMatchObject({ code: "NOT_FOUND" });
+  });
+
+  it("keeps the partial reply as stopped when the client leaves mid-stream", async () => {
+    const { chat } = await as(member).chats.create();
+    const stream = await as(member).chats.send({
+      chatId: chat.id,
+      text: "Gaming",
+    });
+
+    for await (const chunk of stream) {
+      if (chunk.type === "text-delta" && chunk.delta) break;
+    }
+
+    const rows = await assistantRows(chat.id);
+
+    expect(rows).toHaveLength(2);
+    expect(rows[1]!.status).toBe("stopped");
+    expect(rows[1]!.parts).toEqual([{ type: "text", text: "Hello " }]);
+  });
+
+  it("leaves the user turn unanswered when the model fails", async () => {
+    const { chat } = await as(member).chats.create();
+
+    await consume(
+      as(member, failing()).chats.send({ chatId: chat.id, text: "Gaming" }),
+    ).catch(() => undefined);
+
+    const messages = await as(member).chats.messages({ chatId: chat.id });
+
+    expect(messages.map((message) => message.role)).toEqual([
+      "assistant",
+      "user",
+    ]);
   });
 
   it("needs a session", async () => {

@@ -56,7 +56,7 @@ export function useReply(chatId: MaybeRefOrGetter<string>) {
   watch(
     chat.status,
     (status) => {
-      store.dispatch({ type: "hook", status });
+      store.dispatch({ type: "chatStatusChanged", status });
     },
     { immediate: true },
   );

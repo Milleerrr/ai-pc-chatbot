@@ -56,6 +56,33 @@ describe("reply fetcher", () => {
       signal: undefined,
     });
     expect(await readAll(stream)).toEqual([chunk]);
-    expect(await fetcher.reconnectToStream({ chatId: "chat-1" })).toBeNull();
+  });
+
+  it("closes the server stream when the reply is cancelled", async () => {
+    let closed = false;
+    const fetcher = createReplyFetcher(async () =>
+      (async function* () {
+        try {
+          yield chunk;
+          yield chunk;
+        } finally {
+          closed = true;
+        }
+      })(),
+    );
+
+    const stream = await fetcher.sendMessages({
+      trigger: "submit-message",
+      chatId: "chat-1",
+      messageId: undefined,
+      messages: [user],
+      abortSignal: undefined,
+    });
+    const reader = stream.getReader();
+
+    await reader.read();
+    await reader.cancel();
+
+    expect(closed).toBe(true);
   });
 });

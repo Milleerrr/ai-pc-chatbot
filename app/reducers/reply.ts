@@ -9,11 +9,11 @@ export type ReplyModel = {
   status: ReplyStatus;
 };
 
-/** Status values the AI SDK chat hook reports. */
-type HookStatus = "submitted" | "streaming" | "ready" | "error";
+/** Status values the AI SDK chat reports (its `ChatStatus`). */
+type ChatStatus = "submitted" | "streaming" | "ready" | "error";
 
 export type ReplyAction =
-  | { type: "hook"; status: HookStatus }
+  | { type: "chatStatusChanged"; status: ChatStatus }
   | { type: "reset" };
 
 export const initialReplyModel: ReplyModel = { status: "idle" };
@@ -41,13 +41,13 @@ export function update(model: ReplyModel, action: ReplyAction): ReplyModel {
   switch (action.type) {
     case "reset":
       return initialReplyModel;
-    case "hook":
-      return { status: statusFromHook(model.status, action.status) };
+    case "chatStatusChanged":
+      return { status: statusFromChat(model.status, action.status) };
   }
 }
 
-function statusFromHook(current: ReplyStatus, hook: HookStatus): ReplyStatus {
-  switch (hook) {
+function statusFromChat(current: ReplyStatus, chat: ChatStatus): ReplyStatus {
+  switch (chat) {
     case "submitted":
       return "thinking";
     case "streaming":
