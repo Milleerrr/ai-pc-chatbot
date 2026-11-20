@@ -44,6 +44,10 @@ export const chatMessagesQuery = (
     api.messages(id),
 });
 
+/** A finished reply changes this Chat's Messages and may retitle the list. */
+export const replyInvalidations = (chatId: string) =>
+  [chatKeys.messages(chatId), chatKeys.list()] as const;
+
 export const chatPath = (chatId: string) => `/chats/${chatId}`;
 
 export const chatTitle = (chat: Pick<ChatSummary, "title"> | undefined) =>

@@ -2,11 +2,11 @@ name: CI
 
 # Railway deploys `main` to staging and waits for this workflow first
 # ("Wait for CI"). Railway only offers that setting when a workflow runs on
-# `push` to the deploy branch, so this can't be PR-only.
+# `push` to the deploy branch, so this can't be PR-only. Every push to any
+# branch also runs the unit tests; the full `check` runs on PRs and `main`.
 on:
   pull_request:
   push:
-    branches: [main]
   workflow_dispatch:
     inputs:
       upgrade-from:
@@ -23,8 +23,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  unit:
+    name: unit
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm unit:test
+
   check:
     name: check
+    if: github.event_name != 'push' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -53,3 +70,39 @@ jobs:
           # A PR upgrades its base branch; a push to `main` upgrades the
           # commit staging was running before it; a manual run uses its input.
           upgrade-from: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event_name == 'workflow_dispatch' && inputs.upgrade-from || github.event.before }}
+
+  # Posts the PR environment's public URL on the PR once `check` finishes, and
+  # edits the same comment on later pushes instead of adding new ones. Railway
+  # names the domain `<service>-<environment>.up.railway.app` and the PR
+  # environment `ai-pc-chatbot-pr-<number>`. Fork PRs get a read-only token, so
+  # they're skipped.
+  preview-link:
+    name: preview link
+    needs: check
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+          RESULT: ${{ needs.check.result }}
+        run: |
+          url="https://app-ai-pc-chatbot-pr-${PR}.up.railway.app"
+          marker="<!-- preview-link -->"
+          if [ "$RESULT" = success ]; then status="✅ CI passed"; else status="❌ CI ${RESULT}"; fi
+          body="${marker}
+          🚅 **Preview:** ${url}
+
+          ${status} on ${SHA::7}. Railway deploys the PR environment separately, so it can lag a minute or two behind this comment."
+
+          id=$(gh api "repos/$REPO/issues/$PR/comments" --paginate \
+            --jq ".[] | select(.body | startswith(\"$marker\")) | .id" | head -n1)
+          if [ -n "$id" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$id" -f body="$body" > /dev/null
+          else
+            gh api -X POST "repos/$REPO/issues/$PR/comments" -f body="$body" > /dev/null
+          fi

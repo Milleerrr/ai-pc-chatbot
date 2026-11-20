@@ -30,7 +30,10 @@
     "test:watch": "vitest --watch"
   },
   "dependencies": {
+    "@ai-sdk/google": "^4.0.121",
+    "@ai-sdk/vue": "^4.0.173",
     "@better-auth/infra": "^0.4.27",
+    "@comark/vue": "^0.9.2",
     "@nuxt/ui": "^4.11.2",
     "@pinia/nuxt": "^1.0.3",
     "@tanstack/vue-query": "^5.107.1",

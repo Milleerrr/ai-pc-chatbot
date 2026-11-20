@@ -40,6 +40,14 @@ export class ChatService extends Service {
       .orderBy(desc(chatTable.createdAt), desc(chatTable.id));
   }
 
+  /** Stores the user's Message, then returns the Chat in sequence order. */
+  async recordUserTurn(chatId: string, text: string): Promise<ChatMessage[]> {
+    await this.visibleMessages(chatId);
+    await this.services.messages.addUserText(chatId, text);
+
+    return this.services.messages.listForChat(chatId);
+  }
+
   async visibleMessages(chatId: string): Promise<ChatMessage[]> {
     const [chat] = await this.db
       .select({ id: chatTable.id })

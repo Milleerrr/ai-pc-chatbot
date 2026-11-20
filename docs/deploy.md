@@ -47,6 +47,8 @@ Production doesn't need it: it only deploys when someone promotes it, after the 
 
 Railway's docs don't describe a CI gate for PR environments. A PR environment deploys as soon as the branch updates, and `ci.yml` reports on the PR separately.
 
+After `check` finishes on a PR, the `preview link` job in `ci.yml` posts the PR environment's URL (`https://app-ai-pc-chatbot-pr-<number>.up.railway.app`) as a PR comment, with the CI result, and edits that same comment on later pushes. The URL is built from Railway's naming (`<service>-<environment>`), so it breaks if the App service or the PR environment naming changes.
+
 ### Pre-deploy migrations
 
 `drizzle-kit` is a devDependency, so the pre-deploy command has to work in an image where dev dependencies may be pruned.
