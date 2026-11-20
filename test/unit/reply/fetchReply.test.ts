@@ -1,9 +1,9 @@
 import type { UIMessage, UIMessageChunk } from "ai";
 import { describe, expect, it, vi } from "vitest";
 import {
-  createReplyTransport,
+  createReplyFetcher,
   type ReplyRequest,
-} from "../../../app/effects/reply";
+} from "../../../app/effects/fetchReply";
 
 const user: UIMessage = {
   id: "user-1",
@@ -26,16 +26,16 @@ async function readAll(stream: ReadableStream<UIMessageChunk>) {
   }
 }
 
-describe("reply transport", () => {
+describe("reply fetcher", () => {
   it("sends the latest user text and yields the reply chunks", async () => {
     const send = vi.fn(async (_request: ReplyRequest) =>
       (async function* () {
         yield chunk;
       })(),
     );
-    const transport = createReplyTransport(send);
+    const fetcher = createReplyFetcher(send);
 
-    const stream = await transport.sendMessages({
+    const stream = await fetcher.sendMessages({
       trigger: "submit-message",
       chatId: "chat-1",
       messageId: undefined,
@@ -56,6 +56,6 @@ describe("reply transport", () => {
       signal: undefined,
     });
     expect(await readAll(stream)).toEqual([chunk]);
-    expect(await transport.reconnectToStream({ chatId: "chat-1" })).toBeNull();
+    expect(await fetcher.reconnectToStream({ chatId: "chat-1" })).toBeNull();
   });
 });

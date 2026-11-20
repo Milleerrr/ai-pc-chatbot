@@ -1,3 +1,11 @@
+/**
+ * How the AI SDK chat hook gets an assistant reply: send the user's latest
+ * text to the server and hand the reply back as a stream of chunks. The AI
+ * SDK calls this a `ChatTransport`; ours goes over tRPC instead of HTTP.
+ *
+ * Not a dispatching effect: the chat hook owns the request lifecycle, and
+ * the reply reducer reacts to its status.
+ */
 import type { ChatTransport, UIMessage, UIMessageChunk } from "ai";
 
 export type ReplyRequest = {
@@ -36,7 +44,7 @@ function streamFrom(
   });
 }
 
-export function createReplyTransport(
+export function createReplyFetcher(
   send: (request: ReplyRequest) => Promise<AsyncIterable<UIMessageChunk>>,
 ): ChatTransport<UIMessage> {
   return {

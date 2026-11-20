@@ -7,7 +7,7 @@ import {
   watch,
   type MaybeRefOrGetter,
 } from "vue";
-import { createReplyTransport } from "~/effects/reply";
+import { createReplyFetcher } from "~/effects/fetchReply";
 import { replyInvalidations } from "~/queries/chats";
 import { composerLocked, messageListStatus } from "~/reducers/reply";
 import { useReplyStore } from "~/stores/reply";
@@ -23,7 +23,7 @@ export function useReply(chatId: MaybeRefOrGetter<string>) {
   const messagesQuery = useChatMessages(chatId);
   const { $api } = useNuxtApp();
 
-  const transport = createReplyTransport(({ chatId: id, text, signal }) =>
+  const replyFetcher = createReplyFetcher(({ chatId: id, text, signal }) =>
     $api.chats.send.mutate({ chatId: id, text }, { signal }),
   );
 
@@ -32,7 +32,7 @@ export function useReply(chatId: MaybeRefOrGetter<string>) {
 
     return {
       id,
-      transport,
+      transport: replyFetcher,
       onFinish: () => {
         invalidateReply(queryClient, id);
       },
