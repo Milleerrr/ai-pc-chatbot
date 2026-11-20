@@ -1,5 +1,6 @@
 import {
   convertToModelMessages,
+  smoothStream,
   streamText,
   toUIMessageStream,
   type UIMessageChunk,
@@ -27,6 +28,9 @@ export async function* streamReply(options: {
     messages: await convertToModelMessages(history),
     maxOutputTokens: options.models.maxOutputTokens,
     abortSignal: options.abortSignal,
+    // Gemini sends a short reply in one or two large chunks. Re-chunk by
+    // word so it reads as streamed.
+    experimental_transform: smoothStream({ chunking: "word", delayInMs: 15 }),
   });
 
   const reader = toUIMessageStream({ stream: result.stream }).getReader();

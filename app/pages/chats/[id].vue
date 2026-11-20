@@ -56,7 +56,7 @@ function markdownText(message: UIMessage, part: UIMessage["parts"][number]) {
           :user="{ side: 'right', variant: 'soft' }"
         >
           <template #indicator>
-            <span class="text-sm text-muted">Thinking…</span>
+            <UChatShimmer text="Thinking…" class="text-sm" />
           </template>
           <template #content="message">
             <template

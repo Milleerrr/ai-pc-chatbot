@@ -115,6 +115,32 @@ describe("streaming a reply", () => {
     expect(rows.filter((row) => row.role === "assistant")).toHaveLength(2);
   });
 
+  it("streams a reply that arrives in one chunk word by word", async () => {
+    const { chat } = await as(member).chats.create();
+    const stream = await as(
+      member,
+      scripted("What is your total budget?", ""),
+    ).chats.send({ chatId: chat.id, text: "Gaming" });
+
+    const deltas: string[] = [];
+
+    for await (const chunk of stream) {
+      if (chunk.type === "text-delta") deltas.push(chunk.delta);
+    }
+
+    expect(deltas.filter(Boolean)).toEqual([
+      "What ",
+      "is ",
+      "your ",
+      "total ",
+      "budget?",
+    ]);
+
+    const messages = await as(member).chats.messages({ chatId: chat.id });
+
+    expect(textOf(messages.at(-1)!)).toBe("What is your total budget?");
+  });
+
   it("does not write into another user's Chat", async () => {
     const { chat } = await as(member).chats.create();
 
