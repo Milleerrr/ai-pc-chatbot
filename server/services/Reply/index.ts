@@ -44,6 +44,13 @@ export async function* streamReply(options: {
 
       if (value.type === "text-delta") reply += value.delta;
 
+      // The AI SDK reports model failures as a chunk, not a thrown error.
+      if (value.type === "error") {
+        outcome = "failed";
+        yield value;
+        return;
+      }
+
       yield value;
     }
 

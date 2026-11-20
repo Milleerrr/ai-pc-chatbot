@@ -70,3 +70,39 @@ jobs:
           # A PR upgrades its base branch; a push to `main` upgrades the
           # commit staging was running before it; a manual run uses its input.
           upgrade-from: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event_name == 'workflow_dispatch' && inputs.upgrade-from || github.event.before }}
+
+  # Posts the PR environment's public URL on the PR once `check` finishes, and
+  # edits the same comment on later pushes instead of adding new ones. Railway
+  # names the domain `<service>-<environment>.up.railway.app` and the PR
+  # environment `ai-pc-chatbot-pr-<number>`. Fork PRs get a read-only token, so
+  # they're skipped.
+  preview-link:
+    name: preview link
+    needs: check
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+          RESULT: ${{ needs.check.result }}
+        run: |
+          url="https://app-ai-pc-chatbot-pr-${PR}.up.railway.app"
+          marker="<!-- preview-link -->"
+          if [ "$RESULT" = success ]; then status="✅ CI passed"; else status="❌ CI ${RESULT}"; fi
+          body="${marker}
+          🚅 **Preview:** ${url}
+
+          ${status} on ${SHA::7}. Railway deploys the PR environment separately, so it can lag a minute or two behind this comment."
+
+          id=$(gh api "repos/$REPO/issues/$PR/comments" --paginate \
+            --jq ".[] | select(.body | startswith(\"$marker\")) | .id" | head -n1)
+          if [ -n "$id" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$id" -f body="$body" > /dev/null
+          else
+            gh api -X POST "repos/$REPO/issues/$PR/comments" -f body="$body" > /dev/null
+          fi
